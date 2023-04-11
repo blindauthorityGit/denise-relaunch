@@ -10,6 +10,12 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    height: 100%;
+
+}
+
+#__next {
+  height: 100%;
 }
 
 
@@ -20,4 +26,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+/* Define styles for all headline elements */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold;
+}
+
+h1 {
+  @apply font-freight text-lg sm:text-6xl tracking-wider font-light;
+}
+
+h2 {
+  @apply text-2xl sm:text-3xl;
+}
+
+h3 {
+  @apply font-freight text-xl sm:text-3xl tracking-widest;
+}
+
+h4 {
+  @apply text-lg sm:text-xl;
+}
+
+h5 {
+  @apply text-base sm:text-lg;
+}
+
+h6 {
+  @apply font-freight text-sm sm:text-base tracking-widest font-light;
 }
