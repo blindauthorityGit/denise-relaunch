@@ -12,7 +12,7 @@ import MainContainer from "../components/layout/mainContainer";
 import Hero from "../components/Hero/hero";
 import { Menu1 } from "../components/menues";
 import { ContainerStandard } from "../components/container";
-import { StartKachelLeft } from "../components/sections";
+import { StartKachelLeft, Contact } from "../components/sections";
 import { BasicBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
 //ASSETS
@@ -70,6 +70,7 @@ export default function Home({ dataHome, dataSetting }) {
             >
                 <NewsletterSub></NewsletterSub>
             </BasicBox>
+            <Contact data={dataSetting}></Contact>
         </>
     );
 }

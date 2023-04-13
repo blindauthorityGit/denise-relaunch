@@ -28,6 +28,8 @@ module.exports = {
                 },
                 darkText: "#4C4D4F",
                 bg: "#FBFBF5",
+                redColor: "#FE654F",
+                greenColor: "#61E8E1",
             },
         },
     },

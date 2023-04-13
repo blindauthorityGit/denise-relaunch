@@ -2,6 +2,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Newsletter from "../../assets/newsletter.jpg";
 
+//COMPS
+import { MainButton } from "../buttons";
+
 const NewsletterSub = () => {
     const [email, setEmail] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -48,12 +51,10 @@ const NewsletterSub = () => {
                 required
                 className="border-b text-lg border-blackText text-blackText bg-none text-white col-span-10 "
             />
-            <button
-                type="submit"
-                className="bg-blackText mt-6 font-semibold hover-underline-animation z-20 flex items-center justify-center text-primaryColor-200 lg:mt-8 py-2 text-sm sm:text-base sm:py-3 px-6 min-w-[10rem] w-full uppercase rounded-md md:mt-8"
-            >
-                <span className="">Abonnieren</span>
-            </button>
+            <div className="button">
+                <MainButton type="submit">Abonnieren</MainButton>
+            </div>
+
             {successMessage && (
                 <div className="success-message text-greenColor text-sm mt-4 font-semibold col-span-12">
                     {successMessage}
@@ -62,7 +63,7 @@ const NewsletterSub = () => {
             {errorMessage && (
                 <div className="error-message text-redColor text-sm font-semibold mt-4 col-span-12">{errorMessage}</div>
             )}
-            <p className="col-span-12 text-xs mt-6">
+            <p className="col-span-12 text-sm text-primaryColor-200 mt-6">
                 Durch den Eintrag in unseren Newsletter stimmen Sie zu, Ihre personenbezogenen Daten für den Erhalt von
                 Newslettern zu verwenden.
             </p>
