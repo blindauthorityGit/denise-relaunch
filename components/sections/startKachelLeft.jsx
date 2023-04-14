@@ -48,9 +48,7 @@ const StartKachelLeft = (props) => {
                 style={{ height: imgHeight + "px" }}
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left hidden sm:block col-span-12 lg:col-span-6 relative ${
-                    props.data.left ? "" : "order-last"
-                }`}
+                className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "sm:order-last"}`}
             >
                 <Image
                     // {...ImagePropsGallery(i)}
@@ -74,7 +72,7 @@ const StartKachelLeft = (props) => {
                 </div> */}
                 <h2
                     data-aos="fade-left"
-                    className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-6xl  mt-8 mb-8 lg:mb-12"
+                    className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-6xl  mt-8 mb-8 lg:mb-12"
                 >
                     {props.data.title}
                 </h2>
@@ -83,6 +81,7 @@ const StartKachelLeft = (props) => {
                 </div>
                 {/* <div className="text font-serif">{parse(config.text)}</div> */}
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
+                <div className="h-12 sm:h-0"></div>
             </div>
             <style jsx>{`
                 .hover-underline-animation span {

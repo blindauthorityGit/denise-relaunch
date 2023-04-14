@@ -18,6 +18,11 @@ import { PortableText } from "@portabletext/react";
 //COMPS
 import { LineButton } from "../buttons";
 import MapboxMap from "../map";
+import { Form1 } from "../forms";
+
+//ICONS
+import { FaPhone } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 
 const Contact = (props) => {
     const ref = useRef(null);
@@ -45,16 +50,16 @@ const Contact = (props) => {
             >
                 <MapboxMap height={imgHeight}></MapboxMap>
             </motion.div>
-            <div className="right px-8 sm:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-36 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-12"
+                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
                         >
                             Kontakt
                         </h4>
-                        <div className="font-freight leading-relaxed text-lg text-darkText">
+                        <div className="font-freight font-bold leading-relaxed text-lg text-darkText">
                             {" "}
                             {props.data.contact.name}
                         </div>
@@ -66,11 +71,21 @@ const Contact = (props) => {
                             {" "}
                             {props.data.contact.city}
                         </div>
+                        <div className="phoner grid grid-cols-12 mt-4 leading-relaxed">
+                            <div className="col-span-2 text-primaryColor flex items-center">
+                                <FaPhone />{" "}
+                            </div>
+                            <div className="col-span-10">{props.data.contact.phone}</div>
+                            <div className="col-span-2 text-primaryColor flex items-center">
+                                <HiOutlineMail></HiOutlineMail>
+                            </div>
+                            <div className="col-span-10">{props.data.contact.email}</div>
+                        </div>
                     </div>
                     <div className="col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-12"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
                         >
                             Öffnungszeiten
                         </h4>
@@ -92,6 +107,15 @@ const Contact = (props) => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="col-span-12">
+                        <h4
+                            data-aos="fade-left"
+                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
+                        >
+                            Schreiben Sie mir!
+                        </h4>
+                        <Form1 />
                     </div>
                 </div>
 

@@ -27,6 +27,7 @@ module.exports = {
                     950: "#13110A",
                 },
                 darkText: "#4C4D4F",
+                darkBG: "#1B1B1C",
                 bg: "#FBFBF5",
                 redColor: "#FE654F",
                 greenColor: "#61E8E1",

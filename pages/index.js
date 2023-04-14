@@ -48,29 +48,31 @@ export default function Home({ dataHome, dataSetting }) {
                     setIsOpen(true);
                 }}
             ></Menu1>
-
-            <Hero
-                fullHeight={true}
-                data={dataHome}
-                dataSetting={dataSetting}
-                colspan="col-span-12"
-                bgVideo={dataHome.videoFile.asset.url}
-            ></Hero>
-            {dataHome.section.map((e, i) => {
-                console.log(e);
-                return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
-            })}
-            <div className="h-24"></div>
-            <BasicBox
-                title={"Bleiben Sie am neuesten Stand"}
-                text={
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
-                }
-                bgImage={Newsletter.src}
-            >
-                <NewsletterSub></NewsletterSub>
-            </BasicBox>
-            <Contact data={dataSetting}></Contact>
+            <div className="overflow-x-hidden">
+                <Hero
+                    fullHeight={true}
+                    data={dataHome}
+                    dataSetting={dataSetting}
+                    colspan="col-span-12"
+                    bgVideo={dataHome.videoFile.asset.url}
+                ></Hero>
+                {dataHome.section.map((e, i) => {
+                    console.log(e);
+                    return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
+                })}
+                <div className="h-24"></div>
+                <BasicBox
+                    title={"Bleiben Sie am neuesten Stand"}
+                    text={
+                        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
+                    }
+                    bgImage={Newsletter.src}
+                >
+                    <NewsletterSub></NewsletterSub>
+                </BasicBox>
+                <div className="h-24"></div>
+                <Contact data={dataSetting}></Contact>
+            </div>
         </>
     );
 }
