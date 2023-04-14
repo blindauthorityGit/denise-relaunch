@@ -55,7 +55,7 @@ const Contact = (props) => {
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6"
                         >
                             Kontakt
                         </h4>
@@ -85,7 +85,7 @@ const Contact = (props) => {
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Öffnungszeiten
                         </h4>

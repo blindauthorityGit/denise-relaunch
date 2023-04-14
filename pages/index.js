@@ -60,7 +60,7 @@ export default function Home({ dataHome, dataSetting }) {
                     console.log(e);
                     return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
                 })}
-                <div className="sm:h-24"></div>
+                <div className="lg:h-24 "></div>
                 <BasicBox
                     title={"Bleiben Sie am neuesten Stand"}
                     text={

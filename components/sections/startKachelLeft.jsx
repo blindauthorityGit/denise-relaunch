@@ -49,12 +49,20 @@ const StartKachelLeft = (props) => {
     }, [imgRef.current]);
 
     return (
-        <div ref={ref} className={`w-full   sm:px-0 md:px-24 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
+        <div ref={ref} className={`w-full   sm:px-0 md:px-0 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
             <motion.div
-                style={{ height: isMobile ? imgHeight / 1.5 + "px" : imgHeight + "px" }}
+                style={{
+                    height: isMobile
+                        ? imgHeight / 1.5 + "px"
+                        : isTablet
+                        ? imgHeight / 1.6 + "px"
+                        : isDesktop
+                        ? imgHeight + "px"
+                        : "auto",
+                }}
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "sm:order-last"}`}
+                className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "lg:order-last"}`}
             >
                 <Image
                     // {...ImagePropsGallery(i)}
@@ -68,7 +76,7 @@ const StartKachelLeft = (props) => {
             </motion.div>
             <div
                 style={{ backgroundImage: `url(${props.bg.src})` }}
-                className="right px-8 sm:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
+                className="right md:mb-16 lg:mb-0 px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
             >
                 {/* <div
                     data-aos="fade-up"

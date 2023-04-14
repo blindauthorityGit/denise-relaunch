@@ -14,7 +14,7 @@ const FloaterContact = (props) => {
     }, []);
     return (
         <div
-            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 lg:text-lg tracking-wider text-textBlack right-6 lg:right-24 ${
+            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 md:bottom-36 lg:bottom-24 lg:text-lg tracking-wider text-textBlack right-6 lg:right-24 ${
                 props.center ? "items-center flex" : ""
             } ${props.klasse}`}
         >

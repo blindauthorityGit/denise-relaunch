@@ -85,7 +85,7 @@ const Mobile1 = (props) => {
             <motion.nav
                 variants={boxMotion}
                 className={`navbar slide-in-right ${props.klasse} 
-                w-[90%] right-0 h-screen bg-primaryColor-100 fixed z-50 top-0 `}
+                w-[90%] right-0 h-screen bg-white fixed z-50 top-0 `}
             >
                 <div onClick={props.onClick} className="closer absolute text-xl rounded-full p-1 right-4 top-3">
                     <GrClose className=""></GrClose>
@@ -99,17 +99,17 @@ const Mobile1 = (props) => {
                         </Link>
                     </div>
                     <div className="MenuItems text-lg sm:text-4xl pt-4 font-sans">
-                        <Link href="/galerie">
+                        <Link href="/baeckerei">
                             <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
-                                Galerie
+                                Bäckerei
                             </a>
                         </Link>
                         <motion.ul variants={boxMotion} className="">
                             <motion.li variants={textMotion} className="mb-4">
                                 <div className="wrap dropdown text-primaryColor-900  ">
-                                    <Link href="/kurse">
+                                    <Link href="/denise">
                                         <a className="text-text block my-3 subNav relative hover:text-primaryColor cursor-pointer">
-                                            Kurse
+                                            Denise
                                         </a>
                                     </Link>
 
@@ -132,18 +132,13 @@ const Mobile1 = (props) => {
                                     </ul> */}
                                 </div>
                             </motion.li>
-                            <Link href="/leistungen">
+                            <Link href="/weingebaeck">
                                 <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
-                                    Leistungen
+                                    Weingebäck
                                 </a>
                             </Link>
                             <li className="mr-8 hover:text-primaryColor hover:underline mb-4 text-primaryColor-900">
-                                <Link href="/blog">
-                                    <a>Blog</a>
-                                </Link>
-                            </li>
-                            <li className="text-primaryColor-900">
-                                <Link href="/kontakt ">
+                                <Link href="/kontakt">
                                     <a>Kontakt</a>
                                 </Link>
                             </li>
