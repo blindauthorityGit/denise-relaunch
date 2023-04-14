@@ -49,7 +49,7 @@ const MobileBar = (props) => {
                         setShowContact(true);
                         setShowOpening(false);
                     }}
-                    className="w-1/3 p-4 flex flex-col justify-center items-center text-primaryColor hover:text-primaryColor"
+                    className="w-1/3 p-4 flex flex-col border-r border-primaryColor-200 border-opacity-30  justify-center items-center text-primaryColor hover:text-primaryColor"
                 >
                     <FaEnvelope size={16} />
                     <span className="text-xs font-base mt-1">EMAIL</span>
