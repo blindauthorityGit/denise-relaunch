@@ -97,8 +97,7 @@ const Form1 = (props) => {
                             type="checkbox"
                         />
                         <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-sm leading-normal">
-                            Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zum Zweck der
-                            Kontaktaufnahme zu. *
+                            Ich erlaube Datenverarbeitung für Kontaktaufnahme laut Datenschutzerklärung. *
                         </label>
                         {errors.checkbox && <Error klasse="block col-span-12">Bitte bestätigen</Error>}
                     </div>
