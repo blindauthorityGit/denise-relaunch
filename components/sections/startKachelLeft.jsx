@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 
 //FUNCTIONS
 import urlFor from "../../functions/urlFor";
+import useBreakpoints from "../../functions/useBreakpoints";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
@@ -22,6 +23,11 @@ const StartKachelLeft = (props) => {
     const ref = useRef(null);
     const floaterRef = useRef(null);
     const imgRef = useRef(null);
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+
+    useEffect(() => {
+        console.log(isMobile, isTablet, isDesktop);
+    }, [isMobile, isTablet, isDesktop]);
 
     //STATES
     const [imgHeight, setImgHeight] = useState(null);
@@ -45,7 +51,7 @@ const StartKachelLeft = (props) => {
     return (
         <div ref={ref} className={`w-full   sm:px-0 md:px-24 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
             <motion.div
-                style={{ height: imgHeight + "px" }}
+                style={{ height: isMobile ? imgHeight / 1.5 + "px" : imgHeight + "px" }}
                 data-aos="fade-right"
                 ref={imgRef}
                 className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "sm:order-last"}`}

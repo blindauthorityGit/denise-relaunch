@@ -3,11 +3,19 @@ import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import { Map } from "mapbox-gl";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+//FUNCTIONS
+import useBreakpoints from "../../functions/useBreakpoints";
 
 const MapboxMap = (props) => {
     const mapContainer = useRef(null);
     const container = useRef(null);
     const [mapHeight, setMapHeight] = useState(null);
+
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+
+    useEffect(() => {
+        console.log(isMobile, isTablet, isDesktop);
+    }, [isMobile, isTablet, isDesktop]);
 
     mapboxgl.accessToken = process.env.NEXT_PUBLIC_MAPBOX_API;
 
@@ -22,6 +30,7 @@ const MapboxMap = (props) => {
                 zoom: 15.5,
                 bearing: -17.6,
                 antialias: true,
+                scrollZoom: !isMobile, // set scrollZoom option based on device
             });
 
             const marker = new mapboxgl.Marker({
