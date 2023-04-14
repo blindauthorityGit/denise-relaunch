@@ -1,5 +1,5 @@
 //ImageBuilder
-import myConfiguredSanityClient from "../client";
+import myConfiguredSanityClient from "../../client";
 
 import imageUrlBuilder from "@sanity/image-url";
 

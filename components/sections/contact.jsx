@@ -10,7 +10,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 //FUNCTIONS
-import urlFor from "../../functions/urlFor";
+import urlFor from "../functions/urlFor";
 
 //SANITY
 import { PortableText } from "@portabletext/react";

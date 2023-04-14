@@ -5,7 +5,7 @@ import Image from "next/image";
 
 // SANITY
 import client from "../client";
-import urlFor from "../functions/urlFor";
+import urlFor from "../components/functions/urlFor";
 
 //COMPS
 import MainContainer from "../components/layout/mainContainer";

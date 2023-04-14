@@ -4,7 +4,7 @@ import { Map } from "mapbox-gl";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 //FUNCTIONS
-import useBreakpoints from "../../functions/useBreakpoints";
+import useBreakpoints from "../functions/useBreakpoints";
 
 const MapboxMap = (props) => {
     const mapContainer = useRef(null);

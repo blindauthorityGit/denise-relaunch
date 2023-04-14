@@ -10,8 +10,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 //FUNCTIONS
-import urlFor from "../../functions/urlFor";
-import useBreakpoints from "../../functions/useBreakpoints";
+import urlFor from "../functions/urlFor";
+import useBreakpoints from "../functions/useBreakpoints";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
