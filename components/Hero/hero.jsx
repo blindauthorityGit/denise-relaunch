@@ -6,15 +6,15 @@ import { Spinner1 } from "../spinner";
 import { FloaterContact, FloaterOpening } from "../floaters";
 
 //FUNCTIONS
-import useBreakpoints from "../../functions/useBreakpoints";
+// import useBreakpoints from "../../functions/useBreakpoints";
 
 const Hero = (props) => {
     const [loaded, setLoaded] = useState(false);
-    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+    // const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
-    useEffect(() => {
-        console.log(isMobile, isTablet, isDesktop);
-    }, [isMobile, isTablet, isDesktop]);
+    // useEffect(() => {
+    //     console.log(isMobile, isTablet, isDesktop);
+    // }, [isMobile, isTablet, isDesktop]);
 
     return (
         <div
