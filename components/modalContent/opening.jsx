@@ -14,13 +14,15 @@ const Opening = (props) => {
                 </h4>
                 <div className="flex space-x-6">
                     <div className="font-freight ">
-                        <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">Brunn an der Pitten</div>
+                        <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg font-bold">
+                            Brunn an der Pitten
+                        </div>
                         <div className="font-freight leading-relaxed text-lg text-darkText">
                             <PortableText value={props.data.oeffnungszeiten.brunn} />
                         </div>{" "}
                     </div>
                     <div className="font-freight ">
-                        <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">
+                        <div className="text-primaryColor-500 font-bold mb-4 leading-relaxed text-lg">
                             Wr. Neustadt Marienmarkt
                         </div>
                         <div className="font-freight leading-relaxed text-lg text-darkText">
