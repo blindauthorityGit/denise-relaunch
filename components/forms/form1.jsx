@@ -80,7 +80,7 @@ const Form1 = (props) => {
 
                     <textarea
                         {...register("message", { required: true })}
-                        className="col-span-12 border border-primaryColor bg-transparent text-primaryColor-800 placeholder-primaryColor-500  p-4"
+                        className="col-span-12 border border-primaryColor bg-transparent border-t-0 text-primaryColor-800 placeholder-primaryColor-500  p-4"
                         name="message"
                         id="message"
                         cols="20"
@@ -96,7 +96,7 @@ const Form1 = (props) => {
                             className="mr-4 text-primaryColor"
                             type="checkbox"
                         />
-                        <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-sm">
+                        <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-sm leading-normal">
                             Ich stimme der Verarbeitung meiner Daten gemäß der Datenschutzerklärung zum Zweck der
                             Kontaktaufnahme zu. *
                         </label>

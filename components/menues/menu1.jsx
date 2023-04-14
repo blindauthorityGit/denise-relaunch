@@ -232,7 +232,9 @@ const Menu1 = (props) => {
                     </div>
                     <div className="col-span-1 social media flex justify-end text-xl md:text-4xl">
                         <div
-                            className="block lg:hidden cursor-pointer"
+                            className={`block lg:hidden cursor-pointer ${
+                                isScrolled ? "text-darkText" : "text-primaryColor-100"
+                            }`}
                             onClick={(e) => {
                                 setShowOverlay(true);
                             }}

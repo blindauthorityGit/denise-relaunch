@@ -46,13 +46,13 @@ const Contact = (props) => {
                 style={{ height: imgHeight + "px" }}
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left hidden sm:block col-span-12 lg:col-span-6 h-full relative`}
+                className={`left  sm:block col-span-12 lg:col-span-6 h-full relative`}
             >
                 <MapboxMap height={imgHeight}></MapboxMap>
             </motion.div>
             <div className="right px-8 sm:px-36 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
-                    <div className="col-span-6">
+                    <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
                             className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
@@ -82,7 +82,7 @@ const Contact = (props) => {
                             <div className="col-span-10">{props.data.contact.email}</div>
                         </div>
                     </div>
-                    <div className="col-span-6">
+                    <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
                             className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"

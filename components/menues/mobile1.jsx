@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { motion, useAnimation } from "framer-motion";
-import Logo from "../../assets/logoLight.svg";
+import Logo from "../../assets/logoDark.svg";
 import { GrClose } from "react-icons/gr";
 import { useRouter } from "next/router";
 
@@ -94,7 +94,7 @@ const Mobile1 = (props) => {
                     <div className="middle flex justify-start">
                         <Link href="/">
                             <a>
-                                <img src={Logo.src} width="32" alt="Logo" />
+                                <img src={Logo.src} width="140" alt="Logo" />
                             </a>
                         </Link>
                     </div>
