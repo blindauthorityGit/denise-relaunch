@@ -62,7 +62,7 @@ const MapboxMap = (props) => {
 
     return (
         <div className="map-container" ref={container} style={{ height: "100%" }}>
-            <div className="map h-full" style={{ height: mapHeight }} ref={mapContainer}></div>
+            <div className="map h-full" style={props.style} ref={mapContainer}></div>
         </div>
     );
 };

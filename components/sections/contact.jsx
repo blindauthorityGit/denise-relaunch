@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 
 //FUNCTIONS
 import urlFor from "../functions/urlFor";
+import useBreakpoints from "../functions/useBreakpoints";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
@@ -31,6 +32,11 @@ const Contact = (props) => {
 
     //STATES
     const [imgHeight, setImgHeight] = useState(null);
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+
+    useEffect(() => {
+        console.log(isMobile, isTablet, isDesktop);
+    }, [isMobile, isTablet, isDesktop]);
 
     useEffect(() => {
         AOS.init({
@@ -41,21 +47,29 @@ const Contact = (props) => {
     }, [imgRef.current]);
 
     return (
-        <div ref={ref} className={`w-full   sm:px-0 md:px-24 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
+        <div ref={ref} className={`w-full   sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
             <motion.div
-                style={{ height: imgHeight + "px" }}
+                style={{
+                    height: isMobile
+                        ? imgHeight / 1.5 + "px"
+                        : isTablet
+                        ? imgHeight / 1.6 + "px"
+                        : isDesktop
+                        ? imgHeight + "px"
+                        : "auto",
+                }}
                 data-aos="fade-right"
                 ref={imgRef}
                 className={`left  sm:block col-span-12 lg:col-span-6 h-full relative`}
             >
-                <MapboxMap height={imgHeight}></MapboxMap>
+                <MapboxMap></MapboxMap>
             </motion.div>
-            <div className="right px-8 sm:px-36 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Kontakt
                         </h4>
@@ -111,7 +125,7 @@ const Contact = (props) => {
                     <div className="col-span-12">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Schreiben Sie mir!
                         </h4>
