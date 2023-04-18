@@ -10,16 +10,17 @@ import { MainButton } from "../components/buttons";
 import HeroPage from "../components/Hero/heroPage";
 import BG from "../components/layout/bg";
 import { Menu2 } from "../components/menues";
-import { ShadowBox } from "../components/container";
+import { ShadowBox, ContainerStandard } from "../components/container";
 import { StoererImg } from "../components/stoerer";
 import { Austria } from "../components/floaters";
-import { ImageGrid1 } from "../components/layout";
+import { ImageGridBasic } from "../components/layout";
 import { StartKachelLeft, Contact, IntroText } from "../components/sections";
 import { BasicBox, Produkt, StoreBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
 import { Divider1 } from "../components/divider";
-import { ImgText1, BGText1 } from "../components/imgText";
+import { ImgText1, BGText1, ImgText2 } from "../components/imgText";
 import { Element } from "../components/quickLinks";
+import { ListItem } from "../components/list";
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
@@ -30,14 +31,12 @@ import Newsletter from "../assets/newsletter.jpg";
 //FUNCTIONS
 import showCurrentURL from "../components/functions/showCurrentURL";
 
-export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) {
+export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome }) {
     const currentUrl = showCurrentURL();
     const [quickLinkData, setQuickLinkData] = useState(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
 
     useEffect(() => {
-        console.log(dataWeingebaeck, dataSetting, dataHome);
-        console.log(dataHome.section.map((e) => e.buttonLink));
-        console.log(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
+        console.log(dataBaeckerei, dataSetting, dataHome);
     }, []);
 
     return (
@@ -62,28 +61,32 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
             ></Menu2>
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataWeingebaeck}>
+                <HeroPage data={dataBaeckerei}>
                     <Austria></Austria>
                 </HeroPage>
                 <Divider1></Divider1>
-                <IntroText data={dataWeingebaeck.intro} klasse="mt-8" />
+                <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
-                <div className="grid grid-cols-12 container mx-auto gap-4 lg:px-36">
-                    {dataWeingebaeck.produkte.map((e, i) => {
-                        return <Produkt data={e}></Produkt>;
-                    })}
-                </div>
+                <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.baeckereiImages}></ImageGridBasic>
                 <div className="h-8 lg:h-24 "></div>
+                <ImgText2 data={dataBaeckerei}></ImgText2>
+                <div className="h-8 lg:h-24 "></div>
+
                 <ShadowBox>
-                    <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
+                    <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
                 </ShadowBox>
+                <ContainerStandard klasse="lg:px-36">
+                    {dataBaeckerei.gebaeck.gebaeckList.map((e, i) => {
+                        return <ListItem data={e}></ListItem>;
+                    })}
+                </ContainerStandard>
+
                 {/* <StoererImg data={dataWeingebaeck.dekoImage}></StoererImg> */}
                 {/* <div className="h-8 lg:h-24"></div> */}
-                <BGText1 data={dataWeingebaeck}></BGText1>
                 {/* <ImgText1 data={dataWeingebaeck}></ImgText1> */}
                 {/* <div className="h-8 lg:h-24"></div> */}
 
-                <StoreBox data={dataWeingebaeck}>
+                {/* <StoreBox data={dataWeingebaeck}>
                     <div className="flex justify-center col-span-12">
                         <Link href="./reseller">
                             <a>
@@ -91,7 +94,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
                             </a>
                         </Link>
                     </div>
-                </StoreBox>
+                </StoreBox> */}
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">
@@ -107,10 +110,10 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
 }
 
 export const getStaticProps = async (context) => {
-    const resWeingebaeck = await client.fetch(`
-  *[_type == "weingebaeck"][0]
+    const resBaeckerei = await client.fetch(`
+  *[_type == "baeckerei"][0]
 `);
-    const dataWeingebaeck = await resWeingebaeck;
+    const dataBaeckerei = await resBaeckerei;
 
     const resSetting = await client.fetch(`
   *[_type == "setting"][0] 
@@ -124,7 +127,7 @@ export const getStaticProps = async (context) => {
 
     return {
         props: {
-            dataWeingebaeck,
+            dataBaeckerei,
             dataSetting,
             dataHome,
         },
