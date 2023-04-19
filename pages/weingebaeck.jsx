@@ -20,6 +20,10 @@ import { NewsletterSub } from "../components/forms";
 import { Divider1 } from "../components/divider";
 import { ImgText1, BGText1 } from "../components/imgText";
 import { Element } from "../components/quickLinks";
+import { Overlay, Modal } from "../components/modal";
+import { Reseller } from "../components/modalContent";
+import { PageChangeFX } from "../components/transitionFX";
+
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
@@ -27,23 +31,49 @@ import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
 import FirstBG from "../assets/firstBG.jpg";
 import Newsletter from "../assets/newsletter.jpg";
+import Favicon from "../assets/favicon.svg";
+
 //FUNCTIONS
 import showCurrentURL from "../components/functions/showCurrentURL";
 
-export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) {
+export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, dataReseller }) {
+    const [showModal, setShowModal] = useState(false);
+
     const currentUrl = showCurrentURL();
     const [quickLinkData, setQuickLinkData] = useState(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
 
     useEffect(() => {
-        console.log(dataWeingebaeck, dataSetting, dataHome);
+        console.log(dataWeingebaeck, dataSetting, dataHome, dataReseller);
         console.log(dataHome.section.map((e) => e.buttonLink));
         console.log(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
     }, []);
 
     return (
-        <>
+        <PageChangeFX>
             <Head>
-                <title>Site title</title>
+                <title>{dataWeingebaeck.seo.mainSEO.title}</title>
+                <meta name="description" content={dataWeingebaeck.seo.mainSEO.description} />
+                <meta name="keywords" content={dataWeingebaeck.seo.mainSEO.keywords.map((e) => e)} />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" href={Favicon.src} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.baeckerin.at/baeckerei" />
+                <meta
+                    property="og:image"
+                    content={
+                        dataWeingebaeck.seo.advancedSEO.ogImage ? urlFor(dataWeingebaeck.seo.advancedSEO.ogImage) : null
+                    }
+                />
+                <meta
+                    property="og:description"
+                    content={
+                        dataWeingebaeck.seo.advancedSEO.ogDescription
+                            ? dataWeingebaeck.seo.advancedSEO.ogDescription
+                            : null
+                    }
+                />
+                <meta property="og:site_name" content="Denise Bäckerin - Die Bäckerei" />
+                <meta property="og:locale" content="de_DE" />
             </Head>
 
             <Menu2
@@ -60,6 +90,24 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
                     setIsOpen(true);
                 }}
             ></Menu2>
+
+            {showModal && (
+                <>
+                    <Modal
+                        onClick={() => {
+                            setShowModal(false);
+                        }}
+                    >
+                        <Reseller data={dataReseller}></Reseller>
+                    </Modal>
+                    <Overlay
+                        onClick={() => {
+                            setShowModal(false);
+                        }}
+                    />
+                </>
+            )}
+
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataWeingebaeck}>
@@ -85,11 +133,19 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
 
                 <StoreBox data={dataWeingebaeck}>
                     <div className="flex justify-center col-span-12">
-                        <Link href="./reseller">
-                            <a>
-                                <MainButton>Reseller</MainButton>
-                            </a>
-                        </Link>
+                        {/* <Link href="./reseller">
+                            <a> */}
+                        <MainButton
+                            onClick={(e) => {
+                                e.preventDefault();
+                                console.log("BUTTET");
+                                setShowModal(true);
+                            }}
+                        >
+                            Reseller
+                        </MainButton>
+                        {/* </a>
+                        </Link> */}
                     </div>
                 </StoreBox>
                 <Divider1></Divider1>
@@ -102,7 +158,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome }) 
                 <div className="lg:h-24 "></div>
                 <Contact data={dataSetting}></Contact>
             </div>
-        </>
+        </PageChangeFX>
     );
 }
 
@@ -122,11 +178,17 @@ export const getStaticProps = async (context) => {
   `);
     const dataHome = await resHome;
 
+    const resReseller = await client.fetch(`
+    *[_type == "reseller"][0]
+  `);
+    const dataReseller = await resReseller;
+
     return {
         props: {
             dataWeingebaeck,
             dataSetting,
             dataHome,
+            dataReseller,
         },
         revalidate: 1, // 10 seconds
     };

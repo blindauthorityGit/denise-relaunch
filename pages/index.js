@@ -15,6 +15,8 @@ import { ContainerStandard } from "../components/container";
 import { StartKachelLeft, Contact } from "../components/sections";
 import { BasicBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
+import { PageChangeFX } from "../components/transitionFX";
+
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
@@ -22,6 +24,7 @@ import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
 import FirstBG from "../assets/firstBG.jpg";
 import Newsletter from "../assets/newsletter.jpg";
+import Favicon from "../assets/favicon.svg";
 
 export default function Home({ dataHome, dataSetting }) {
     useEffect(() => {
@@ -31,7 +34,23 @@ export default function Home({ dataHome, dataSetting }) {
     return (
         <>
             <Head>
-                <title>Site title</title>
+                <title>{dataHome.seo.mainSEO.title}</title>
+                <meta name="description" content={dataHome.seo.mainSEO.description} />
+                <meta name="keywords" content={dataHome.seo.mainSEO.keywords.map((e) => e)} />
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <link rel="icon" href={Favicon.src} />
+                <meta property="og:type" content="website" />
+                <meta property="og:url" content="https://www.baeckerin.at" />
+                <meta
+                    property="og:image"
+                    content={dataHome.seo.advancedSEO.ogImage ? urlFor(dataHome.seo.advancedSEO.ogImage) : null}
+                />
+                <meta
+                    property="og:description"
+                    content={dataHome.seo.advancedSEO.ogDescription ? dataHome.seo.advancedSEO.ogDescription : null}
+                />
+                <meta property="og:site_name" content="Denise Bäckerin - Die Bäckerei" />
+                <meta property="og:locale" content="de_DE" />
             </Head>
 
             <Menu1

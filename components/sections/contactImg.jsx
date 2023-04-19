@@ -25,7 +25,7 @@ import { Form1 } from "../forms";
 import { FaPhone } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
-const Contact = (props) => {
+const ContactImg = (props) => {
     const ref = useRef(null);
     const floaterRef = useRef(null);
     const imgRef = useRef(null);
@@ -48,23 +48,7 @@ const Contact = (props) => {
 
     return (
         <div ref={ref} className={`w-full   sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
-            <motion.div
-                style={{
-                    height: isMobile
-                        ? imgHeight / 1.5 + "px"
-                        : isTablet
-                        ? imgHeight / 1.6 + "px"
-                        : isDesktop
-                        ? imgHeight + "px"
-                        : "auto",
-                }}
-                data-aos="fade-right"
-                ref={imgRef}
-                className={`left  sm:block col-span-12 lg:col-span-6 h-full relative`}
-            >
-                <MapboxMap></MapboxMap>
-            </motion.div>
-            <div className="right px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 lg:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
@@ -122,19 +106,26 @@ const Contact = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12">
+                    <div className="col-span-12 mt-8">
                         <h4
                             data-aos="fade-left"
                             className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Schreiben Sie mir!
                         </h4>
-                        <Form1 contact />
+                        <Form1 />
                     </div>
                 </div>
 
                 {/* <div className="text font-serif">{parse(config.text)}</div> */}
             </div>
+            <motion.div
+                data-aos="fade-right"
+                ref={imgRef}
+                className={`left  sm:block col-span-12 lg:col-span-6 h-full relative flex justify-center text-center`}
+            >
+                <img src={urlFor(props.data.contactImg).url()} alt="Konatkt Bäckerei" className="mx-auto" />
+            </motion.div>
             <style jsx>{`
                 .hover-underline-animation span {
                     display: inline-block;
@@ -164,4 +155,4 @@ const Contact = (props) => {
     );
 };
 
-export default Contact;
+export default ContactImg;

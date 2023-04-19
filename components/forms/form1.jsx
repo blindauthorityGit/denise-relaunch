@@ -25,7 +25,7 @@ const Form1 = (props) => {
         let config = {
             method: "post",
             // url: `http://localhost:3000/api/contact`,
-            url: `/api/contact`,
+            url: `/api/${props.contact ? "contact" : "reseller"}`,
             headers: {
                 "Content-Type": "application/json",
             },

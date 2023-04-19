@@ -7,64 +7,43 @@ import client from "../client";
 import urlFor from "../components/functions/urlFor";
 //COMPS
 import { MainButton } from "../components/buttons";
-import HeroPage from "../components/Hero/heroPage";
+import HeroSimple from "../components/Hero/heroSimple";
 import BG from "../components/layout/bg";
 import { Menu2 } from "../components/menues";
 import { ShadowBox, ContainerStandard } from "../components/container";
 import { StoererImg } from "../components/stoerer";
 import { Austria } from "../components/floaters";
 import { ImageGridBasic } from "../components/layout";
-import { StartKachelLeft, Contact, IntroText } from "../components/sections";
+import { StartKachelLeft, Contact, IntroText, ContactImg } from "../components/sections";
 import { BasicBox, Produkt, StoreBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
 import { Divider1 } from "../components/divider";
 import { ImgText1, BGText1, ImgText2 } from "../components/imgText";
 import { Element } from "../components/quickLinks";
 import { ListItem } from "../components/list";
-import { PageChangeFX } from "../components/transitionFX";
-
+import Map from "../components/map";
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
-import Favicon from "../assets/favicon.svg";
+import FirstBG from "../assets/firstBG.jpg";
 import Newsletter from "../assets/newsletter.jpg";
 //FUNCTIONS
 import showCurrentURL from "../components/functions/showCurrentURL";
 
-export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBaeckereiCats }) {
+export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
     const currentUrl = showCurrentURL();
     const [quickLinkData, setQuickLinkData] = useState(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
 
     useEffect(() => {
-        console.log(dataBaeckerei, dataSetting, dataHome, dataBaeckereiCats);
+        console.log(dataDenise, dataSetting, dataHome);
     }, []);
 
     return (
-        <PageChangeFX>
+        <>
             <Head>
-                <title>{dataBaeckerei.seo.mainSEO.title}</title>
-                <meta name="description" content={dataBaeckerei.seo.mainSEO.description} />
-                <meta name="keywords" content={dataBaeckerei.seo.mainSEO.keywords.map((e) => e)} />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" href={Favicon.src} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.baeckerin.at/baeckerei" />
-                <meta
-                    property="og:image"
-                    content={
-                        dataBaeckerei.seo.advancedSEO.ogImage ? urlFor(dataBaeckerei.seo.advancedSEO.ogImage) : null
-                    }
-                />
-                <meta
-                    property="og:description"
-                    content={
-                        dataBaeckerei.seo.advancedSEO.ogDescription ? dataBaeckerei.seo.advancedSEO.ogDescription : null
-                    }
-                />
-                <meta property="og:site_name" content="Denise Bäckerin - Die Bäckerei" />
-                <meta property="og:locale" content="de_DE" />
+                <title>Site title</title>
             </Head>
 
             <Menu2
@@ -83,35 +62,26 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
             ></Menu2>
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataBaeckerei}>
-                    <Austria></Austria>
-                </HeroPage>
+                <HeroSimple>Kontakt</HeroSimple>
                 <Divider1></Divider1>
-                <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
+                <div className="h-8 lg:h-16 "></div>
+                <ContainerStandard>
+                    <div className="col-span-12 h-[450px]">
+                        <Map></Map>
+                    </div>
+                </ContainerStandard>
+                {/* <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.baeckereiImages}></ImageGridBasic> */}
+                <div className="h-8 lg:h-8 "></div>
+                <ContainerStandard>
+                    <div className="col-span-12">
+                        <ContactImg data={dataSetting}></ContactImg>
+                    </div>
+                </ContainerStandard>
                 <div className="h-8 lg:h-24 "></div>
-                <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.baeckereiImages}></ImageGridBasic>
-                <div className="h-8 lg:h-24 "></div>
-                <ImgText2 data={dataBaeckerei}></ImgText2>
-                <div className="h-8 lg:h-24 "></div>
-                <h2
-                    data-aos="fade-left"
-                    className="font-freight text-center text-2xl sm:text-4xl text-darkText lg:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
-                >
-                    {dataBaeckerei.gebaeck.title}
-                </h2>
-
-                <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
 
                 {/* <ShadowBox>
                     <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
                 </ShadowBox> */}
-                <div className="h-8 lg:h-24 "></div>
-
-                <ContainerStandard klasse="lg:px-36">
-                    {dataBaeckerei.gebaeck.gebaeckList.map((e, i) => {
-                        return <ListItem data={e}></ListItem>;
-                    })}
-                </ContainerStandard>
 
                 {/* <StoererImg data={dataWeingebaeck.dekoImage}></StoererImg> */}
                 {/* <div className="h-8 lg:h-24"></div> */}
@@ -135,24 +105,23 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                     })}
                 </div>
                 <div className="lg:h-24 "></div>
-                <Contact data={dataSetting}></Contact>
             </div>
-        </PageChangeFX>
+        </>
     );
 }
 
 export const getStaticProps = async (context) => {
-    const resBaeckerei = await client.fetch(`
-  *[_type == "baeckerei"][0]
-`);
-    const dataBaeckerei = await resBaeckerei;
-
-    const resBaeckereiCats = await client.fetch(`*[_type == "baeckerei"]{
-        gebaeck {
-          gebaeckList 
+    const resDenise = await client.fetch(`
+    *[_type == "denise"][0] {
+        ...,
+        videoFile {
+          asset-> {
+            url
+          }
         }
-      }`);
-    const dataBaeckereiCats = await resBaeckereiCats;
+      }
+    `);
+    const dataDenise = await resDenise;
 
     const resSetting = await client.fetch(`
   *[_type == "setting"][0] 
@@ -166,10 +135,9 @@ export const getStaticProps = async (context) => {
 
     return {
         props: {
-            dataBaeckerei,
+            dataDenise,
             dataSetting,
             dataHome,
-            dataBaeckereiCats,
         },
         revalidate: 1, // 10 seconds
     };

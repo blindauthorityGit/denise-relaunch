@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@sanity/client": "^5.4.2",
     "@sanity/image-url": "^1.0.2",
     "@portabletext/react": "^2.0.1",
