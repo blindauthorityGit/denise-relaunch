@@ -12,8 +12,8 @@ const Opening = (props) => {
                 >
                     Öffnungszeiten
                 </h4>
-                <div className="flex space-x-6">
-                    <div className="font-freight ">
+                <div className="grid grid-cols-12">
+                    <div className="font-freight col-span-6 ">
                         <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg font-bold">
                             Brunn an der Pitten
                         </div>
@@ -21,7 +21,7 @@ const Opening = (props) => {
                             <PortableText value={props.data.oeffnungszeiten.brunn} />
                         </div>{" "}
                     </div>
-                    <div className="font-freight ">
+                    <div className="font-freight col-span-6">
                         <div className="text-primaryColor-500 font-bold mb-4 leading-relaxed text-lg">
                             Wr. Neustadt Marienmarkt
                         </div>

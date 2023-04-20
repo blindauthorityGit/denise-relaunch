@@ -33,7 +33,7 @@ const Element = (props) => {
                 gridColumn: `span ${isMobile ? 6 : getColSpan(imageCount)} / span ${getColSpan(imageCount)}`,
             }}
         >
-            <div className="image relative h-36 sm:h-96 md:h-64 lg:h-72">
+            <div className="image relative h-36 sm:h-96 md:h-64 lg:h-96">
                 <Link href={props.link}>
                     <a>
                         <Image
@@ -50,7 +50,7 @@ const Element = (props) => {
                     </a>
                 </Link>
             </div>
-            <div className="col-span-12 z-10 mt-2 sm:mt-4 pl-4 sm:pl-0 sm:px-8 font-freight tracking-wider">
+            <div className="col-span-12 z-10 mt-2 sm:mt-4 pl-4 sm:pl-0 sm:px-8 font-freight text-xl font-bold tracking-wider">
                 <Link href={props.link}>
                     <a>{props.linkText}</a>
                 </Link>

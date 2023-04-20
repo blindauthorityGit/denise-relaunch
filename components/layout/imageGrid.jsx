@@ -25,7 +25,7 @@ const ImageGrid1 = (props) => {
 
     return (
         <div
-            className={`w-full col-span-12 grid grid-cols-12 relative grid-rows-3 sm:grid-rows-2 z-10 min-h-[400px] md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.colspan}`}
+            className={`w-full col-span-12 grid grid-cols-12 relative grid-rows-3 sm:grid-rows-2 z-10 min-h-[600px] md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.colspan}`}
         >
             <>
                 <div className="col-span-12 sm:col-span-4 relative group sm:row-span-2">

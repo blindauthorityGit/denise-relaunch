@@ -8,7 +8,7 @@ const BasicBox = (props) => {
             style={{ backgroundImage: `url(${props.bgImage})` }}
         >
             <div className="col-span-12 z-10 text-center ">
-                <h3 className="font-freight font-thin text-primaryColor-300">{props.title}</h3>
+                <h3 className="font-freight text-3xl font-thin text-primaryColor-300">{props.title}</h3>
                 <div className="description ">
                     <PortableText value={props.text} />
                 </div>
