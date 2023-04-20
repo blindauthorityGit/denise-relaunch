@@ -29,13 +29,13 @@ const ImageGridBasic = (props) => {
 
     return (
         <div
-            className={`w-full container mx-auto col-span-12 grid grid-cols-12 relative  z-10 md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.klasse}`}
+            className={`w-full container mx-auto col-span-12 grid grid-cols-12 relative  z-10 min-h-[15rem] md:min-h-[30rem] lg:min-h-[40rem] gap-1 sm_gap-2 h-full  ${props.klasse}`}
         >
             <>
                 {props.data.map((e, i) => {
                     return (
                         <div
-                            className="col-span-6 relative group"
+                            className="col-span-6 relative group min-h-[10rem]"
                             style={{
                                 gridColumn: `span ${isMobile ? 6 : getColSpan(imageCount)} / span ${getColSpan(
                                     imageCount

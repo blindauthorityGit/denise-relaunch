@@ -80,7 +80,7 @@ export default function Home({ dataHome, dataSetting }) {
                         videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
                     ></Hero>
                 ) : (
-                    <div className="h-screen bg-black"></div>
+                    <div className="h-screen bg-primaryColor"></div>
                 )}
                 {dataHome.section
                     .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))

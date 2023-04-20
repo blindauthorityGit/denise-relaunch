@@ -35,8 +35,10 @@ const ImgText2 = (props) => {
                     <>
                         <motion.div
                             data-aos="fade-right"
-                            className={`left hidden sm:block col-span-12 lg:col-span-6 relative h-64 lg:h-auto ${
-                                i % 2 !== 0 ? "order-first" : "order-last"
+                            className={`left ${
+                                props.showImgMobile ? "block" : "hidden"
+                            }  sm:block col-span-12 lg:col-span-6 relative h-64 lg:h-auto ${
+                                i % 2 !== 0 ? "sm:order-first mt-8 sm:mt-0" : "sm:order-last"
                             }`}
                         >
                             <Image
@@ -57,7 +59,9 @@ const ImgText2 = (props) => {
                             >
                                 {e.title}
                             </h2>
-                            <PortableText value={e.text} />
+                            <div className="font-freight text-lg tracking-wider">
+                                <PortableText value={e.text} />
+                            </div>
                         </div>
                     </>
                 );
