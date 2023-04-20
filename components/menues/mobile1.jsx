@@ -98,7 +98,7 @@ const Mobile1 = (props) => {
                             </a>
                         </Link>
                     </div>
-                    <div className="MenuItems text-lg sm:text-4xl pt-4 font-sans">
+                    <div className="MenuItems text-lg sm:text-4xl pt-4 font-barlow">
                         <Link href="/baeckerei">
                             <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
                                 Bäckerei

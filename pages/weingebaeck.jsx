@@ -44,8 +44,6 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
 
     useEffect(() => {
         console.log(dataWeingebaeck, dataSetting, dataHome, dataReseller);
-        console.log(dataHome.section.map((e) => e.buttonLink));
-        console.log(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
     }, []);
 
     return (
@@ -82,11 +80,8 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 menuItems={menuItems}
                 socialMedia={socialMedia}
                 burgerIcon={<RxHamburgerMenu />}
-                onBurgerClick={(e) => {
-                    console.log(e);
-                }}
+                onBurgerClick={(e) => {}}
                 onClick={() => {
-                    console.log("IS CLICKED");
                     setIsOpen(true);
                 }}
             ></Menu2>
@@ -125,34 +120,33 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <ShadowBox>
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
                 </ShadowBox>
-                {/* <StoererImg data={dataWeingebaeck.dekoImage}></StoererImg> */}
-                {/* <div className="h-8 lg:h-24"></div> */}
+
                 <BGText1 data={dataWeingebaeck}></BGText1>
-                {/* <ImgText1 data={dataWeingebaeck}></ImgText1> */}
-                {/* <div className="h-8 lg:h-24"></div> */}
 
                 <StoreBox data={dataWeingebaeck}>
                     <div className="flex justify-center col-span-12">
-                        {/* <Link href="./reseller">
-                            <a> */}
                         <MainButton
                             onClick={(e) => {
                                 e.preventDefault();
-                                console.log("BUTTET");
                                 setShowModal(true);
                             }}
                         >
                             Reseller
                         </MainButton>
-                        {/* </a>
-                        </Link> */}
                     </div>
                 </StoreBox>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">
                     {quickLinkData.map((e, i) => {
-                        return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
+                        return (
+                            <Element
+                                length={quickLinkData.length}
+                                link={e.buttonLink}
+                                linkText={e.title}
+                                image={e.image}
+                            ></Element>
+                        );
                     })}
                 </div>
                 <div className="lg:h-24 "></div>

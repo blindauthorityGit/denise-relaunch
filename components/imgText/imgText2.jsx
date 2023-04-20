@@ -28,7 +28,7 @@ const ImgText2 = (props) => {
     return (
         <div
             ref={ref}
-            className={`w-full container  sm:px-0 md:px-24 lg:px-36 m-auto lg:gap-24 grid grid-cols-12  ${props.colspan}`}
+            className={`w-full container  sm:px-0 md:px-8 lg:px-36 m-auto lg:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
             {props.data.story.map((e, i) => {
                 return (
@@ -37,8 +37,8 @@ const ImgText2 = (props) => {
                             data-aos="fade-right"
                             className={`left ${
                                 props.showImgMobile ? "block" : "hidden"
-                            }  sm:block col-span-12 lg:col-span-6 relative h-64 lg:h-auto ${
-                                i % 2 !== 0 ? "sm:order-first mt-8 sm:mt-0" : "sm:order-last"
+                            }  sm:block col-span-12 lg:col-span-6 relative h-96 md:h-[600px] lg:h-auto ${
+                                i % 2 !== 0 ? "lg:order-first mt-8 md:mt-12 lg:mt-0" : "lg:order-last"
                             }`}
                         >
                             <Image

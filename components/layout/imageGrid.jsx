@@ -25,10 +25,10 @@ const ImageGrid1 = (props) => {
 
     return (
         <div
-            className={`w-full col-span-12 grid grid-cols-12 relative grid-rows-2 z-10 md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.colspan}`}
+            className={`w-full col-span-12 grid grid-cols-12 relative grid-rows-3 sm:grid-rows-2 z-10 min-h-[400px] md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.colspan}`}
         >
             <>
-                <div className="col-span-4 relative group row-span-2">
+                <div className="col-span-12 sm:col-span-4 relative group sm:row-span-2">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[0]).url()}
@@ -40,7 +40,7 @@ const ImageGrid1 = (props) => {
                         onClick={props.onClick}
                     />
                 </div>
-                <motion.div className="col-span-3  relative group">
+                <motion.div className="col-span-6 sm:col-span-3  relative group">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[1]).url()}
@@ -52,7 +52,7 @@ const ImageGrid1 = (props) => {
                         onClick={props.onClick}
                     />
                 </motion.div>
-                <div className="col-span-5 row-span-1 relative group">
+                <div className="col-span-6  sm:col-span-5 sm:row-span-1 relative group">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[2]).url()}
@@ -64,7 +64,7 @@ const ImageGrid1 = (props) => {
                         onClick={props.onClick}
                     />
                 </div>
-                <div className="col-span-4 row-span-2 relative group">
+                <div className="col-span-12 sm:col-span-4 sm:row-span-2 relative group">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[3]).url()}

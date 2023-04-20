@@ -73,7 +73,7 @@ const Contact = (props) => {
                         >
                             Kontakt
                         </h4>
-                        <div className="font-freight font-bold leading-relaxed text-xl text-darkText">
+                        <div className="font-freight font-bold leading-relaxed text-lg sm:text-xl text-darkText">
                             {" "}
                             {props.data.contact.name}
                         </div>
@@ -89,13 +89,13 @@ const Contact = (props) => {
                             <div className="col-span-2 text-primaryColor flex items-center text-2xl">
                                 <FaPhone />{" "}
                             </div>
-                            <div className="col-span-10 font-freight leading-relaxed text-xl text-darkText">
+                            <div className="col-span-10 font-freight leading-relaxed text-lg sm:text-xl text-darkText">
                                 {props.data.contact.phone}
                             </div>
                             <div className="col-span-2 text-primaryColor flex items-center text-2xl">
                                 <HiOutlineMail></HiOutlineMail>
                             </div>
-                            <div className="col-span-10 font-freight leading-relaxed text-xl text-darkText">
+                            <div className="col-span-10 font-freight leading-relaxed text-lg sm:text-xl text-darkText">
                                 {props.data.contact.email}
                             </div>
                         </div>
@@ -109,7 +109,7 @@ const Contact = (props) => {
                         </h4>
                         <div className="flex space-x-6">
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-xl">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg sm:text-xl">
                                     Brunn an der Pitten
                                 </div>
                                 <div className="font-freight leading-relaxed text-lg text-darkText">
@@ -117,7 +117,7 @@ const Contact = (props) => {
                                 </div>{" "}
                             </div>
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-xl">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg sm:text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
                                 <div className="font-freight leading-relaxed text-lg text-darkText">

@@ -71,7 +71,9 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataDenise}>
-                    <Austria></Austria>
+                    <div className="hidden lg:block">
+                        <Austria></Austria>
+                    </div>
                 </HeroPage>
                 <Divider1></Divider1>
                 <IntroText data={dataDenise.intro} klasse="mt-8" />
@@ -86,7 +88,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                     </video>
                 </ContainerStandard>
                 <div className="h-8 lg:h-24 "></div>
-                <ImgText2 data={dataDenise}></ImgText2>
+                <ImgText2 showImgMobile data={dataDenise}></ImgText2>
                 <div className="h-8 lg:h-24 "></div>
 
                 <ImageGridBasic klasse="lg:px-28" data={dataDenise.deniseImages}></ImageGridBasic>
@@ -94,7 +96,14 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">
                     {quickLinkData.map((e, i) => {
-                        return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
+                        return (
+                            <Element
+                                length={quickLinkData.length}
+                                link={e.buttonLink}
+                                linkText={e.title}
+                                image={e.image}
+                            ></Element>
+                        );
                     })}
                 </div>
                 <div className="lg:h-24 "></div>

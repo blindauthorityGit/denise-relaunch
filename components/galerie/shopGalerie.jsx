@@ -29,7 +29,7 @@ const ShopGalerie = (props) => {
         <div
             className={`w-full container mx-auto col-span-12 grid grid-cols-12 relative  z-10  gap-2 h-full  ${props.klasse}`}
         >
-            <div className="col-span-12 relative md:min-h-[30rem] lg:h-[100%]">
+            <div className="col-span-12 relative min-h-[10rem] md:min-h-[20rem] lg:h-[100%]">
                 <Image
                     src={mainImg}
                     layout="fill"

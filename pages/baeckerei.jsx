@@ -7,7 +7,6 @@ import urlFor from "../components/functions/urlFor";
 import HeroPage from "../components/Hero/heroPage";
 import BG from "../components/layout/bg";
 import { Menu2 } from "../components/menues";
-import { ContainerStandard } from "../components/container";
 import { Austria } from "../components/floaters";
 import { ImageGridBasic } from "../components/layout";
 import { Contact, IntroText } from "../components/sections";
@@ -101,17 +100,19 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                         return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                     })}
                 </div>
-                {/* <ContainerStandard klasse="px-8 lg:px-36">
-                    {dataBaeckerei.gebaeck.gebaeckList.map((e, i) => {
-                        return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
-                    })}
-                </ContainerStandard> */}
 
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">
                     {quickLinkData.map((e, i) => {
-                        return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
+                        return (
+                            <Element
+                                length={quickLinkData.length}
+                                link={e.buttonLink}
+                                linkText={e.title}
+                                image={e.image}
+                            ></Element>
+                        );
                     })}
                 </div>
                 <div className="lg:h-24 "></div>

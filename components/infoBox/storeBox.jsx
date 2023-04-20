@@ -32,7 +32,7 @@ const StoreBox = (props) => {
                                     isMobile ? 6 : storeCount <= 12 ? Math.floor(12 / storeCount) : 1
                                 } / span ${storeCount <= 12 ? Math.floor(12 / storeCount) : 1}`,
                             }}
-                            className={`text-primaryColor-50 font-freight sm:pl-16  text-lg mb-4 sm:mb-0 col-span-${
+                            className={`text-primaryColor-50 font-freight sm:pl-4 lg:pl-16  text-lg mb-4 sm:mb-0 col-span-${
                                 storeCount <= 12 ? Math.floor(12 / storeCount) : 1
                             }`}
                         >
