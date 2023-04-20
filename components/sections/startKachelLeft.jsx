@@ -42,7 +42,7 @@ const StartKachelLeft = (props) => {
                     height: isMobile
                         ? imgHeight / 1.5 + "px"
                         : isTablet
-                        ? imgHeight / 1.6 + "px"
+                        ? imgHeight / 1.3 + "px"
                         : isDesktop
                         ? imgHeight + "px"
                         : "auto",

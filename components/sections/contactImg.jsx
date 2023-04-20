@@ -73,11 +73,15 @@ const ContactImg = (props) => {
                             <div className="col-span-2 text-primaryColor flex items-center">
                                 <FaPhone />{" "}
                             </div>
-                            <div className="col-span-10">{props.data.contact.phone}</div>
+                            <div className="col-span-10 font-freight text-xl tracking-wider">
+                                {props.data.contact.phone}
+                            </div>
                             <div className="col-span-2 text-primaryColor flex items-center">
                                 <HiOutlineMail></HiOutlineMail>
                             </div>
-                            <div className="col-span-10">{props.data.contact.email}</div>
+                            <div className="col-span-10 font-freight text-xl tracking-wider">
+                                {props.data.contact.email}
+                            </div>
                         </div>
                     </div>
                     <div className="col-span-12 sm:col-span-6">
@@ -106,7 +110,7 @@ const ContactImg = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12 mt-8">
+                    <div className="col-span-12 mt-2 sm:mt-8">
                         <h4
                             data-aos="fade-left"
                             className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"

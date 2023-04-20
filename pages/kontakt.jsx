@@ -66,12 +66,11 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                 <Divider1></Divider1>
                 <div className="h-8 lg:h-16 "></div>
                 <ContainerStandard>
-                    <div className="col-span-12 h-[450px]">
+                    <div className="col-span-12 h-[250px] sm:h-[450px]">
                         <Map></Map>
                     </div>
                 </ContainerStandard>
-                {/* <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.baeckereiImages}></ImageGridBasic> */}
-                <div className="h-8 lg:h-8 "></div>
+                <div className="h-2 lg:h-8 "></div>
                 <ContainerStandard>
                     <div className="col-span-12">
                         <ContactImg data={dataSetting}></ContactImg>
@@ -79,24 +78,6 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                 </ContainerStandard>
                 <div className="h-8 lg:h-24 "></div>
 
-                {/* <ShadowBox>
-                    <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
-                </ShadowBox> */}
-
-                {/* <StoererImg data={dataWeingebaeck.dekoImage}></StoererImg> */}
-                {/* <div className="h-8 lg:h-24"></div> */}
-                {/* <ImgText1 data={dataWeingebaeck}></ImgText1> */}
-                {/* <div className="h-8 lg:h-24"></div> */}
-
-                {/* <StoreBox data={dataWeingebaeck}>
-                    <div className="flex justify-center col-span-12">
-                        <Link href="./reseller">
-                            <a>
-                                <MainButton>Reseller</MainButton>
-                            </a>
-                        </Link>
-                    </div>
-                </StoreBox> */}
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">
