@@ -1,21 +1,15 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-
-import Image from "next/image";
-
+import { useEffect } from "react";
 // SANITY
 import client from "../client";
 import urlFor from "../components/functions/urlFor";
 
 //COMPS
-import MainContainer from "../components/layout/mainContainer";
 import Hero from "../components/Hero/hero";
 import { Menu1 } from "../components/menues";
-import { ContainerStandard } from "../components/container";
 import { StartKachelLeft, Contact } from "../components/sections";
 import { BasicBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
-import { PageChangeFX } from "../components/transitionFX";
 
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -28,7 +22,7 @@ import Favicon from "../assets/favicon.svg";
 
 export default function Home({ dataHome, dataSetting }) {
     useEffect(() => {
-        console.log(dataHome, dataSetting);
+        console.log(dataHome.section.sort((a, b) => a.buttonLink.localeCompare(b.buttonLink)));
     }, []);
 
     return (
@@ -59,11 +53,8 @@ export default function Home({ dataHome, dataSetting }) {
                 menuItems={menuItems}
                 socialMedia={socialMedia}
                 burgerIcon={<RxHamburgerMenu />}
-                onBurgerClick={(e) => {
-                    console.log(e);
-                }}
+                onBurgerClick={(e) => {}}
                 onClick={() => {
-                    console.log("IS CLICKED");
                     setIsOpen(true);
                 }}
             ></Menu1>
@@ -75,10 +66,11 @@ export default function Home({ dataHome, dataSetting }) {
                     colspan="col-span-12"
                     bgVideo={dataHome.videoFile.asset.url}
                 ></Hero>
-                {dataHome.section.map((e, i) => {
-                    console.log(e);
-                    return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
-                })}
+                {dataHome.section
+                    .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
+                    .map((e, i) => {
+                        return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
+                    })}
                 <div className="lg:h-24 "></div>
                 <BasicBox
                     title={"Bleiben Sie am neuesten Stand"}

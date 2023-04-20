@@ -21,24 +21,11 @@ import { LineButton } from "../buttons";
 
 const StartKachelLeft = (props) => {
     const ref = useRef(null);
-    const floaterRef = useRef(null);
     const imgRef = useRef(null);
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
-    useEffect(() => {
-        console.log(isMobile, isTablet, isDesktop);
-    }, [isMobile, isTablet, isDesktop]);
-
     //STATES
     const [imgHeight, setImgHeight] = useState(null);
-
-    // const { scrollYProgress } = useScroll();
-    const { scrollY } = useScroll();
-
-    const { scrollYProgress } = useScroll({
-        target: ref,
-        offset: ["start end", "end end"],
-    });
 
     useEffect(() => {
         AOS.init({
@@ -65,7 +52,6 @@ const StartKachelLeft = (props) => {
                 className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "lg:order-last"}`}
             >
                 <Image
-                    // {...ImagePropsGallery(i)}
                     src={urlFor(props.data.image).url()}
                     layout="fill"
                     loading="lazy"
@@ -78,12 +64,6 @@ const StartKachelLeft = (props) => {
                 style={{ backgroundImage: `url(${props.bg.src})` }}
                 className="right md:mb-16 lg:mb-0 px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
             >
-                {/* <div
-                    data-aos="fade-up"
-                    className="font-montserrat  mt-4 lg:mt-0  tracking-wide leading-relaxed sm:leading-relaxed lg:leading-relaxed text-xs sm:text-sm lg:text-2xl text-primaryColor-100 mb-4"
-                >
-                    <h2>{props.data.title}</h2>
-                </div> */}
                 <h2
                     data-aos="fade-left"
                     className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-6xl  mt-8 mb-8 lg:mb-12"
@@ -93,7 +73,6 @@ const StartKachelLeft = (props) => {
                 <div className="text-regular leading-relaxed font-freight text-lg">
                     <PortableText value={props.data.text} />
                 </div>
-                {/* <div className="text font-serif">{parse(config.text)}</div> */}
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
                 <div className="h-12 sm:h-0"></div>
             </div>
