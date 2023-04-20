@@ -64,16 +64,16 @@ const Contact = (props) => {
             >
                 <MapboxMap></MapboxMap>
             </motion.div>
-            <div className="right px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 lg:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-5xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Kontakt
                         </h4>
-                        <div className="font-freight font-bold leading-relaxed text-lg text-darkText">
+                        <div className="font-freight font-bold leading-relaxed text-xl text-darkText">
                             {" "}
                             {props.data.contact.name}
                         </div>
@@ -86,26 +86,30 @@ const Contact = (props) => {
                             {props.data.contact.city}
                         </div>
                         <div className="phoner grid grid-cols-12 mt-4 leading-relaxed">
-                            <div className="col-span-2 text-primaryColor flex items-center">
+                            <div className="col-span-2 text-primaryColor flex items-center text-2xl">
                                 <FaPhone />{" "}
                             </div>
-                            <div className="col-span-10">{props.data.contact.phone}</div>
-                            <div className="col-span-2 text-primaryColor flex items-center">
+                            <div className="col-span-10 font-freight leading-relaxed text-xl text-darkText">
+                                {props.data.contact.phone}
+                            </div>
+                            <div className="col-span-2 text-primaryColor flex items-center text-2xl">
                                 <HiOutlineMail></HiOutlineMail>
                             </div>
-                            <div className="col-span-10">{props.data.contact.email}</div>
+                            <div className="col-span-10 font-freight leading-relaxed text-xl text-darkText">
+                                {props.data.contact.email}
+                            </div>
                         </div>
                     </div>
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-5xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Öffnungszeiten
                         </h4>
                         <div className="flex space-x-6">
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-xl">
                                     Brunn an der Pitten
                                 </div>
                                 <div className="font-freight leading-relaxed text-lg text-darkText">
@@ -113,7 +117,7 @@ const Contact = (props) => {
                                 </div>{" "}
                             </div>
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
                                 <div className="font-freight leading-relaxed text-lg text-darkText">
@@ -122,7 +126,7 @@ const Contact = (props) => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-span-12">
+                    <div className="col-span-12 mt-8">
                         <h4
                             data-aos="fade-left"
                             className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"

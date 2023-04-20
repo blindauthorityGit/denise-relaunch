@@ -62,7 +62,7 @@ const Form1 = (props) => {
                     <input
                         {...register("name", { required: true })}
                         id="name"
-                        className="col-span-12 lg:col-span-6 border-b border-primaryColor bg-transparent text-primaryColor-800 placeholder-primaryColor-500 p-2 sm:p-4"
+                        className="col-span-12 lg:col-span-6 text-lg border-b border-primaryColor bg-transparent text-primaryColor-800 placeholder-primaryColor-500 p-2 sm:p-4"
                         type="text"
                         placeholder="Name"
                     />
@@ -72,7 +72,7 @@ const Form1 = (props) => {
                         {...register("email", { required: true })}
                         name="email"
                         id="email"
-                        className="col-span-12 lg:col-span-6 border-b border-primaryColor bg-transparent text-primaryColor-800 placeholder-primaryColor-500  p-2 sm:p-4"
+                        className="col-span-12 lg:col-span-6 text-lg border-b border-primaryColor bg-transparent text-primaryColor-800 placeholder-primaryColor-500  p-2 sm:p-4"
                         type="email"
                         placeholder="Email"
                     />
@@ -80,7 +80,7 @@ const Form1 = (props) => {
 
                     <textarea
                         {...register("message", { required: true })}
-                        className="col-span-12 border border-primaryColor bg-transparent border-t-0 text-primaryColor-800 placeholder-primaryColor-500  p-2 sm:p-4"
+                        className="col-span-12 text-lg border border-primaryColor bg-transparent border-t-0 text-primaryColor-800 placeholder-primaryColor-500  p-2 sm:p-4"
                         name="message"
                         id="message"
                         cols="20"
@@ -96,8 +96,8 @@ const Form1 = (props) => {
                             className="mr-4 text-primaryColor"
                             type="checkbox"
                         />
-                        <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-sm leading-normal">
-                            Ich erlaube Datenverarbeitung für Kontaktaufnahme laut Datenschutzerklärung. *
+                        <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-base leading-normal">
+                            Ich erlaube Datenverarbeitung für Kontaktaufnahme laut Datenschutzerklärung.
                         </label>
                         {errors.checkbox && <Error klasse="block col-span-12">Bitte bestätigen</Error>}
                     </div>

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 // SANITY
 import client from "../client";
 import urlFor from "../components/functions/urlFor";
@@ -20,10 +20,22 @@ import FirstBG from "../assets/firstBG.jpg";
 import Newsletter from "../assets/newsletter.jpg";
 import Favicon from "../assets/favicon.svg";
 
+// FUNCTIONS
+import useBreakpoints from "../components/functions/useBreakpoints";
+
 export default function Home({ dataHome, dataSetting }) {
     useEffect(() => {
-        console.log(dataHome.section.sort((a, b) => a.buttonLink.localeCompare(b.buttonLink)));
+        console.log(dataHome);
     }, []);
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+
+    useEffect(() => {
+        console.log(isMobile, isTablet, isDesktop);
+        setIsLoading(false);
+    }, [isMobile, isTablet, isDesktop]);
 
     return (
         <>
@@ -59,13 +71,17 @@ export default function Home({ dataHome, dataSetting }) {
                 }}
             ></Menu1>
             <div className="overflow-x-hidden">
-                <Hero
-                    fullHeight={true}
-                    data={dataHome}
-                    dataSetting={dataSetting}
-                    colspan="col-span-12"
-                    bgVideo={dataHome.videoFile.asset.url}
-                ></Hero>
+                {!isLoading ? (
+                    <Hero
+                        fullHeight={true}
+                        data={dataHome}
+                        dataSetting={dataSetting}
+                        colspan="col-span-12"
+                        videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
+                    ></Hero>
+                ) : (
+                    <div className="h-screen bg-black"></div>
+                )}
                 {dataHome.section
                     .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
                     .map((e, i) => {
@@ -73,7 +89,7 @@ export default function Home({ dataHome, dataSetting }) {
                     })}
                 <div className="lg:h-24 "></div>
                 <BasicBox
-                    title={"Bleiben Sie am neuesten Stand"}
+                    title={"Im Newsletter eintragen"}
                     text={
                         "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
                     }
@@ -96,7 +112,12 @@ export const getStaticProps = async (context) => {
       asset-> {
         url
       }
-    }
+    },
+    videoFileMobile {
+        asset-> {
+          url
+        }
+      }
   }
 `);
     const dataHome = await resHome;

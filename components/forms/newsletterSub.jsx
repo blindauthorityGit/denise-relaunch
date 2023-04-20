@@ -64,8 +64,8 @@ const NewsletterSub = () => {
                 <div className="error-message text-redColor text-sm font-semibold mt-4 col-span-12">{errorMessage}</div>
             )}
             <p className="col-span-12 text-sm text-primaryColor-200 mt-6">
-                Durch den Eintrag in unseren Newsletter stimmen Sie zu, Ihre personenbezogenen Daten für den Erhalt von
-                Newslettern zu verwenden.
+                Durch den Eintrag in unseren Newsletter stimmen Sie zu, <br />
+                Ihre personenbezogenen Daten für den Erhalt von Newslettern zu verwenden.
             </p>
         </form>
     );

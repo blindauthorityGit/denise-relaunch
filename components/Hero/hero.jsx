@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
-
+import Link from "next/link";
 // COMPS
 import { MainButton } from "../buttons";
 import { Spinner1 } from "../spinner";
 import { FloaterContact, FloaterOpening } from "../floaters";
 
-//FUNCTIONS
-// import useBreakpoints from "../../functions/useBreakpoints";
+// FUNCTIONS
+import useBreakpoints from "../functions/useBreakpoints";
 
 const Hero = (props) => {
     const [loaded, setLoaded] = useState(false);
-    // const { isMobile, isTablet, isDesktop } = useBreakpoints();
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
-    // useEffect(() => {
-    //     console.log(isMobile, isTablet, isDesktop);
-    // }, [isMobile, isTablet, isDesktop]);
+    useEffect(() => {
+        console.log(isMobile, isTablet, isDesktop);
+    }, [isMobile, isTablet, isDesktop]);
 
     return (
         <div
@@ -30,7 +30,11 @@ const Hero = (props) => {
                 <h1 className="text-white">{props.data.title}</h1>
                 <h3 className="mt-2 sm:mt-4 text-primaryColor-200">{props.data.subtitle}</h3>
                 <h6 className="mt-2 sm:mt-4 text-primaryColor-200">{props.data.subsubtitle}</h6>
-                <MainButton>Mehr</MainButton>
+                <Link href="/denise">
+                    <a>
+                        <MainButton>Mehr</MainButton>
+                    </a>
+                </Link>
             </div>
             <div className="h-full w-full bg-darkText opacity-60 absolute"></div>
             {/* {!loaded && <Spinner1></Spinner1>} */}
@@ -44,7 +48,11 @@ const Hero = (props) => {
                 onLoadedData={() => setLoaded(true)}
                 onCanPlayThrough={() => setLoaded(true)}
             >
-                <source src={props.data.videoFile.asset.url} type="video/mp4" />
+                <source
+                    src={props.videoFile}
+                    // src={isMobile ? props.data.videoFileMobile.asset.url : props.data.videoFile.asset.url}
+                    type="video/mp4"
+                />
             </video>
         </div>
     );

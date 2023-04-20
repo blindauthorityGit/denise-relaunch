@@ -190,7 +190,7 @@ const Menu1 = (props) => {
                                         }}
                                     >
                                         <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end uppercase text-base">
+                                            <a className="flex items-end uppercase text-xl">
                                                 {e.title}{" "}
                                                 {e.subMenu ? (
                                                     <motion.span variants={pfeilMotion}>
@@ -226,9 +226,9 @@ const Menu1 = (props) => {
                                 );
                             })}
                         </ul>
-                        <ul className="block md:flex lg:hidden lg:flex items-center list-style-none justify-end pr-12">
+                        {/* <ul className="block md:flex lg:hidden lg:flex items-center list-style-none justify-end pr-12">
                             <Newsletter onClick={props.onClick}></Newsletter>
-                        </ul>
+                        </ul> */}
                     </div>
                     <div className="col-span-1 social media flex justify-end text-xl md:text-4xl">
                         <div
@@ -245,8 +245,8 @@ const Menu1 = (props) => {
                             {props.socialMedia.map((e, i) => {
                                 return (
                                     <a
-                                        className={`mr-4 text-lg g${
-                                            isScrolled ? "text-primaryColor-200" : "text-darkText"
+                                        className={`mr-4 text-lg ${
+                                            !isScrolled ? "text-primaryColor-200" : "text-darkText"
                                         }`}
                                         key={`smKey${i}`}
                                         href={e.link}

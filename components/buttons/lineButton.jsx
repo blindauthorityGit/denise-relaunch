@@ -8,7 +8,7 @@ const LineButton = (props) => {
             <a className="">
                 <motion.button
                     whileHover={{ scale: 1.05 }}
-                    className="px-12 py-4 mt-8 min-w-[300px] transition-all-ease text-darkText  text-xl uppercase tracking-wider text-darkText font-freight border border-darkText"
+                    className="px-12 py-4 mt-8 min-w-[300px] transition-all-ease text-darkText  text-2xl uppercase tracking-widest text-darkText font-freight border border-darkText"
                 >
                     {props.children}
                 </motion.button>

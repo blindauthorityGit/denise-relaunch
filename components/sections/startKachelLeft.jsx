@@ -49,16 +49,23 @@ const StartKachelLeft = (props) => {
                 }}
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left sm:block col-span-12 lg:col-span-6 relative ${props.data.left ? "" : "lg:order-last"}`}
+                className={`left sm:block col-span-12 lg:col-span-6 relative group ${
+                    props.data.left ? "" : "lg:order-last"
+                }`}
             >
-                <Image
-                    src={urlFor(props.data.image).url()}
-                    layout="fill"
-                    loading="lazy"
-                    objectFit="cover"
-                    alt="hero"
-                    className="z-10"
-                />
+                <Link href={props.data.buttonLink}>
+                    <a>
+                        <div className="absolute transition-all duration-500 bg-primaryColor-500 w-full h-full opacity-0 group-hover:opacity-50 z-20"></div>
+                        <Image
+                            src={urlFor(props.data.image).url()}
+                            layout="fill"
+                            loading="lazy"
+                            objectFit="cover"
+                            alt="hero"
+                            className="z-10 group-hover:scale-110 transition-all duration-500"
+                        />
+                    </a>
+                </Link>
             </motion.div>
             <div
                 style={{ backgroundImage: `url(${props.bg.src})` }}
@@ -70,7 +77,7 @@ const StartKachelLeft = (props) => {
                 >
                     {props.data.title}
                 </h2>
-                <div className="text-regular leading-relaxed font-freight text-lg">
+                <div className="text-regular leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl">
                     <PortableText value={props.data.text} />
                 </div>
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
