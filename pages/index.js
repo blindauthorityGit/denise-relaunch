@@ -82,11 +82,13 @@ export default function Home({ dataHome, dataSetting }) {
                 ) : (
                     <div className="h-screen bg-primaryColor"></div>
                 )}
-                {dataHome.section
-                    .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
-                    .map((e, i) => {
-                        return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
-                    })}
+                <div className="max-w-container mx-auto">
+                    {dataHome.section
+                        .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
+                        .map((e, i) => {
+                            return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
+                        })}
+                </div>
                 <div className="lg:h-24 "></div>
                 <BasicBox
                     title={"Im Newsletter eintragen"}

@@ -32,6 +32,9 @@ module.exports = {
                 redColor: "#FE654F",
                 greenColor: "#61E8E1",
             },
+            height: {
+                "calc-screen": "calc(100vh - 5rem)",
+            },
         },
     },
     plugins: [],
