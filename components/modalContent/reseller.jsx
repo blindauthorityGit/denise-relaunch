@@ -12,7 +12,7 @@ const Reseller = (props) => {
             <div className="hidden sm:block col-span-12 lg:col-span-6">
                 <ShopGalerie data={props.data} />
             </div>
-            <div className="col-span-12 lg:col-span-6 lg:p-16">
+            <div className="col-span-12 lg:col-span-6 lg:px-16">
                 <h4
                     data-aos="fade-left"
                     className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-4 mb-4 lg:mb-6"
