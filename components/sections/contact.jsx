@@ -64,12 +64,12 @@ const Contact = (props) => {
             >
                 <MapboxMap></MapboxMap>
             </motion.div>
-            <div className="right px-8 sm:px-16 lg:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 xl:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-5xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-2xl xl:text-5xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Kontakt
                         </h4>
