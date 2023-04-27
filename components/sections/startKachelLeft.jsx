@@ -73,7 +73,7 @@ const StartKachelLeft = (props) => {
             >
                 <h2
                     data-aos="fade-left"
-                    className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-6xl  mt-8 mb-8 lg:mb-12"
+                    className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-4xl  xl:text-6xl  mt-8 mb-8 lg:mb-12"
                 >
                     {props.data.title}
                 </h2>
