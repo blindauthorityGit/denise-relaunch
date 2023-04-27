@@ -69,7 +69,7 @@ const StartKachelLeft = (props) => {
             </motion.div>
             <div
                 style={{ backgroundImage: `url(${props.bg.src})` }}
-                className="right md:mb-16 lg:mb-0 px-8 sm:px-16 lg:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
+                className="right md:mb-16 lg:mb-0 px-8 sm:px-16 xl:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
             >
                 <h2
                     data-aos="fade-left"
@@ -77,7 +77,7 @@ const StartKachelLeft = (props) => {
                 >
                     {props.data.title}
                 </h2>
-                <div className="text-regular leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl">
+                <div className="text-regular leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl lg:text-base xl:text-lg">
                     <PortableText value={props.data.text} />
                 </div>
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
