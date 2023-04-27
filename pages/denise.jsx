@@ -71,9 +71,9 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataDenise}>
-                    <div className="hidden lg:block">
+                    {/* <div className="hidden lg:block">
                         <Austria></Austria>
-                    </div>
+                    </div> */}
                 </HeroPage>
                 <Divider1></Divider1>
                 <IntroText data={dataDenise.intro} klasse="mt-8" />

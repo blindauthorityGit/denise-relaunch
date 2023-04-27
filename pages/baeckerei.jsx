@@ -73,9 +73,9 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataBaeckerei}>
-                    <div className="hidden sm:block">
+                    {/* <div className="hidden sm:block">
                         <Austria></Austria>
-                    </div>
+                    </div> */}
                 </HeroPage>
                 <Divider1></Divider1>
                 <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
