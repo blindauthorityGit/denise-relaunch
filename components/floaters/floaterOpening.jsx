@@ -16,7 +16,7 @@ const FloaterOpening = (props) => {
     }, []);
     return (
         <div
-            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 lg:text-lg tracking-wider text-textBlack left-6 lg:left-24 ${
+            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 lg:bottom-12 xl:bottom-24 lg:text-lg tracking-wider text-textBlack left-6 lg:left-24 ${
                 props.center ? "items-center flex" : ""
             } ${props.klasse}`}
         >
