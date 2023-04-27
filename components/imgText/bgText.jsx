@@ -29,7 +29,7 @@ const BGText = (props) => {
         <div
             ref={ref}
             style={{ backgroundImage: `url(${urlFor(props.data.story.image).url()})` }}
-            className={`w-full container  sm:px-0 md:px-24 xl:px-48 m-auto bg-contain bg-no-repeat bg-center [background-position-x:400px] xl:gap-24 grid grid-cols-12  ${props.colspan}`}
+            className={`w-full container  sm:px-0 md:px-24 xl:px-48 m-auto bg-contain bg-no-repeat bg-center [lg:background-position-x:400px] [xl:background-position-x:400px] xl:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
             <div className="right px-8 py-8 xl:py-24 sm:px-0 col-span-12 lg:col-span-8 flex flex-col justify-center ">
                 <h2
