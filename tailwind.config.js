@@ -50,5 +50,16 @@ module.exports = {
             },
         },
     },
-    plugins: [],
+    plugins: [
+        function ({ addUtilities }) {
+            addUtilities(
+                {
+                    ".bg-pos-x": {
+                        "background-position-x": "400px",
+                    },
+                },
+                ["responsive", "hover", "focus"]
+            );
+        },
+    ],
 };
