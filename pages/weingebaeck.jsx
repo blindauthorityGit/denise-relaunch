@@ -111,7 +111,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <Divider1></Divider1>
                 <IntroText data={dataWeingebaeck.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
-                <div className="grid grid-cols-12 container mx-auto gap-4 lg:px-36">
+                <div className="grid grid-cols-12 container mx-auto gap-4 xl:px-36">
                     {dataWeingebaeck.produkte.map((e, i) => {
                         return <Produkt data={e}></Produkt>;
                     })}
