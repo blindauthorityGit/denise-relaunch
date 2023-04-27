@@ -190,7 +190,7 @@ const Menu1 = (props) => {
                                         }}
                                     >
                                         <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end uppercase text-xl">
+                                            <a className="flex items-end uppercase text-base xl:text-lg">
                                                 {e.title}{" "}
                                                 {e.subMenu ? (
                                                     <motion.span variants={pfeilMotion}>
