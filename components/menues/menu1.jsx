@@ -182,7 +182,7 @@ const Menu1 = (props) => {
                                         whileHover="hover"
                                         animate="rest"
                                         key={`menuKey${i}`}
-                                        className={`relative mx-8 py-4 tracking-widest font-semibold ${
+                                        className={`relative mx-8 py-4 xl:tracking-widest font-semibold ${
                                             isScrolled ? "text-darkText" : "text-white"
                                         }  hover:text-primaryColor-500`}
                                         onMouseEnter={(e) => {
@@ -190,7 +190,7 @@ const Menu1 = (props) => {
                                         }}
                                     >
                                         <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end uppercase text-base lg:text-sm xl:text-lg">
+                                            <a className="flex items-end uppercase text-base lg:text-xs xl:text-lg">
                                                 {e.title}{" "}
                                                 {e.subMenu ? (
                                                     <motion.span variants={pfeilMotion}>
