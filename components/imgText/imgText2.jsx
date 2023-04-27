@@ -28,7 +28,7 @@ const ImgText2 = (props) => {
     return (
         <div
             ref={ref}
-            className={`w-full container  sm:px-0 md:px-8 xl:px-36 mx-auto xl:gap-24 grid grid-cols-12  ${props.colspan}`}
+            className={`w-full container  sm:px-0 md:px-8 xl:px-36 mx-auto lg:gap-8 xl:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
             {props.data.story.map((e, i) => {
                 return (
