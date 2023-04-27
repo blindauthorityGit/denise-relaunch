@@ -10,7 +10,7 @@ const HeroPage = (props) => {
                 className={`hero container mx-auto relative mt-12 md:mt-20 lg:mt-20 h-[260px] lg:h-[350px] xl:h-[620px] ${props.colspan}`}
             >
                 <div className="text absolute z-10 text-center w-[600px] top-[85%] md:top-[89%] left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                    <h1 className="text-white uppercase text-4xl lg:text-7xl">{props.data.hero.title}</h1>
+                    <h1 className="text-white uppercase text-4xl lg:text-6xl xl:text-7xl">{props.data.hero.title}</h1>
                 </div>
                 <div className="h-full opacity-60 w-full absolute bg-gradient-to-b from-transparent to-[#4C4D4F]"></div>{" "}
                 <div
