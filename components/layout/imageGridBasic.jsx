@@ -54,7 +54,7 @@ const ImageGridBasic = (props) => {
                 </>
             )}
             <div
-                className={`w-full container mx-auto col-span-12 grid grid-cols-12 relative  z-10 min-h-[15rem] md:min-h-[20rem] lg:min-h-[40rem] gap-1 sm_gap-2 h-full  ${props.klasse}`}
+                className={`w-full container mx-auto col-span-12 grid grid-cols-12 relative  z-10 min-h-[15rem] md:min-h-[20rem] xl:min-h-[40rem] gap-1 sm_gap-2 h-full  ${props.klasse}`}
             >
                 <>
                     {props.data.map((e, i) => {

@@ -28,7 +28,7 @@ const ImgText2 = (props) => {
     return (
         <div
             ref={ref}
-            className={`w-full container  sm:px-0 md:px-8 lg:px-36 m-auto lg:gap-24 grid grid-cols-12  ${props.colspan}`}
+            className={`w-full container  sm:px-0 md:px-8 lg:px-36 mx-auto lg:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
             {props.data.story.map((e, i) => {
                 return (
@@ -55,7 +55,7 @@ const ImgText2 = (props) => {
                         <div className="right px-8 sm:px-0 col-span-12 lg:col-span-6 flex flex-col justify-center ">
                             <h2
                                 data-aos="fade-left"
-                                className="font-freight text-2xl sm:text-4xl text-darkText lg:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
+                                className="font-freight text-2xl sm:text-4xl text-darkText xl:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
                             >
                                 {e.title}
                             </h2>
