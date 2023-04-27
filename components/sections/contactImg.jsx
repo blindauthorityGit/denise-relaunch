@@ -42,30 +42,29 @@ const ContactImg = (props) => {
         AOS.init({
             duration: 1200,
         });
-        console.log(imgRef.current.clientWidth);
         setImgHeight(imgRef.current.clientWidth);
     }, [imgRef.current]);
 
     return (
         <div ref={ref} className={`w-full   sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
-            <div className="right px-8 sm:px-16 lg:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 xl:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl xl:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Kontakt
                         </h4>
-                        <div className="font-freight font-bold leading-relaxed text-lg text-darkText">
+                        <div className="font-freight font-bold leading-relaxed xl:text-lg text-darkText">
                             {" "}
                             {props.data.contact.name}
                         </div>
-                        <div className="font-freight leading-relaxed text-lg text-darkText">
+                        <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                             {" "}
                             {props.data.contact.street}
                         </div>
-                        <div className="font-freight leading-relaxed text-lg text-darkText">
+                        <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                             {" "}
                             {props.data.contact.city}
                         </div>
@@ -73,13 +72,13 @@ const ContactImg = (props) => {
                             <div className="col-span-2 text-primaryColor flex items-center">
                                 <FaPhone />{" "}
                             </div>
-                            <div className="col-span-10 font-freight text-xl tracking-wider">
+                            <div className="col-span-10 font-freight xl:text-xl tracking-wider">
                                 {props.data.contact.phone}
                             </div>
                             <div className="col-span-2 text-primaryColor flex items-center">
                                 <HiOutlineMail></HiOutlineMail>
                             </div>
-                            <div className="col-span-10 font-freight text-xl tracking-wider">
+                            <div className="col-span-10 font-freight xl:text-xl tracking-wider">
                                 {props.data.contact.email}
                             </div>
                         </div>
@@ -87,24 +86,24 @@ const ContactImg = (props) => {
                     <div className="col-span-12 sm:col-span-6">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl xl:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Öffnungszeiten
                         </h4>
                         <div className="flex space-x-6">
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-lg">
                                     Brunn an der Pitten
                                 </div>
-                                <div className="font-freight leading-relaxed text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
                                 </div>{" "}
                             </div>
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-lg">
                                     Wr. Neustadt Marienmarkt
                                 </div>
-                                <div className="font-freight leading-relaxed text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.wrn} />
                                 </div>
                             </div>
@@ -113,7 +112,7 @@ const ContactImg = (props) => {
                     <div className="col-span-12 mt-2 sm:mt-8">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText xl:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Schreiben Sie mir!
                         </h4>
@@ -126,7 +125,7 @@ const ContactImg = (props) => {
             <motion.div
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left hidden sm:block col-span-12 lg:col-span-6 h-full relative flex justify-center text-center`}
+                className={`left hidden sm:block col-span-12 lg:col-span-6 h-full relative  justify-center text-center`}
             >
                 <img src={urlFor(props.data.contactImg).url()} alt="Konatkt Bäckerei" className="mx-auto" />
             </motion.div>

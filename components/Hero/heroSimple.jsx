@@ -15,7 +15,7 @@ const HeroSimple = (props) => {
                 {/* Background Image */}
                 {/* Background Video */}
                 <div className="text  z-10 text-center ">
-                    <h1 className="text-darkText  text-4xl xl:text-7xl">{props.children}</h1>
+                    <h1 className="text-darkText  text-5xl xl:text-7xl">{props.children}</h1>
                 </div>
             </div>
         </>

@@ -64,7 +64,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
             <div className="overflow-x-hidden">
                 <HeroSimple>Kontakt</HeroSimple>
                 <Divider1></Divider1>
-                <div className="h-8 lg:h-16 "></div>
+                <div className="h-8 xl:h-16 "></div>
                 <ContainerStandard>
                     <div className="col-span-12 h-[250px] md:h-[300px] xl:h-[450px]">
                         <Map></Map>
