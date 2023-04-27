@@ -15,24 +15,23 @@ const Reseller = (props) => {
             <div className="col-span-12 lg:col-span-6 lg:px-16">
                 <h4
                     data-aos="fade-left"
-                    className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-4xl  mt-4 mb-4 lg:mb-6"
+                    className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-3xl xl:text-4xl  mt-4 mb-4 lg:mb-6"
                 >
                     Interesse?
                 </h4>
-                <p className="font-freight text-lg leading-relaxed">
+                <p className="font-freight xl:text-lg leading-relaxed">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil natus dicta provident sint saepe,
-                    quibusdam, unde earum pariatur a voluptatem perferendis tenetur. Vero itaque odit optio
-                    reprehenderit vitae autem quod!
+                    quibusdam, unde earum pariatur a voluptatem perferendis tenetur.
                 </p>
                 <div className="phoner grid grid-cols-12 mt-8 mb-4 leading-relaxed">
                     <div className="col-span-2 text-primaryColor flex items-center">
                         <FaPhone />{" "}
                     </div>
-                    <div className="col-span-10 font-bold font-freight text-xl">+43 / 650 80 11 900</div>
+                    <div className="col-span-10 font-bold font-freight xl:text-xl">+43 / 650 80 11 900</div>
                     <div className="col-span-2 text-primaryColor flex items-center">
                         <HiOutlineMail></HiOutlineMail>
                     </div>
-                    <div className="col-span-10 font-freight text-xl tracking-wider">
+                    <div className="col-span-10 font-freight xl:text-xl tracking-wider">
                         <a className="underline" href="mailto:office@baeckerin.at">
                             office@baeckerin.at
                         </a>
