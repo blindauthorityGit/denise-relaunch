@@ -47,7 +47,7 @@ const ContactImg = (props) => {
 
     return (
         <div ref={ref} className={`w-full   sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
-            <div className="right px-8 sm:px-16 xl:px-24 col-span-12 lg:col-span-6 flex flex-col justify-center">
+            <div className="right px-8 sm:px-16 xl:px-24 col-span-12 lg:col-span-8 xl:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
@@ -125,7 +125,7 @@ const ContactImg = (props) => {
             <motion.div
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left hidden sm:block col-span-12 lg:col-span-6 h-full relative  justify-center text-center`}
+                className={`left hidden sm:block col-span-12 lg:col-span-4 xl:col-span-6 h-full relative  justify-center text-center`}
             >
                 <img src={urlFor(props.data.contactImg).url()} alt="Konatkt Bäckerei" className="mx-auto" />
             </motion.div>
