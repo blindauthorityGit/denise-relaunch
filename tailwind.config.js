@@ -57,8 +57,6 @@ module.exports = {
                     ".bg-pos-x": {
                         "background-position-x": "400px",
                     },
-                },
-                {
                     ".bg-pos-x-small": {
                         "background-position-x": "250px",
                     },
