@@ -86,16 +86,16 @@ const Contact = (props) => {
                             {props.data.contact.city}
                         </div>
                         <div className="phoner grid grid-cols-12 mt-4 leading-relaxed">
-                            <div className="col-span-2 text-primaryColor flex items-center text-2xl">
+                            <div className="col-span-2 text-primaryColor flex items-center text-xl xl:text-2xl">
                                 <FaPhone />{" "}
                             </div>
-                            <div className="col-span-10 font-freight leading-relaxed text-lg sm:text-xl text-darkText">
+                            <div className="col-span-10 font-freight leading-relaxed text-lg xl:text-xl text-darkText">
                                 {props.data.contact.phone}
                             </div>
-                            <div className="col-span-2 text-primaryColor flex items-center text-2xl">
+                            <div className="col-span-2 text-primaryColor flex items-center text-xl xl:text-2xl">
                                 <HiOutlineMail></HiOutlineMail>
                             </div>
-                            <div className="col-span-10 font-freight leading-relaxed text-lg sm:text-xl text-darkText">
+                            <div className="col-span-10 font-freight leading-relaxed text-lg xl:text-xl text-darkText">
                                 {props.data.contact.email}
                             </div>
                         </div>
@@ -112,7 +112,7 @@ const Contact = (props) => {
                                 <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg sm:text-xl">
                                     Brunn an der Pitten
                                 </div>
-                                <div className="font-freight leading-relaxed text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
                                 </div>{" "}
                             </div>
@@ -120,7 +120,7 @@ const Contact = (props) => {
                                 <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg sm:text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
-                                <div className="font-freight leading-relaxed text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.wrn} />
                                 </div>
                             </div>
@@ -129,7 +129,7 @@ const Contact = (props) => {
                     <div className="col-span-12 mt-8">
                         <h4
                             data-aos="fade-left"
-                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-4xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
+                            className="font-thin font-freight text-2xl sm:text-4xl text-darkText lg:text-3xl xl:text-5xl  mt-6 mb-4 sm:mt-8 sm:mb-8 lg:mb-6 lg:mb-6"
                         >
                             Schreiben Sie mir!
                         </h4>
