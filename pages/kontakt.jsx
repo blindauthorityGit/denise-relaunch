@@ -85,7 +85,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                         return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
                     })}
                 </div>
-                <div className="lg:h-24 "></div>
+                <div className="xl:h-24 "></div>
             </div>
         </>
     );
