@@ -58,6 +58,11 @@ module.exports = {
                         "background-position-x": "400px",
                     },
                 },
+                {
+                    ".bg-pos-x-small": {
+                        "background-position-x": "25px",
+                    },
+                },
                 ["responsive", "hover", "focus"]
             );
         },
