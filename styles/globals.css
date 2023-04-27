@@ -39,7 +39,7 @@ h1 {
 }
 
 h2 {
-  @apply text-2xl sm:text-4xl tracking-wider;
+  @apply text-2xl sm:text-4xl lg:text-2xl xl:text-4xl tracking-wider;
 }
 
 h3 {
