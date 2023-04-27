@@ -60,7 +60,7 @@ module.exports = {
                 },
                 {
                     ".bg-pos-x-small": {
-                        "background-position-x": "25px",
+                        "background-position-x": "250px",
                     },
                 },
                 ["responsive", "hover", "focus"]
