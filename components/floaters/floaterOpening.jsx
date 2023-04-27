@@ -25,7 +25,10 @@ const FloaterOpening = (props) => {
                 <AiOutlineClockCircle className="text-primaryColor-300 pt-2 text-3xl"></AiOutlineClockCircle>{" "}
                 <a className="pl-4 text-primaryColor-100" href="tel:+43 650 944 4150">
                     <div className="text-primaryColor-300">Brunn an der Pitten</div>
-                    <PortableText value={props.data.oeffnungszeiten.brunn} />
+                    <div className="mb-0" style={{ marginBottom: "0!important" }}>
+                        {" "}
+                        <PortableText value={props.data.oeffnungszeiten.brunn} />
+                    </div>
                 </a>
                 <a className="pl-4 text-primaryColor-100" href="tel:+43 650 944 4150">
                     <div className="text-primaryColor-300"> Marienmarkt Wr. Neustadt</div>
