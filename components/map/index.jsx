@@ -30,7 +30,7 @@ const MapboxMap = (props) => {
                 zoom: 15.5,
                 bearing: -17.6,
                 antialias: true,
-                scrollZoom: !isMobile, // set scrollZoom option based on device
+                scrollZoom: false, // set scrollZoom option based on device
             });
 
             const marker = new mapboxgl.Marker({

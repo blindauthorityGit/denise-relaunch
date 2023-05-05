@@ -49,7 +49,7 @@ const NewsletterSub = () => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
-                className="border-b text-lg border-blackText text-blackText bg-white text-darkText col-span-10 "
+                className="border-b text-lg p-2 border-blackText text-blackText bg-white text-darkText col-span-10 "
             />
             <div className="button">
                 <MainButton type="submit">Abonnieren</MainButton>
