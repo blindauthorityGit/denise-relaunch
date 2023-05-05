@@ -29,7 +29,7 @@ const StartKachelLeft = (props) => {
 
     useEffect(() => {
         AOS.init({
-            duration: 1200,
+            duration: 800,
         });
         console.log(imgRef.current.clientWidth);
         setImgHeight(imgRef.current.clientWidth);
