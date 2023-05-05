@@ -7,7 +7,7 @@ import Sackerl from "../../assets/SVG/sackl.svg";
 
 const Opening = (props) => {
     return (
-        <div className="container mx-auto grid grid-cols-12">
+        <div className="container mx-auto grid grid-cols-12 gap-8">
             <div className="brot absolute bottom-10 right-[-2rem] w-72 opacity-[0.08]">
                 <img src={Sackerl.src} alt="" />
             </div>
