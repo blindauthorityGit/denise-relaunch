@@ -137,7 +137,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 </StoreBox>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto">
+                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element

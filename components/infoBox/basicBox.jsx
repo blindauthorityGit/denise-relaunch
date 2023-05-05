@@ -4,7 +4,7 @@ import { PortableText } from "@portabletext/react";
 const BasicBox = (props) => {
     return (
         <div
-            className="container mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
+            className="container mx-auto containerXL 2xl:mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
             style={{ backgroundImage: `url(${props.bgImage})` }}
         >
             <div className="col-span-12 z-10 text-center ">

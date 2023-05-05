@@ -22,9 +22,9 @@ const Hero = (props) => {
 
     return (
         <div
-            className={`hero-container w-full relative ${props.fullHeight ? "h-calc-screen sm:h-full" : props.height} ${
-                props.colspan
-            }`}
+            className={`hero-container containerXL 2xl:mx-auto w-full relative ${
+                props.fullHeight ? "h-calc-screen 2xl:h-[940px] sm:h-full" : props.height
+            } ${props.colspan}`}
         >
             {/* Background Image */}
             {/* Background Video */}
@@ -47,7 +47,7 @@ const Hero = (props) => {
                 muted
                 loop
                 playsInline
-                className="w-full h-full sm:h-screen object-cover object-center"
+                className="w-full h-full sm:h-screen 2xl:h-full object-cover object-center"
                 style={{ objectFit: "cover" }}
                 onLoadedData={() => setLoaded(true)}
                 onCanPlayThrough={() => setLoaded(true)}

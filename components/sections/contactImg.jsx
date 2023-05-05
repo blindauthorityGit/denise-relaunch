@@ -46,7 +46,10 @@ const ContactImg = (props) => {
     }, [imgRef.current]);
 
     return (
-        <div ref={ref} className={`w-full   sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
+        <div
+            ref={ref}
+            className={`w-full  containerXL 2xl:mx-auto sm:px-0  lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}
+        >
             <div className="right px-8 sm:px-16 xl:px-24 col-span-12 lg:col-span-8 xl:col-span-6 flex flex-col justify-center">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">

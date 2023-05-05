@@ -72,7 +72,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                     </div>
                 </ContainerStandard>
                 <div className="h-8 lg:h-24 "></div>
-                <ContainerStandard>
+                <ContainerStandard klasse="containerXL 2xl:mx-auto">
                     <div className="col-span-12 h-[250px] md:h-[300px] xl:h-[450px]">
                         <Map></Map>
                     </div>
@@ -80,7 +80,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                 <div className="h-2 lg:h-8 "></div>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto">
+                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
                     })}

@@ -16,7 +16,7 @@ const StoreBox = (props) => {
     }, []);
     return (
         <div
-            className="container bg-cover mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
+            className="container containerXL 2xl:mx-auto bg-cover mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
             style={{ backgroundImage: `url(${urlFor(props.data.imageStore).url()})` }}
         >
             {" "}

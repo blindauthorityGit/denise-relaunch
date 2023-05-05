@@ -29,6 +29,16 @@ a {
   box-sizing: border-box;
 }
 
+/* .container {
+  max-width: 100%;
+} */
+
+@media (min-width: 1980px) {
+  .containerXL {
+    max-width: 1680px!important;
+  }
+}
+
 /* Define styles for all headline elements */
 h1, h2, h3, h4, h5, h6 {
   @apply font-bold;

@@ -36,7 +36,10 @@ const StartKachelLeft = (props) => {
     }, [imgRef.current]);
 
     return (
-        <div ref={ref} className={`w-full   sm:px-0 md:px-0 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}>
+        <div
+            ref={ref}
+            className={`w-full containerXL 2xl:mx-auto  sm:px-0 md:px-0 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}
+        >
             <motion.div
                 style={{
                     height: isMobile

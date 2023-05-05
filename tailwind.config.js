@@ -10,13 +10,14 @@ module.exports = {
             md: "768px",
             lg: "1024px",
             xl: "1440px",
-            // "2xl": "1364px",
+            "2xl": "1980px",
         },
         container: {
             sm: "100%",
             md: "960px",
             lg: "1024px",
             xl: "1440px",
+            "2xl": "calc((100vw - 1680px) / 2)",
         },
         extend: {
             fontFamily: {

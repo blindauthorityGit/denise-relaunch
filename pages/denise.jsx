@@ -78,7 +78,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <Divider1></Divider1>
                 <IntroText data={dataDenise.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
-                <ContainerStandard>
+                <ContainerStandard klasse="containerXL 2xl:mx-auto">
                     <video
                         controls
                         className="w-full col-span-12 object-cover object-center"
@@ -91,10 +91,10 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <ImgText2 showImgMobile data={dataDenise}></ImgText2>
                 <div className="h-8 lg:h-24 "></div>
 
-                <ImageGridBasic klasse="lg:px-28" data={dataDenise.deniseImages}></ImageGridBasic>
+                <ImageGridBasic klasse="lg:px-28 " data={dataDenise.deniseImages}></ImageGridBasic>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto">
+                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element

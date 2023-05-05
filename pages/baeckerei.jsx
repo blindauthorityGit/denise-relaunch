@@ -80,7 +80,10 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 <Divider1></Divider1>
                 <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
-                <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.baeckereiImages}></ImageGridBasic>
+                <ImageGridBasic
+                    klasse="lg:px-28 containerXL 2xl:mx-auto"
+                    data={dataBaeckerei.baeckereiImages}
+                ></ImageGridBasic>
                 <div className="h-8 lg:h-24 "></div>
                 <ImgText2 showImgMobile data={dataBaeckerei}></ImgText2>
                 <div className="h-8 lg:h-24 "></div>
@@ -95,7 +98,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
 
                 <div className="h-8 lg:h-24 "></div>
 
-                <div className="container mx-auto">
+                <div className="container mx-auto containerXL 2xl:mx-auto">
                     {dataBaeckerei.gebaeck.gebaeckList.map((e, i) => {
                         return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                     })}
@@ -103,7 +106,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
 
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto">
+                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element
