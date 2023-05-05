@@ -36,14 +36,14 @@ const Hero = (props) => {
                     </a>
                 </Link>
             </div>
-            <div className="h-full w-full bg-darkText opacity-60 absolute"></div>
+            <div className="h-[95%] sm:h-full w-full bg-darkText opacity-60 absolute"></div>
             {/* {!loaded && <Spinner1></Spinner1>} */}
             <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-screen object-cover object-center"
+                className="w-full h-full sm:h-screen object-cover object-center"
                 style={{ objectFit: "cover" }}
                 onLoadedData={() => setLoaded(true)}
                 onCanPlayThrough={() => setLoaded(true)}
