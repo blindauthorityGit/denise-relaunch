@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 // COMPS
 import { MainButton } from "../buttons";
@@ -12,13 +12,17 @@ const Hero = (props) => {
     const [loaded, setLoaded] = useState(false);
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
+    const videoRef = useRef(null);
+
     useEffect(() => {
         console.log(isMobile, isTablet, isDesktop);
     }, [isMobile, isTablet, isDesktop]);
 
+    useEffect(() => {}, []);
+
     return (
         <div
-            className={`hero-container w-full  ${props.fullHeight ? "h-screen sm:h-full" : props.height} ${
+            className={`hero-container w-full relative ${props.fullHeight ? "h-calc-screen sm:h-full" : props.height} ${
                 props.colspan
             }`}
         >
@@ -36,7 +40,7 @@ const Hero = (props) => {
                     </a>
                 </Link>
             </div>
-            <div className="h-[95%] sm:h-full w-full bg-darkText opacity-60 absolute"></div>
+            <div className="h-full sm:h-full w-full bg-darkText opacity-60 absolute"></div>
             {/* {!loaded && <Spinner1></Spinner1>} */}
             <video
                 autoPlay
@@ -47,6 +51,7 @@ const Hero = (props) => {
                 style={{ objectFit: "cover" }}
                 onLoadedData={() => setLoaded(true)}
                 onCanPlayThrough={() => setLoaded(true)}
+                ref={videoRef}
             >
                 <source
                     src={props.videoFile}
