@@ -29,7 +29,7 @@ const sendEmail = async (to, subject, html, attachments) => {
 
         // send the email
         await transporter.sendMail({
-            from: "johabuch@gmail.com",
+            from: "office@baeckerin.at",
             to,
             subject,
             html,
