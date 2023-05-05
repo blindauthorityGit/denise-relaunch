@@ -88,7 +88,7 @@ const Mobile1 = (props) => {
             <motion.nav
                 variants={boxMotion}
                 className={`navbar slide-in-right ${props.klasse} 
-                w-[90%] right-0 h-calc-screen bg-white fixed z-50 top-0 `}
+                w-[90%] right-0 h-full bg-white fixed z-50 top-0 `}
             >
                 <div className="brot absolute bottom-10 right-[-4rem] w-72 opacity-10">
                     <img src={Brot.src} alt="" />

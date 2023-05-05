@@ -31,7 +31,7 @@ class MyDocument extends Document {
                 ></link> */}
                 <link rel="stylesheet" href="https://use.typekit.net/kav8zbg.css" />
 
-                <body className="bg-bg">
+                <body className="bg-bg overflow-y-scroll">
                     <Main />
                     <NextScript />
                 </body>
