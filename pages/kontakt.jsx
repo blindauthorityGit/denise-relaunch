@@ -62,22 +62,22 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
             ></Menu2>
             <BG />
             <div className="overflow-x-hidden">
-                <HeroSimple>Kontakt</HeroSimple>
-                <Divider1></Divider1>
-                <div className="h-8 xl:h-16 "></div>
-                <ContainerStandard>
-                    <div className="col-span-12 h-[250px] md:h-[300px] xl:h-[450px]">
-                        <Map></Map>
-                    </div>
-                </ContainerStandard>
-                <div className="h-2 lg:h-8 "></div>
+                {/* <HeroSimple>Kontakt</HeroSimple> */}
+                {/* <Divider1></Divider1> */}
+                <div className="h-12 xl:h-16 "></div>
+
                 <ContainerStandard>
                     <div className="col-span-12">
                         <ContactImg data={dataSetting}></ContactImg>
                     </div>
                 </ContainerStandard>
                 <div className="h-8 lg:h-24 "></div>
-
+                <ContainerStandard>
+                    <div className="col-span-12 h-[250px] md:h-[300px] xl:h-[450px]">
+                        <Map></Map>
+                    </div>
+                </ContainerStandard>
+                <div className="h-2 lg:h-8 "></div>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto">

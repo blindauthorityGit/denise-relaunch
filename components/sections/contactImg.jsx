@@ -125,7 +125,7 @@ const ContactImg = (props) => {
             <motion.div
                 data-aos="fade-right"
                 ref={imgRef}
-                className={`left hidden sm:block col-span-12 lg:col-span-4 xl:col-span-6 h-full relative  justify-center text-center`}
+                className={`left hidden sm:block pt-16 col-span-12 lg:col-span-4 xl:col-span-6 h-full relative  justify-center text-center`}
             >
                 <img src={urlFor(props.data.contactImg).url()} alt="Konatkt Bäckerei" className="mx-auto" />
             </motion.div>
