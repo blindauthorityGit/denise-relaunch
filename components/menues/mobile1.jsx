@@ -7,6 +7,9 @@ import Logo from "../../assets/logoDark.svg";
 import { GrClose } from "react-icons/gr";
 import { useRouter } from "next/router";
 
+//ASSETS
+import Brot from "../../assets/SVG/brot.svg";
+
 const Mobile1 = (props) => {
     const [showMenu, setShowMenu] = useState(props.showMenu);
     const { asPath } = useRouter();
@@ -87,10 +90,13 @@ const Mobile1 = (props) => {
                 className={`navbar slide-in-right ${props.klasse} 
                 w-[90%] right-0 h-screen bg-white fixed z-50 top-0 `}
             >
+                <div className="brot absolute bottom-10 right-[-4rem] w-72 opacity-10">
+                    <img src={Brot.src} alt="" />
+                </div>
                 <div onClick={props.onClick} className="closer absolute text-xl rounded-full p-1 right-4 top-3">
                     <GrClose className=""></GrClose>
                 </div>
-                <div className="container h-screen py-3 px-8 font-europa tracking-widest">
+                <div className="container h-screen pt-12 px-8 font-europa tracking-widest">
                     <div className="middle flex justify-start">
                         <Link href="/">
                             <a>
@@ -98,7 +104,7 @@ const Mobile1 = (props) => {
                             </a>
                         </Link>
                     </div>
-                    <div className="MenuItems text-lg sm:text-4xl pt-4 font-barlow">
+                    <div className="MenuItems text-xl sm:text-4xl pt-12 font-barlow">
                         <Link href="/baeckerei">
                             <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
                                 Bäckerei
@@ -108,7 +114,7 @@ const Mobile1 = (props) => {
                             <motion.li variants={textMotion} className="mb-4">
                                 <div className="wrap dropdown text-primaryColor-900  ">
                                     <Link href="/denise">
-                                        <a className="text-text block my-3 subNav relative hover:text-primaryColor cursor-pointer">
+                                        <a className="text-text block my-5 subNav relative hover:text-primaryColor cursor-pointer">
                                             Denise
                                         </a>
                                     </Link>
@@ -133,7 +139,7 @@ const Mobile1 = (props) => {
                                 </div>
                             </motion.li>
                             <Link href="/weingebaeck">
-                                <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
+                                <a className="text-text block my-5 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
                                     Weingebäck
                                 </a>
                             </Link>
@@ -143,7 +149,7 @@ const Mobile1 = (props) => {
                                 </Link>
                             </li>
                         </motion.ul>
-                        <hr className="mt-4" />
+                        <hr className="mt-8" />
                         <ul className="tracking-widest text-primaryColor-900">
                             <li className="mb-3 mt-8 text-xs">
                                 <div className="wrap dropdown   ">
@@ -160,7 +166,7 @@ const Mobile1 = (props) => {
                                     </Link>
                                 </div>
                             </li>
-                            <li className="">
+                            <li className="mt-8">
                                 <div className="sm:hidden flex ">
                                     {props.socialMedia.map((e, i) => {
                                         return (
