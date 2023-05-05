@@ -12,6 +12,9 @@ import { motion, useScroll, useAnimation } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+//ASSETS
+import Sackerl from "../../assets/SVG/sackl.svg";
+
 //Functions
 import urlFor from "../functions/urlFor";
 
@@ -28,8 +31,11 @@ const ImgText2 = (props) => {
     return (
         <div
             ref={ref}
-            className={`w-full container  sm:px-0 md:px-8 xl:px-36 mx-auto lg:gap-12 xl:gap-24 grid grid-cols-12  ${props.colspan}`}
+            className={`w-full container relative sm:px-0 md:px-8 xl:px-36 mx-auto lg:gap-12 xl:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
+            <div className="brot absolute bottom-10 right-[-2rem] w-72 opacity-[0.08]">
+                <img src={Sackerl.src} alt="" />
+            </div>
             {props.data.story.map((e, i) => {
                 return (
                     <>

@@ -31,6 +31,7 @@ const MapboxMap = (props) => {
                 bearing: -17.6,
                 antialias: true,
                 scrollZoom: false, // set scrollZoom option based on device
+                dragPan: !isMobile,
             });
 
             const marker = new mapboxgl.Marker({
