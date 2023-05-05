@@ -90,16 +90,21 @@ const Form1 = (props) => {
                     {errors.message && <Error klasse="block col-span-12">Bitte geben Sie Ihre Nachricht an</Error>}
 
                     <div className="check col-span-12 mt-2">
-                        <input
-                            {...register("checkbox", { required: true })}
-                            id="checkbox"
-                            className="mr-4 text-primaryColor"
-                            type="checkbox"
-                        />
-                        <label htmlFor="checkbox" className="text-primaryColor-800 text-xs sm:text-base leading-normal">
-                            Ich erlaube Datenverarbeitung für Kontaktaufnahme laut Datenschutzerklärung.
-                        </label>
-                        {errors.checkbox && <Error klasse="block col-span-12">Bitte bestätigen</Error>}
+                        <div className="flex">
+                            <input
+                                {...register("checkbox", { required: true })}
+                                id="checkbox"
+                                className="mr-4 text-primaryColor"
+                                type="checkbox"
+                            />
+                            <label
+                                htmlFor="checkbox"
+                                className="text-primaryColor-800 text-xs sm:text-base leading-normal"
+                            >
+                                Ich erlaube Datenverarbeitung für Kontaktaufnahme laut Datenschutzerklärung.
+                            </label>
+                            {errors.checkbox && <Error klasse="block col-span-12">Bitte bestätigen</Error>}
+                        </div>
                     </div>
                     {loading ? (
                         <div className="col-span-12 flex justify-center">
