@@ -52,7 +52,9 @@ const ImgText1 = (props) => {
                 >
                     {props.data.story.title}
                 </h2>
-                <PortableText value={props.data.story.text} />
+                <div className="leading-relaxed  tracking-wider">
+                    <PortableText value={props.data.story.text} />
+                </div>
             </div>
         </div>
     );

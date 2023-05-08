@@ -28,7 +28,7 @@ const BGText = (props) => {
     return (
         <div
             ref={ref}
-            style={{ backgroundImage: `url(${urlFor(props.data.story.image).url()})` }}
+            style={{ backgroundImage: `url(${props.isMobile ? "" : urlFor(props.data.story.image).url()})` }}
             className={`w-full container  sm:px-0 md:px-24 xl:px-48 m-auto bg-contain bg-no-repeat bg-center lg:bg-pos-x-small xl:bg-pos-x xl:gap-24 grid grid-cols-12  ${props.colspan}`}
         >
             <div className="right px-8 py-8 xl:py-24 sm:px-0 col-span-12 lg:col-span-8 flex flex-col justify-center ">
@@ -38,7 +38,7 @@ const BGText = (props) => {
                 >
                     {props.data.story.title}
                 </h2>
-                <div className="font-freight xl:text-lg">
+                <div className="font-freight xl:text-lg leading-relaxed tracking-wider">
                     <PortableText value={props.data.story.text} />
                 </div>
             </div>

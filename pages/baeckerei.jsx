@@ -29,6 +29,10 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
     const currentUrl = showCurrentURL();
     const [quickLinkData, setQuickLinkData] = useState(dataHome.section.filter((e) => e.buttonLink !== currentUrl));
 
+    const Dinkel = "cf7c260a-bf44-4071-8c82-077c20b7e9c8";
+    const Roggen = "8abf184a-bd54-412b-b7f2-216b5a5dbd11";
+    const Weizen = "aabd1bab-a7e3-4081-aa73-ab9e19b3cb11";
+
     useEffect(() => {
         console.log(dataBaeckerei, dataSetting, dataHome, dataBaeckereiCats);
     }, []);
@@ -80,31 +84,61 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 <Divider1></Divider1>
                 <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
+
                 <ImageGridBasic
                     klasse="lg:px-28 containerXL 2xl:mx-auto"
                     data={dataBaeckerei.baeckereiImages}
                 ></ImageGridBasic>
                 <div className="h-8 lg:h-24 "></div>
+                <div className="brote">
+                    <h2
+                        data-aos="fade-left"
+                        className="font-freight text-center text-2xl sm:text-4xl text-darkText lg:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
+                    >
+                        {dataBaeckerei.gebaeck.title}
+                    </h2>
+
+                    <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
+
+                    {/* <div className="h-8 lg:h-24 "></div> */}
+
+                    <div className="container mx-auto containerXL 2xl:mx-auto">
+                        <h2 className="col-span-12 pl-8 lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                            ROGGEN
+                        </h2>
+                        {dataBaeckerei.gebaeck.gebaeckList
+                            .filter((e) => e.category._ref == Roggen)
+                            .map((e, i) => {
+                                console.log(e);
+                                return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
+                            })}
+                        <h2 className="col-span-12 pl-8  lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                            DINKEL
+                        </h2>
+                        {dataBaeckerei.gebaeck.gebaeckList
+                            .filter((e) => e.category._ref == Dinkel)
+                            .map((e, i) => {
+                                console.log(e);
+                                return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
+                            })}
+                        <h2 className="col-span-12 pl-8  lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                            WEIZEN
+                        </h2>
+                        {dataBaeckerei.gebaeck.gebaeckList
+                            .filter((e) => e.category._ref == Weizen)
+                            .map((e, i) => {
+                                console.log(e);
+                                return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
+                            })}
+                    </div>
+
+                    <Divider1></Divider1>
+                </div>
+                <div className="h-8 lg:h-24 "></div>
+
                 <ImgText2 showImgMobile data={dataBaeckerei}></ImgText2>
                 <div className="h-8 lg:h-24 "></div>
-                <h2
-                    data-aos="fade-left"
-                    className="font-freight text-center text-2xl sm:text-4xl text-darkText lg:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
-                >
-                    {dataBaeckerei.gebaeck.title}
-                </h2>
 
-                <ImageGridBasic klasse="lg:px-28" data={dataBaeckerei.gebaeckImages}></ImageGridBasic>
-
-                <div className="h-8 lg:h-24 "></div>
-
-                <div className="container mx-auto containerXL 2xl:mx-auto">
-                    {dataBaeckerei.gebaeck.gebaeckList.map((e, i) => {
-                        return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
-                    })}
-                </div>
-
-                <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {

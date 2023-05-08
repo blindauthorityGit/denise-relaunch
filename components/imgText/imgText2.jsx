@@ -65,7 +65,7 @@ const ImgText2 = (props) => {
                             >
                                 {e.title}
                             </h2>
-                            <div className="font-freight xl:text-lg tracking-wider">
+                            <div className="font-freight xl:text-lg  leading-relaxed  tracking-wider">
                                 <PortableText value={e.text} />
                             </div>
                         </div>
