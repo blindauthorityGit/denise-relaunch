@@ -60,7 +60,7 @@ const ImageGridBasic = (props) => {
                     {props.data.slice(0, isMobile ? 4 : props.data.length).map((e, i) => {
                         return (
                             <div
-                                className="col-span-6 relative group min-h-[10rem]"
+                                className="col-span-6 relative group min-h-[10rem] cursor-pointer"
                                 style={{
                                     gridColumn: `span ${isMobile ? 6 : getColSpan(imageCount)} / span ${getColSpan(
                                         imageCount
@@ -70,7 +70,6 @@ const ImageGridBasic = (props) => {
                                 onClick={(e) => {
                                     console.log(e.currentTarget.id);
                                     setShowModal(true);
-
                                     setLightBoxImg(props.data[e.currentTarget.id]);
                                 }}
                             >

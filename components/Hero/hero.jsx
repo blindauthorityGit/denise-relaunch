@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { Parallax } from "react-scroll-parallax";
+
 // COMPS
 import { MainButton } from "../buttons";
 import { Spinner1 } from "../spinner";
@@ -31,16 +33,18 @@ const Hero = (props) => {
             <FloaterOpening data={props.dataSetting}></FloaterOpening>
             <FloaterContact data={props.dataSetting}></FloaterContact>
             <div className="text absolute z-10 text-center sm:w-[600px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                <h1 className="text-white">{props.data.title}</h1>
-                <h3 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subtitle}</h3>
-                <h6 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subsubtitle}</h6>
-                <Link href="/denise">
-                    <a>
-                        <MainButton>Mehr</MainButton>
-                    </a>
-                </Link>
+                <Parallax translateY={["-200px", "150px"]}>
+                    <h1 className="text-white">{props.data.title}</h1>
+                    <h3 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subtitle}</h3>
+                    <h6 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subsubtitle}</h6>
+                    <Link href="/denise">
+                        <a>
+                            <MainButton>Mehr</MainButton>
+                        </a>
+                    </Link>
+                </Parallax>
             </div>
-            <div className="h-full sm:h-full w-full bg-darkText opacity-60 absolute"></div>
+            <div className="h-full sm:h-full w-full bg-[#3b3720] opacity-60 absolute"></div>
             {/* {!loaded && <Spinner1></Spinner1>} */}
             <video
                 autoPlay

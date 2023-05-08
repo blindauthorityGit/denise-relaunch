@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import { Footer } from "../components/footer";
 import { MobileBar1 } from "../components/mobileBar";
 import { useEffect } from "react";
+import { ParallaxProvider } from "react-scroll-parallax";
+
 // SANITY
 import client from "../client";
 
@@ -20,7 +22,9 @@ function MyApp({ Component, pageProps }) {
                     console.log("IS CLICKED");
                 }}
             ></MobileBar1>
-            <Component {...pageProps} />
+            <ParallaxProvider>
+                <Component {...pageProps} />
+            </ParallaxProvider>
             <Footer />
         </>
     );

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Parallax } from "react-scroll-parallax";
 
 //Framer Motion
 import { motion, useScroll, useAnimation } from "framer-motion";
@@ -51,6 +52,7 @@ const StartKachelLeft = (props) => {
                         : "auto",
                 }}
                 data-aos="fade-right"
+                data-aos-once="true"
                 ref={imgRef}
                 className={`left sm:block col-span-12 lg:col-span-6 relative group ${
                     props.data.left ? "" : "lg:order-last"
@@ -76,6 +78,7 @@ const StartKachelLeft = (props) => {
             >
                 <h2
                     data-aos="fade-left"
+                    data-aos-once="true"
                     className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-4xl  xl:text-6xl  mt-8 mb-8 lg:mb-12"
                 >
                     {props.data.title}

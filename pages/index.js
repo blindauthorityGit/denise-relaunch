@@ -10,6 +10,8 @@ import { Menu1 } from "../components/menues";
 import { StartKachelLeft, Contact } from "../components/sections";
 import { BasicBox } from "../components/infoBox";
 import { NewsletterSub } from "../components/forms";
+import { FullBGContainer } from "../components/container";
+import { Aktuelles } from "../components/stoerer";
 
 //ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -23,12 +25,13 @@ import Favicon from "../assets/favicon.svg";
 // FUNCTIONS
 import useBreakpoints from "../components/functions/useBreakpoints";
 
-export default function Home({ dataHome, dataSetting }) {
+export default function Home({ dataHome, dataSetting, dataAktuelles }) {
     useEffect(() => {
-        console.log(dataHome);
+        console.log(dataHome, dataAktuelles);
     }, []);
 
     const [isLoading, setIsLoading] = useState(true);
+    const [aktuelles, setAktuelles] = useState(false);
 
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
@@ -82,6 +85,11 @@ export default function Home({ dataHome, dataSetting }) {
                 ) : (
                     <div className="h-screen bg-primaryColor"></div>
                 )}
+                {aktuelles ? (
+                    <FullBGContainer klasse="bg-darkRed">
+                        <Aktuelles data={dataAktuelles}></Aktuelles>
+                    </FullBGContainer>
+                ) : null}
                 <div className="max-w-container mx-auto">
                     {dataHome.section
                         .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
@@ -128,11 +136,16 @@ export const getStaticProps = async (context) => {
   *[_type == "setting"][0] 
 `);
     const dataSetting = await resSetting;
+    const resAktuelles = await client.fetch(`
+  *[_type == "aktuelles"][0] 
+`);
+    const dataAktuelles = await resAktuelles;
 
     return {
         props: {
             dataHome,
             dataSetting,
+            dataAktuelles,
         },
         revalidate: 1, // 10 seconds
     };

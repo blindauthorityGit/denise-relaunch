@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Parallax } from "react-scroll-parallax";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
@@ -47,15 +48,17 @@ const ImgText2 = (props) => {
                                 i % 2 !== 0 ? "lg:order-first mt-8 md:mt-12 lg:mt-0" : "lg:order-last"
                             }`}
                         >
-                            <Image
-                                // {...ImagePropsGallery(i)}
-                                src={urlFor(e.image).url()}
-                                layout="fill"
-                                loading="lazy"
-                                objectFit="cover"
-                                alt="hero"
-                                className="z-10"
-                            />
+                            <Parallax className="relative h-full" translateY={["-150px", "100px"]}>
+                                <Image
+                                    // {...ImagePropsGallery(i)}
+                                    src={urlFor(e.image).url()}
+                                    layout="fill"
+                                    loading="lazy"
+                                    objectFit="cover"
+                                    alt="hero"
+                                    className="z-10"
+                                />
+                            </Parallax>
                             <div className="bgOverlay absolute bg-primaryColor opacity-20 w-full h-full md:left-[1.85rem] lg:left-[-2rem] top-[-2rem]"></div>
                         </motion.div>
                         <div className="right px-8 sm:px-0 col-span-12 lg:col-span-6 flex flex-col justify-center ">

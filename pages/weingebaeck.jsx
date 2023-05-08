@@ -2,6 +2,8 @@ import Head from "next/head";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Parallax } from "react-scroll-parallax";
+
 // SANITY
 import client from "../client";
 import urlFor from "../components/functions/urlFor";
@@ -121,11 +123,12 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <IntroText data={dataWeingebaeck.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
                 <div
-                    className="py-8 relative"
+                    className="py-8 relative bg-cover"
                     style={{ backgroundImage: `url(${isMobile ? WGBGMobile.src : WGBG.src})` }}
                 >
-                    <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-24 bg-top">
+                    <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-36 bg-top">
                         <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-[#1D1B1C] "></div>
+
                         {dataWeingebaeck.produkte.map((e, i) => {
                             return <Produkt data={e}></Produkt>;
                         })}
@@ -136,7 +139,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
                 </ShadowBox> */}
 
-                <BGText1 isMobile={isMobile} data={dataWeingebaeck}></BGText1>
+                <BGText1 isDesktop={isDesktop} data={dataWeingebaeck}></BGText1>
                 {/* <div className="h-8 lg:h-24 "></div> */}
                 <ShadowBox>
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>

@@ -45,6 +45,7 @@ module.exports = {
                 bg: "#FBFBF5",
                 redColor: "#FE654F",
                 greenColor: "#61E8E1",
+                darkRed: "#444140",
             },
             height: {
                 "calc-screen": "calc(100vh - 5rem)",
