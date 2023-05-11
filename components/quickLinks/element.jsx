@@ -19,6 +19,7 @@ const Element = (props) => {
         console.log(props.length);
     }, []);
     const [imageCount, setImageCount] = useState(null);
+    const [isDenise, setIsDenise] = useState(false);
 
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
@@ -42,9 +43,14 @@ const Element = (props) => {
                             layout="fill"
                             loading="lazy"
                             objectFit="cover"
+                            objectPosition={`${isDenise ? "top" : "center"}`}
                             alt="hero"
-                            onLoad={() => {
-                                console.log("LOADING");
+                            onLoad={(e) => {
+                                e.target.parentNode.parentNode.href.split("/")[
+                                    e.target.parentNode.parentNode.href.split("/").length - 1
+                                ] == "denise"
+                                    ? setIsDenise(true)
+                                    : setIsDenise(false);
                             }}
                         />
                     </a>
