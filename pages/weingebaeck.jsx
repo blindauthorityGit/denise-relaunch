@@ -8,7 +8,7 @@ import { Parallax } from "react-scroll-parallax";
 import client from "../client";
 import urlFor from "../components/functions/urlFor";
 //COMPS
-import { MainButton } from "../components/buttons";
+import { MainButton, LineButtonWhite } from "../components/buttons";
 import HeroPage from "../components/Hero/heroPage";
 import BG from "../components/layout/bg";
 import { Menu2 } from "../components/menues";
@@ -128,10 +128,13 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 >
                     <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-36 bg-top">
                         <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-[#1D1B1C] "></div>
-
                         {dataWeingebaeck.produkte.map((e, i) => {
                             return <Produkt data={e}></Produkt>;
-                        })}
+                        })}{" "}
+                        <div className="col-span-12 text-center text-[#fff!important] z-10">
+                            {" "}
+                            <LineButtonWhite link="#sell">Erhältlich hier</LineButtonWhite>
+                        </div>
                     </div>
                 </div>
                 {/* <div className="h-8 lg:h-24 "></div> */}
@@ -144,18 +147,20 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <ShadowBox>
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
                 </ShadowBox>
-                <StoreBox data={dataWeingebaeck}>
-                    <div className="flex justify-center col-span-12">
-                        <MainButton
-                            onClick={(e) => {
-                                e.preventDefault();
-                                setShowModal(true);
-                            }}
-                        >
-                            Reseller
-                        </MainButton>
-                    </div>
-                </StoreBox>
+                <div id="sell" className="scroll-mt-24">
+                    <StoreBox data={dataWeingebaeck}>
+                        <div className="flex justify-center col-span-12">
+                            <MainButton
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    setShowModal(true);
+                                }}
+                            >
+                                Reseller
+                            </MainButton>
+                        </div>
+                    </StoreBox>
+                </div>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">

@@ -83,12 +83,12 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 </HeroPage>
                 <Divider1></Divider1>
                 <IntroText data={dataBaeckerei.intro} klasse="mt-8" />
-                <div className="h-8 lg:h-24 "></div>
+                {/* <div className="h-8 lg:h-24 "></div>
 
                 <ImageGridBasic
                     klasse="lg:px-28 containerXL 2xl:mx-auto"
                     data={dataBaeckerei.baeckereiImages}
-                ></ImageGridBasic>
+                ></ImageGridBasic> */}
                 <div className="h-8 lg:h-24 "></div>
                 <div className="brote">
                     <h2
@@ -103,7 +103,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                     {/* <div className="h-8 lg:h-24 "></div> */}
 
                     <div className="container mx-auto containerXL 2xl:mx-auto">
-                        <h2 className="col-span-12 pl-8 lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                        <h2 className="col-span-12 text-center pl-8 lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
                             ROGGEN
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList
@@ -112,7 +112,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                                 console.log(e);
                                 return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                             })}
-                        <h2 className="col-span-12 pl-8  lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                        <h2 className="col-span-12 pl-8 text-center lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
                             DINKEL
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList
@@ -121,7 +121,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                                 console.log(e);
                                 return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                             })}
-                        <h2 className="col-span-12 pl-8  lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                        <h2 className="col-span-12 pl-8 text-center lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
                             WEIZEN
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList

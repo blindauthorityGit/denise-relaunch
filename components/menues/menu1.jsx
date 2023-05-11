@@ -182,9 +182,9 @@ const Menu1 = (props) => {
                                         whileHover="hover"
                                         animate="rest"
                                         key={`menuKey${i}`}
-                                        className={`relative mx-8 py-4 xl:tracking-widest font-semibold ${
-                                            isScrolled ? "text-darkText" : "text-white"
-                                        }  hover:text-primaryColor-500`}
+                                        className={`relative mx-8 py-4 font-montserrat tracking-widest font-semibold 
+                                       
+                                         ${isScrolled ? "text-darkText" : "text-white"}  hover:text-primaryColor-500`}
                                         onMouseEnter={(e) => {
                                             onEnter(e);
                                         }}

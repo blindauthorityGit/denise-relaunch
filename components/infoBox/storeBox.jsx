@@ -16,23 +16,23 @@ const StoreBox = (props) => {
     }, []);
     return (
         <div
-            className="container containerXL 2xl:mx-auto bg-cover mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
+            className=" bg-cover mx-auto relative grid grid-cols-12 py-16 sm:py-24 px-8"
             style={{ backgroundImage: `url(${urlFor(props.data.imageStore).url()})` }}
         >
             {" "}
-            <h3 className="font-freight font-thin text-primaryColor-300 z-20 col-span-12 text-center">
-                Erhältlich hier:
+            <h3 className="font-freight font-thin text-4xl lg:text-6xl lg:mb-12 text-primaryColor-300 z-20 col-span-12 text-center">
+                Verkaufsstellen
             </h3>
-            <div className="col-span-12 z-10  grid grid-cols-12 mt-9 gap-4 sm:gap-0">
+            <div className="col-span-12 z-10 container containerXL 2xl:mx-auto mx-auto  grid grid-cols-12 mt-9 gap-4 sm:gap-4 ">
                 {props.data.stores.map((e, i) => {
                     return (
                         <div
                             style={{
                                 gridColumn: `span ${
-                                    isMobile ? 6 : storeCount <= 12 ? Math.floor(12 / storeCount) : 1
+                                    isMobile ? 12 : storeCount <= 12 ? Math.floor(12 / storeCount) : 1
                                 } / span ${storeCount <= 12 ? Math.floor(12 / storeCount) : 1}`,
                             }}
-                            className={`text-primaryColor-50 font-freight sm:pl-4 lg:pl-16  text-lg mb-4 sm:mb-0 col-span-${
+                            className={`text-primaryColor-50 border  font-freight sm:pl-4 px-8 lg:pl-16 py-8  text-lg mb-4 sm:mb-0 col-span-${
                                 storeCount <= 12 ? Math.floor(12 / storeCount) : 1
                             }`}
                         >
@@ -46,7 +46,7 @@ const StoreBox = (props) => {
 
                 {props.children}
             </div>
-            <div className="h-full w-full bg-darkText opacity-70 absolute"></div>
+            <div className="h-full w-full bg-[#1D1B1C] opacity-70 absolute"></div>
         </div>
     );
 };
