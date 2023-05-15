@@ -45,6 +45,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 <meta name="keywords" content={dataBaeckerei.seo.mainSEO.keywords.map((e) => e)} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href={Favicon.src} />
+                <meta property="og:title" content={dataBaeckerei.seo.mainSEO.title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.baeckerin.at/baeckerei" />
                 <meta

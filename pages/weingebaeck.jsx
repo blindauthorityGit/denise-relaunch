@@ -65,8 +65,9 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <meta name="keywords" content={dataWeingebaeck.seo.mainSEO.keywords.map((e) => e)} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href={Favicon.src} />
+                <meta property="og:title" content={dataWeingebaeck.seo.mainSEO.title} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.baeckerin.at/baeckerei" />
+                <meta property="og:url" content="https://www.baeckerin.at/weingeabeck" />
                 <meta
                     property="og:image"
                     content={

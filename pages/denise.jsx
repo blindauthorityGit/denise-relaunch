@@ -43,8 +43,9 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <meta name="keywords" content={dataDenise.seo.mainSEO.keywords.map((e) => e)} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href={Favicon.src} />
+                <meta property="og:title" content={dataDenise.seo.mainSEO.title} />
                 <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.baeckerin.at/baeckerei" />
+                <meta property="og:url" content="https://www.baeckerin.at/denise" />
                 <meta
                     property="og:image"
                     content={dataDenise.seo.advancedSEO.ogImage ? urlFor(dataDenise.seo.advancedSEO.ogImage) : null}

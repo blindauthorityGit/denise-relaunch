@@ -48,6 +48,7 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
                 <meta name="keywords" content={dataHome.seo.mainSEO.keywords.map((e) => e)} />
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link rel="icon" href={Favicon.src} />
+                <meta property="og:title" content={dataHome.seo.mainSEO.title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content="https://www.baeckerin.at" />
                 <meta
