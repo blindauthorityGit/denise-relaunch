@@ -23,7 +23,9 @@ const HeroPage = (props) => {
                 <div className="w-[18%] lg:w-[35%] flex items-center">
                     <div className="strich border-t border-primaryColor-500 w-full "></div>
                 </div>
-                <h2 className="font-freight font-thin text-xl sm:text-2xl mx-2 sm:mx-6">{props.data.hero.subtTitle}</h2>
+                <h2 className="font-freight font-thin italic uppercase text-xl sm:text-2xl mx-2 sm:mx-6">
+                    {props.data.hero.subtTitle}
+                </h2>
                 <div className=" w-[18%]  lg:w-[35%] flex items-center">
                     <div className="strich border-t border-primaryColor-500 w-full "></div>
                 </div>

@@ -119,7 +119,7 @@ const ContactImg = (props) => {
                         >
                             Schreiben Sie mir!
                         </h4>
-                        <Form1 />
+                        <Form1 contact />
                     </div>
                 </div>
 

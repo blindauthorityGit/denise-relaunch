@@ -30,7 +30,7 @@ const sendEmail = async (to, subject, html, attachments) => {
 
         // send the email
         await transporter.sendMail({
-            from: process.env.NEXT_DEV == "true" ? "johabuch@gmail.com" : "office@atelierbuchner.at",
+            from: process.env.NEXT_DEV == "true" ? "johabuch@gmail.com" : "office@baeckerin.at",
             to,
             subject,
             html,
@@ -77,7 +77,7 @@ export default async (req, res) => {
         const pdfAttachment = await getPDFAttachment();
 
         // send the email
-        await sendEmail("office@atelierbuchner.at", `Anfrage Weingebäck von ${name}`, html);
+        await sendEmail("office@baeckerin.at", `Anfrage Weingebäck von ${name}`, html);
         await sendEmail(email, `Anfrage Weingebäck - Denise Bäckerin`, htmlClient, [pdfAttachment]);
 
         // return success response

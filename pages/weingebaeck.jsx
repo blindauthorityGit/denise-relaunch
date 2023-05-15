@@ -127,7 +127,10 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                     className="py-8 relative bg-cover"
                     style={{ backgroundImage: `url(${isMobile ? WGBGMobile.src : WGBG.src})` }}
                 >
-                    <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-36 bg-top">
+                    <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-24 bg-top">
+                        <h2 className="font-freight text-center col-span-12 text-2xl sm:text-4xl z-10 text-primaryColor-500 lg:text-6xl font-thin  tracking-widest mb-8 lg:mb-12">
+                            3 köstliche Sorten
+                        </h2>
                         <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-[#1D1B1C] "></div>
                         {dataWeingebaeck.produkte.map((e, i) => {
                             return <Produkt data={e}></Produkt>;

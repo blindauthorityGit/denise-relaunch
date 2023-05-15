@@ -17,11 +17,11 @@ const Reseller = (props) => {
                     data-aos="fade-left"
                     className="font-thin font-freight text-2xl sm:text-xl text-darkText lg:text-3xl xl:text-4xl  mt-4 mb-4 lg:mb-6"
                 >
-                    Interesse?
+                    Interesse an unserem Weingebäck?
                 </h4>
                 <p className="font-freight xl:text-lg leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil natus dicta provident sint saepe,
-                    quibusdam, unde earum pariatur a voluptatem perferendis tenetur.
+                    Gerne stellen wir Ihnen weitere Informationen zu unserem köstlichen Weingebäck zur Verfügung.
+                    Fordern Sie das Info-Blatt gleich an!
                 </p>
                 <div className="phoner grid grid-cols-12 mt-8 mb-4 leading-relaxed">
                     <div className="col-span-2 text-primaryColor flex items-center">

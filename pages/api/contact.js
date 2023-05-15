@@ -4,18 +4,18 @@ const sendEmail = async (to, subject, html) => {
     try {
         // create a transporter object
         const transporter = nodemailer.createTransport({
-            host: "smtp.gmail.com",
-            port: 465,
-            secure: true,
+            host: process.env.NEXT_DEV == "true" ? "smtp.gmail.com" : "smtp.world4you.com",
+            port: process.env.NEXT_DEV == "true" ? 465 : 587,
+            secure: false,
             auth: {
-                user: process.env.NEXT_USER,
-                pass: process.env.NEXT_PASSWORD_PIZ,
+                user: process.env.NEXT_DEV == "true" ? process.env.NEXT_USER : process.env.NEXT_W4YUSER,
+                pass: process.env.NEXT_DEV == "true" ? process.env.NEXT_PASSWORD_PIZ : process.env.NEXT_W4YPASSWORD,
             },
         });
 
         // send the email
         await transporter.sendMail({
-            from: "johabuch@gmail.com",
+            from: process.env.NEXT_DEV == "true" ? "johabuch@gmail.com" : "office@baeckerin.at",
             to,
             subject,
             html,
@@ -40,7 +40,7 @@ export default async (req, res) => {
         `;
 
         // send the email
-        await sendEmail("office@atelierbuchner.at", `Email von ${name}`, html);
+        await sendEmail("office@baeckerin.at", `Email von ${name}`, html);
 
         // return success response
         res.status(200).json(req.body);
