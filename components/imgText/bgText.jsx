@@ -38,7 +38,7 @@ const BGText = (props) => {
                 >
                     {props.data.story.title}
                 </h2>
-                <div className="font-freight xl:text-lg leading-relaxed tracking-wider">
+                <div className="font-freight xl:text-xl xl:leading-8 leading-relaxed tracking-wider">
                     <PortableText value={props.data.story.text} />
                 </div>
             </div>

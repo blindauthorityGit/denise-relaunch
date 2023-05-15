@@ -59,15 +59,15 @@ const ContactImg = (props) => {
                         >
                             Kontakt
                         </h4>
-                        <div className="font-freight font-bold leading-relaxed xl:text-lg text-darkText">
+                        <div className="font-freight font-bold leading-relaxed xl:text-xl text-darkText">
                             {" "}
                             {props.data.contact.name}
                         </div>
-                        <div className="font-freight leading-relaxed xl:text-lg text-darkText">
+                        <div className="font-freight leading-relaxed xl:text-xl text-darkText">
                             {" "}
                             {props.data.contact.street}
                         </div>
-                        <div className="font-freight leading-relaxed xl:text-lg text-darkText">
+                        <div className="font-freight leading-relaxed xl:text-xl text-darkText">
                             {" "}
                             {props.data.contact.city}
                         </div>
@@ -95,18 +95,18 @@ const ContactImg = (props) => {
                         </h4>
                         <div className="flex space-x-6">
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-xl">
                                     Brunn an der Pitten
                                 </div>
-                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-xl text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
                                 </div>{" "}
                             </div>
                             <div className="font-freight ">
-                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-lg">
+                                <div className="text-primaryColor-500 mb-4 leading-relaxed xl:text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
-                                <div className="font-freight leading-relaxed xl:text-lg text-darkText">
+                                <div className="font-freight leading-relaxed xl:text-xl text-darkText">
                                     <PortableText value={props.data.oeffnungszeiten.wrn} />
                                 </div>
                             </div>

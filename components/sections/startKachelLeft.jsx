@@ -83,7 +83,7 @@ const StartKachelLeft = (props) => {
                 >
                     {props.data.title}
                 </h2>
-                <div className="text-regular leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl lg:text-base xl:text-lg">
+                <div className="text-regular leading-relaxed xl:leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl lg:text-base xl:text-xl">
                     <PortableText value={props.data.text} />
                 </div>
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
