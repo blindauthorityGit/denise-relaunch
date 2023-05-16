@@ -58,8 +58,7 @@ export default async (req, res) => {
             </p>
             <p>
               Bitte zögern Sie nicht, sich bei Fragen oder Bestellungen an mich unter
-              <a href="mailto:office@baeckerin.at">office@baeckerin.at</a> zu wenden. Ich bin sicher,
-              dass meine Produkte Ihre Kunden begeistern werden.
+              <a href="mailto:office@baeckerin.at">office@baeckerin.at</a> zu wenden.
             </p>
             <p>
               Vielen Dank noch einmal für Ihr Interesse. Ich freue mich darauf, von Ihnen zu hören.
