@@ -3,6 +3,7 @@ import { Footer } from "../components/footer";
 import { MobileBar1 } from "../components/mobileBar";
 import { useEffect } from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { Analytics } from "@vercel/analytics/react";
 
 // SANITY
 import client from "../client";
@@ -26,6 +27,7 @@ function MyApp({ Component, pageProps }) {
                 <Component {...pageProps} />
             </ParallaxProvider>
             <Footer />
+            <Analytics />
         </>
     );
 }
