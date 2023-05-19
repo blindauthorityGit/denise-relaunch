@@ -7,7 +7,7 @@ import Sackerl from "../../assets/SVG/sackl.svg";
 
 const Opening = (props) => {
     return (
-        <div className="container mx-auto grid grid-cols-12 sm:gap-8">
+        <div className="container mx-auto grid grid-cols-12 gap-8">
             <div className="brot absolute bottom-10 right-[-2rem] w-72 opacity-[0.08]">
                 <img src={Sackerl.src} alt="" />
             </div>
@@ -19,7 +19,7 @@ const Opening = (props) => {
                     Öffnungszeiten
                 </h4>
                 <div className="grid grid-cols-12">
-                    <div className="col-span-6 font-freight ">
+                    <div className="col-span-6 pr-2 font-freight">
                         <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                             Bäckerei<br></br> Brunn an der Pitten
                         </div>
