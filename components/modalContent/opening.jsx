@@ -14,25 +14,36 @@ const Opening = (props) => {
             <div className="col-span-12 sm:col-span-6">
                 <h4
                     data-aos="fade-left"
-                    className="font-thin font-freight text-3xl sm:text-4xl text-darkText lg:text-4xl  mt-8 mb-8 lg:mb-6"
+                    className="mt-8 mb-8 font-freight text-3xl font-thin text-darkText  sm:text-4xl lg:mb-6 lg:text-4xl"
                 >
                     Öffnungszeiten
                 </h4>
                 <div className="grid grid-cols-12">
-                    <div className="font-freight col-span-6 ">
-                        <div className="text-primaryColor-500 mb-4 leading-relaxed text-lg font-bold">
+                    <div className="col-span-6 font-freight ">
+                        <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                             Bäckerei<br></br> Brunn an der Pitten
                         </div>
-                        <div className="font-freight leading-relaxed text-base text-darkText">
+                        <div className="font-freight text-base leading-relaxed text-darkText">
                             <PortableText value={props.data.oeffnungszeiten.brunn} />
                         </div>{" "}
                     </div>
-                    <div className="font-freight col-span-6">
-                        <div className="text-primaryColor-500 font-bold mb-4 leading-relaxed text-lg">
+                    <div className="col-span-6 font-freight">
+                        <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                             Wr. Neustadt Marienmarkt
                         </div>
-                        <div className="font-freight leading-relaxed text-base text-darkText">
+                        <div className="font-freight text-base leading-relaxed text-darkText">
                             <PortableText value={props.data.oeffnungszeiten.wrn} />
+                        </div>
+                    </div>
+                    <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
+                        <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
+                            ab 27.05.
+                        </div>
+                        <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
+                            Bad Vöslau Schlosspark
+                        </div>
+                        <div className="font-freight text-base leading-relaxed text-darkText">
+                            <PortableText value={props.data.oeffnungszeiten.voeslau} />
                         </div>
                     </div>
                 </div>

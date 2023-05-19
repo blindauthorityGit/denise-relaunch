@@ -39,7 +39,7 @@ const NewsletterSub = () => {
 
     return (
         <form onSubmit={handleSubmit} className="mt-6">
-            <label className="col-span-2 text-lg text-primaryColor-100 mr-4" htmlFor="email">
+            <label className="col-span-2 mr-4 text-lg text-primaryColor-100" htmlFor="email">
                 Email:
             </label>
             <input
@@ -49,23 +49,23 @@ const NewsletterSub = () => {
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 required
-                className="border-b text-lg p-2 border-blackText text-blackText bg-white text-darkText col-span-10 "
+                className="border-blackText text-blackText col-span-10 border-b bg-white p-2 text-lg text-darkText "
             />
             <div className="button">
                 <MainButton type="submit">Abonnieren</MainButton>
             </div>
 
             {successMessage && (
-                <div className="success-message text-greenColor text-sm mt-4 font-semibold col-span-12">
+                <div className="success-message col-span-12 mt-4 text-sm font-semibold text-greenColor">
                     {successMessage}
                 </div>
             )}
             {errorMessage && (
-                <div className="error-message text-redColor text-sm font-semibold mt-4 col-span-12">{errorMessage}</div>
+                <div className="error-message col-span-12 mt-4 text-sm font-semibold text-redColor">{errorMessage}</div>
             )}
-            <p className="col-span-12 text-sm text-primaryColor-200 mt-6">
-                Durch den Eintrag in unseren Newsletter stimmen Sie zu, <br />
-                Ihre personenbezogenen Daten für den Erhalt von Newslettern zu verwenden.
+            <p className="col-span-12 mt-6 text-sm text-primaryColor-200">
+                Durch den Eintrag in unseren Newsletter stimmen Sie zu, Ihre personenbezogenen Daten für den Erhalt von
+                Newslettern zu verwenden.
             </p>
         </form>
     );

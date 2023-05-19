@@ -54,13 +54,13 @@ const ImageGridBasic = (props) => {
                 </>
             )}
             <div
-                className={`w-full containerXL 2xl:mx-auto container mx-auto col-span-12 grid grid-cols-12 relative  z-10 min-h-[15rem] md:min-h-[20rem] xl:min-h-[40rem] gap-1 sm_gap-2 h-full  ${props.klasse}`}
+                className={`containerXL sm_gap-2 container relative z-10 col-span-12 mx-auto grid h-full  min-h-[15rem] w-full grid-cols-12 gap-1 md:min-h-[20rem] xl:min-h-[40rem] 2xl:mx-auto  ${props.klasse}`}
             >
                 <>
                     {props.data.slice(0, isMobile ? 4 : props.data.length).map((e, i) => {
                         return (
                             <div
-                                className="col-span-6 relative group min-h-[10rem] cursor-pointer"
+                                className="group relative col-span-6 min-h-[10rem] cursor-pointer"
                                 style={{
                                     gridColumn: `span ${isMobile ? 6 : getColSpan(imageCount)} / span ${getColSpan(
                                         imageCount
@@ -80,8 +80,9 @@ const ImageGridBasic = (props) => {
                                     layout="fill"
                                     loading="lazy"
                                     objectFit="cover"
+                                    objectPosition={isMobile ? "top" : "center"}
                                     alt="hero"
-                                    className="group-hover:scale-110 transition-all duration-500"
+                                    className="transition-all duration-500 group-hover:scale-110"
                                 />
                             </div>
                         );
