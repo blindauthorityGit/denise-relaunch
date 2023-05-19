@@ -21,7 +21,7 @@ const Opening = (props) => {
                 <div className="grid grid-cols-12">
                     <div className="col-span-6 pr-2 font-freight">
                         <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
-                            Bäckerei<br></br> Brunn an der Pitten
+                            Bäckerei<br></br> Brunn a.d. Pitten
                         </div>
                         <div className="font-freight text-base leading-relaxed text-darkText">
                             <PortableText value={props.data.oeffnungszeiten.brunn} />
