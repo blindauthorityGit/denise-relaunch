@@ -23,16 +23,20 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ82LLMZYN"></script>
-                <script>
-                    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}
-                    gtag('js', new Date()); gtag('config', 'G-XZ82LLMZYN');
-                </script>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ82LLMZYN" />
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments)}
+              gtag('js', new Date());
+              gtag('config', 'G-XZ82LLMZYN');
+            `,
+                    }}
+                />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-
                 <link rel="stylesheet" href="https://use.typekit.net/kav8zbg.css" />
-
                 <body className="overflow-y-scroll bg-bg">
                     <Main />
                     <NextScript />
