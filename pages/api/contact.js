@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 
-const sendEmail = async (to, subject, html) => {
+const sendEmail = async (to, subject, html, email) => {
+    console.log(process.env.NEXT_DEV);
     try {
         // create a transporter object
         const transporter = nodemailer.createTransport({
@@ -17,6 +18,7 @@ const sendEmail = async (to, subject, html) => {
         await transporter.sendMail({
             from: process.env.NEXT_DEV == "true" ? "johabuch@gmail.com" : "office@baeckerin.at",
             to,
+            replyTo: email,
             subject,
             html,
         });
@@ -40,7 +42,7 @@ export default async (req, res) => {
         `;
 
         // send the email
-        await sendEmail("office@baeckerin.at", `Email von ${name}`, html);
+        await sendEmail("office@baeckerin.at", `Email von ${name}`, html, email);
 
         // return success response
         res.status(200).json(req.body);

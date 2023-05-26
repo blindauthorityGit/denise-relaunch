@@ -23,15 +23,17 @@ class MyDocument extends Document {
         return (
             <Html>
                 <Head />
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-XZ82LLMZYN"></script>
+                <script>
+                    window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments)}
+                    gtag('js', new Date()); gtag('config', 'G-XZ82LLMZYN');
+                </script>
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-                {/* <link
-                    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
-                    rel="stylesheet"
-                ></link> */}
+
                 <link rel="stylesheet" href="https://use.typekit.net/kav8zbg.css" />
 
-                <body className="bg-bg overflow-y-scroll">
+                <body className="overflow-y-scroll bg-bg">
                     <Main />
                     <NextScript />
                 </body>
