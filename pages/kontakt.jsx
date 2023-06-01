@@ -43,7 +43,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
     return (
         <>
             <Head>
-                <title>Site title</title>
+                <title>Denise Bäckerin | Kontakt</title>
             </Head>
 
             <Menu2
@@ -80,7 +80,7 @@ export default function Kontakt({ dataDenise, dataSetting, dataHome }) {
                 <div className="h-2 lg:h-8 "></div>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
+                <div className="containerXL container mx-auto grid grid-cols-12 gap-4 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return <Element link={e.buttonLink} linkText={e.title} image={e.image}></Element>;
                     })}
