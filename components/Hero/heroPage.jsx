@@ -14,7 +14,7 @@ const HeroPage = (props) => {
                 </div>
                 <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-[#493414] opacity-60"></div>{" "}
                 <div
-                    className="h-full w-full bg-cover bg-center"
+                    className="h-full w-full bg-cover bg-right"
                     style={{ backgroundImage: `url(${urlFor(props.data.hero.image)})` }}
                 ></div>
                 {props.children}
