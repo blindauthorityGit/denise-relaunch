@@ -25,6 +25,9 @@ import { Form1 } from "../forms";
 import { FaPhone } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
+//ASSETS
+import BuildByNature from "../../assets/Logo-Built-by-Nature3.png";
+
 const Contact = (props) => {
     const ref = useRef(null);
     const floaterRef = useRef(null);
@@ -102,6 +105,9 @@ const Contact = (props) => {
                                 {props.data.contact.email}
                             </div>
                         </div>
+                        <a href="https://builtbynature.at/">
+                            <img src={BuildByNature.src} className="mt-8 w-24" alt="buildbynature" />
+                        </a>
                     </div>
                     <div className="col-span-12 sm:col-span-6">
                         <h4

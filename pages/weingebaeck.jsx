@@ -31,8 +31,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
-import FirstBG from "../assets/firstBG.jpg";
-import Newsletter from "../assets/newsletter.jpg";
+import BuildByNature from "../assets/Logo-Built-by-Nature3.png";
 import Favicon from "../assets/favicon.svg";
 import WGBG from "../assets/wgBg.jpg";
 import WGBGMobile from "../assets/wbBgMobile.jpg";
@@ -118,24 +117,29 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataWeingebaeck}>
+                    <img
+                        src={BuildByNature.src}
+                        className="absolute top-[38%] right-6 w-20 md:top-8 md:left-8 md:w-24 lg:w-24 xl:w-48"
+                        alt=""
+                    />
                     <Austria></Austria>
                 </HeroPage>
                 <Divider1></Divider1>
                 <IntroText data={dataWeingebaeck.intro} klasse="mt-8" />
                 <div className="h-8 lg:h-24 "></div>
                 <div
-                    className="py-8 relative bg-cover"
+                    className="relative bg-cover py-8"
                     style={{ backgroundImage: `url(${isMobile ? WGBGMobile.src : WGBG.src})` }}
                 >
-                    <div className=" grid grid-cols-12 gap-4 xl:px-36 sm:p-16 xl:p-24 bg-top">
-                        <h2 className="font-freight text-center col-span-12 text-2xl sm:text-4xl z-10 text-primaryColor-500 lg:text-6xl font-thin  tracking-widest mb-8 lg:mb-12">
+                    <div className=" grid grid-cols-12 gap-4 bg-top sm:p-16 xl:p-24 xl:px-36">
+                        <h2 className="z-10 col-span-12 mb-1 text-center font-freight text-3xl font-thin tracking-widest text-primaryColor-500 sm:mb-8  sm:text-4xl lg:mb-12 lg:text-6xl">
                             Die 3 Sorten
                         </h2>
-                        <div className="absolute top-0 left-0 w-full h-full opacity-80 bg-[#1D1B1C] "></div>
+                        <div className="absolute top-0 left-0 h-full w-full bg-[#1D1B1C] opacity-80 "></div>
                         {dataWeingebaeck.produkte.map((e, i) => {
                             return <Produkt data={e}></Produkt>;
                         })}{" "}
-                        <div className="col-span-12 text-center text-[#fff!important] z-10">
+                        <div className="text-[#fff!important] z-10 col-span-12 text-center">
                             {" "}
                             <LineButtonWhite link="#sell">Erhältlich hier</LineButtonWhite>
                         </div>
@@ -153,7 +157,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 </ShadowBox>
                 <div id="sell" className="scroll-mt-24">
                     <StoreBox data={dataWeingebaeck}>
-                        <div className="flex justify-center col-span-12">
+                        <div className="col-span-12 flex justify-center">
                             <MainButton
                                 onClick={(e) => {
                                     e.preventDefault();
@@ -167,7 +171,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 </div>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
+                <div className="containerXL container mx-auto grid grid-cols-12 gap-4 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element
