@@ -76,6 +76,14 @@ p {
   margin-bottom: 0!important
 }
 
+.storeBox a {
+  text-decoration: underline
+}
+
+.storeBox a:hover {
+  opacity: 0.8
+}
+
 
 .scale-up-hor-left {
   -webkit-animation: scale-up-hor-left 0.6s cubic-bezier(0.77, 0, 0.175, 1) both;

@@ -23,7 +23,7 @@ const StoreBox = (props) => {
             <h3 className="z-20 col-span-12 text-center font-freight text-4xl font-thin text-primaryColor-300 lg:mb-12 lg:text-6xl">
                 Verkaufsstellen
             </h3>
-            <div className="containerXL container z-10 col-span-12 mx-auto mt-9  grid grid-cols-12  sm:gap-4 2xl:mx-auto ">
+            <div className="containerXL storeBox container z-10 col-span-12 mx-auto mt-9  grid grid-cols-12  sm:gap-4 2xl:mx-auto ">
                 {props.data.stores.map((e, i) => {
                     return (
                         <div
