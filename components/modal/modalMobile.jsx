@@ -6,13 +6,13 @@ const ModalMobile = ({ ...props }, ref) => {
     return (
         <div
             ref={ref}
-            className="fixed  slide-in-bottom  max-h-[100%] w-[100%] lg:w-[80%] min-h-[70%] bg-white pt-8 pb-8 px-8 lg:p-24 z-50 bottom-16"
+            className="slide-in-bottom  fixed  bottom-16 z-50 max-h-[100%] min-h-[70%] w-[100%] bg-white px-8 pt-2 pb-8 lg:w-[80%] lg:p-24"
         >
             <div
-                className="closer absolute bg-white rounded-full top-[-1rem] right-6 text-xl p-2 cursor-pointer transition hover:opacity-50 z-50"
+                className="closer absolute top-[-1rem] right-6 z-50 cursor-pointer rounded-full bg-white p-2 text-xl transition hover:opacity-50"
                 onClick={props.onClick}
             >
-                <MdOutlineClose className="bg-white rounded-full"></MdOutlineClose>
+                <MdOutlineClose className="rounded-full bg-white"></MdOutlineClose>
             </div>
             {props.children}
         </div>
