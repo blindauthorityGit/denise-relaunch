@@ -50,7 +50,7 @@ const ContactImg = (props) => {
             ref={ref}
             className={`containerXL  m-auto grid w-full  grid-cols-12 sm:px-0  lg:px-0 2xl:mx-auto  ${props.colspan}`}
         >
-            <div className="right col-span-12 flex flex-col justify-center px-8 sm:px-16 lg:col-span-8 xl:col-span-6 xl:px-24">
+            <div className="right col-span-12 flex flex-col justify-center px-8  sm:px-16 lg:col-span-8 xl:col-span-6 xl:px-24">
                 <div className="grid grid-cols-12">
                     <div className="col-span-12 sm:col-span-6">
                         <h4
@@ -102,14 +102,14 @@ const ContactImg = (props) => {
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
                                 </div>{" "}
                             </div>
-                            <div className="font-freight ">
+                            {/* <div className="font-freight ">
                                 <div className="mb-4 leading-relaxed text-primaryColor-500 xl:text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
                                 <div className="font-freight leading-relaxed text-darkText xl:text-xl">
                                     <PortableText value={props.data.oeffnungszeiten.wrn} />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
                             <div className="absolute top-[-2rem] right-[-1rem] flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">

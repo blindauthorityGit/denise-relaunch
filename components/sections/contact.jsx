@@ -125,14 +125,14 @@ const Contact = (props) => {
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
                                 </div>{" "}
                             </div>
-                            <div className="font-freight ">
+                            {/* <div className="font-freight ">
                                 <div className="mb-4 text-lg leading-relaxed text-primaryColor-500 sm:text-xl">
                                     Wr. Neustadt Marienmarkt
                                 </div>
                                 <div className="font-freight leading-relaxed text-darkText xl:text-lg">
                                     <PortableText value={props.data.oeffnungszeiten.wrn} />
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
                             <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">

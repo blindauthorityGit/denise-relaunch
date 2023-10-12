@@ -10,19 +10,20 @@ import "aos/dist/aos.css";
 
 const FloaterOpening = (props) => {
     useEffect(() => {
+        console.log(props.data);
         AOS.init({
             duration: 800,
         });
     }, []);
     return (
         <div
-            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 lg:bottom-8 xl:bottom-24 xl:text-lg tracking-wider text-textBlack left-6 lg:left-8 xl:left-24 ${
-                props.center ? "items-center flex" : ""
+            className={`floater text-textBlack absolute bottom-12 left-6 z-10 hidden font-freight tracking-wider sm:bottom-24 sm:block lg:bottom-8 lg:left-8 xl:bottom-24 xl:left-24 xl:text-lg ${
+                props.center ? "flex items-center" : ""
             } ${props.klasse}`}
         >
             <div className="tel flex ">
                 {" "}
-                <AiOutlineClockCircle className="text-primaryColor-300 pt-2 text-3xl"></AiOutlineClockCircle>{" "}
+                <AiOutlineClockCircle className="pt-2 text-3xl text-primaryColor-300"></AiOutlineClockCircle>{" "}
                 <a className="pl-4 text-primaryColor-100" href="tel:+43 650 944 4150">
                     <div className="text-primaryColor-300">Brunn an der Pitten</div>
                     <div className="noMargin" style={{ marginBottom: "0!important" }}>
@@ -31,9 +32,9 @@ const FloaterOpening = (props) => {
                     </div>
                 </a>
                 <a className="pl-4 text-primaryColor-100" href="tel:+43 650 944 4150">
-                    <div className="text-primaryColor-300"> Marienmarkt Wr. Neustadt</div>
+                    <div className="text-primaryColor-300"> Bad Vöslau Schlosspark</div>
                     <div className="noMargin" style={{ marginBottom: "0!important" }}>
-                        <PortableText value={props.data.oeffnungszeiten.wrn} />
+                        <PortableText value={props.data.oeffnungszeiten.voeslau} />
                     </div>
                 </a>
             </div>

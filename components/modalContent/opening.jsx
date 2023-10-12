@@ -27,14 +27,14 @@ const Opening = (props) => {
                             <PortableText value={props.data.oeffnungszeiten.brunn} />
                         </div>{" "}
                     </div>
-                    <div className="col-span-6 font-freight">
+                    {/* <div className="col-span-6 font-freight">
                         <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                             Wr. Neustadt Marienmarkt
                         </div>
                         <div className="font-freight text-base leading-relaxed text-darkText">
                             <PortableText value={props.data.oeffnungszeiten.wrn} />
                         </div>
-                    </div>
+                    </div> */}
                     <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
                         <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
                             ab 27.05.
