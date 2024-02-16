@@ -56,11 +56,11 @@ export default function Impressum() {
                 <div className="h-6 xl:h-16 "></div>
 
                 <ContainerStandard>
-                    <div className="col-span-12 my-8 lg:my-16 px-8 lg:px-32">
-                        <h2 className="font-freight text-2xl sm:text-4xl text-darkText xl:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12">
+                    <div className="col-span-12 my-8 px-8 lg:my-16 lg:px-32">
+                        <h2 className="mt-8 mb-8 font-freight text-2xl font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 xl:text-6xl">
                             Impressum
                         </h2>
-                        <ul className="xl:text-lg font-freight">
+                        <ul className="font-freight xl:text-lg">
                             <li className="mb-2">
                                 <span className="font-black ">Firmenname:</span>
                                 <br /> Pölzelbauer Denise
@@ -72,7 +72,7 @@ export default function Impressum() {
                             <li className="mb-2">
                                 <span className="font-black">Kontakt:</span>
                                 <ul className="ml-4">
-                                    <li>Telefon: 02627/82 296</li>
+                                    {/* <li>Telefon: 02627/82 296</li> */}
                                     <li>Mobil: 0650 80 11 900</li>
                                     <li>E-Mail: office@baeckerin.at</li>
                                 </ul>
@@ -93,20 +93,20 @@ export default function Impressum() {
                             {/* <li className="mb-2">
                                 <span className="font-medium">AT-BIO-401 zertifiziert</span>
                             </li> */}
-                            <li className="mb-10">
+                            {/* <li className="mb-10">
                                 <span className="font-black">Bankverbindung:</span>
                                 <ul className="ml-4">
                                     <li>IBAN: AT41 3264 7000 0000 0281</li>
                                     <li>BIC: RLNWATW1647</li>
                                 </ul>
-                            </li>
-                            <li className="mb-6">
+                            </li> */}
+                            <li className="mb-6 mt-10">
                                 <span className="font-black">Webdesign & Programmierung:</span>
                                 <ul className="ml-4">
                                     <li>
                                         {" "}
                                         <a
-                                            className="underline text-primaryColor-500"
+                                            className="text-primaryColor-500 underline"
                                             href="https://www.atelierbuchner.at"
                                         >
                                             Atelier Buchner
