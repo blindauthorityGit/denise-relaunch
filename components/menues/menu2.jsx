@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef, forwardRef } from "react";
 import Link from "next/link";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown } from "react-icons/bi/index.js";
 import { useRouter } from "next/router";
 
 // Overlay
@@ -158,23 +158,23 @@ const Menu2 = (props) => {
                 className="h-16 fixed top-0 left-0 right-0 origin-[0%] bg-white z-40"
                 style={{ scaleX: scrollYProgress }}
             /> */}
-            <nav ref={navRef2} className={`w-full fixed z-30 px-4 sm:px-12 lg:py-4  ${props.colspan}`}>
+            <nav ref={navRef2} className={`fixed z-30 w-full px-4 sm:px-12 lg:py-4  ${props.colspan}`}>
                 {/* BG */}
-                <div className=" z-30 grid relative grid-cols-12 m-auto items-center  py-3 sm:py-4 lg:px-0 lg:py-0">
+                <div className=" relative z-30 m-auto grid grid-cols-12 items-center  py-3 sm:py-4 lg:px-0 lg:py-0">
                     {/* Background Image */}
                     <div className="logo col-span-4 md:col-span-2 ">
                         <Link href="/">
                             <a className="flex">
                                 <img
                                     src={props.logoDark}
-                                    className="max-h-[1.75rem] sm:max-h-[3.75rem] fill-current-[#fff]"
+                                    className="fill-current-[#fff] max-h-[1.75rem] sm:max-h-[3.75rem]"
                                     alt="Logo"
                                 />
                             </a>
                         </Link>
                     </div>
                     <div className="col-span-7 md:col-span-9 ">
-                        <ul className="hidden font-barlow lg:flex items-center list-style-none justify-end pr-8">
+                        <ul className="list-style-none hidden items-center justify-end pr-8 font-barlow lg:flex">
                             {props.menuItems.map((e, i) => {
                                 return (
                                     <motion.li
@@ -182,7 +182,7 @@ const Menu2 = (props) => {
                                         whileHover="hover"
                                         animate="rest"
                                         key={`menuKey${i}`}
-                                        className={`relative mx-8 py-4 font-montserrat tracking-widest font-semibold 
+                                        className={`font-montserrat relative mx-8 py-4 font-semibold tracking-widest 
                                           text-darkText
                                           hover:text-primaryColor-500`}
                                         onMouseEnter={(e) => {
@@ -190,7 +190,7 @@ const Menu2 = (props) => {
                                         }}
                                     >
                                         <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end uppercase text-base lg:text-xs xl:text-lg">
+                                            <a className="flex items-end text-base uppercase lg:text-xs xl:text-lg">
                                                 {e.title}{" "}
                                                 {e.subMenu ? (
                                                     <motion.span variants={pfeilMotion}>
@@ -202,17 +202,17 @@ const Menu2 = (props) => {
                                         {e.subMenu ? (
                                             <motion.ul
                                                 variants={boxMotion}
-                                                className={`absolute z-50 mt-4 bg-[#000] text-white pl-16 pr-24 py-4 left-[-4rem] rounded-br-lg rounded-bl-lg ${props.subMenuKlasse}`}
+                                                className={`absolute left-[-4rem] z-50 mt-4 rounded-br-lg rounded-bl-lg bg-[#000] py-4 pl-16 pr-24 text-white ${props.subMenuKlasse}`}
                                             >
                                                 {e.subMenuItems.map((e, i) => {
                                                     return (
                                                         <motion.li
                                                             variants={textMotion}
                                                             key={`submenuKey${i}`}
-                                                            className="min-w-max mb-3"
+                                                            className="mb-3 min-w-max"
                                                         >
                                                             <Link href={`${e.external ? "" : "/"}${e.slug}`}>
-                                                                <a className="hover:text-red-500 font-semibold">
+                                                                <a className="font-semibold hover:text-red-500">
                                                                     {e.title}
                                                                 </a>
                                                             </Link>
@@ -230,9 +230,9 @@ const Menu2 = (props) => {
                             <Newsletter onClick={props.onClick}></Newsletter>
                         </ul> */}
                     </div>
-                    <div className="col-span-1 social media flex justify-end text-xl md:text-4xl">
+                    <div className="social media col-span-1 flex justify-end text-xl md:text-4xl">
                         <div
-                            className={`block lg:hidden cursor-pointer ${
+                            className={`block cursor-pointer lg:hidden ${
                                 isScrolled ? "text-darkText" : "text-darkText"
                             }`}
                             onClick={(e) => {
@@ -287,7 +287,7 @@ const Menu2 = (props) => {
                 `}</style>
                 <motion.div
                     ref={ref2}
-                    className="absolute hidden w-full h-full top-0 left-0 bg-primaryColor-50"
+                    className="absolute top-0 left-0 hidden h-full w-full bg-primaryColor-50"
                 ></motion.div>
             </nav>
         </>

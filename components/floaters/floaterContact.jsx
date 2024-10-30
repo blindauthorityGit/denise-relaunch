@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 
 // AOS
 import AOS from "aos";
@@ -14,8 +14,8 @@ const FloaterContact = (props) => {
     }, []);
     return (
         <div
-            className={`floater font-freight z-10 hidden sm:block absolute bottom-12 sm:bottom-24 md:bottom-36 lg:bottom-8 xl:bottom-24 xl:text-lg tracking-wider text-textBlack right-6 lg:right-24 ${
-                props.center ? "items-center flex" : ""
+            className={`floater text-textBlack absolute bottom-12 right-6 z-10 hidden font-freight tracking-wider sm:bottom-24 sm:block md:bottom-36 lg:bottom-8 lg:right-24 xl:bottom-24 xl:text-lg ${
+                props.center ? "flex items-center" : ""
             } ${props.klasse}`}
         >
             <div className="tel flex items-center">

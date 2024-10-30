@@ -4,8 +4,9 @@ import { useState, useEffect } from "react";
 import client from "../client";
 import urlFor from "../components/functions/urlFor";
 
-//COMPS
+// COMPS
 import Hero from "../components/Hero/hero";
+import UnderConstruction from "../components/underConstruction"; // Import UnderConstruction component
 import { Menu1 } from "../components/menues";
 import { StartKachelLeft, Contact } from "../components/sections";
 import { BasicBox } from "../components/infoBox";
@@ -13,7 +14,7 @@ import { NewsletterSub } from "../components/forms";
 import { FullBGContainer } from "../components/container";
 import { Aktuelles } from "../components/stoerer";
 
-//ASSETS
+// ASSETS
 import { RxHamburgerMenu } from "react-icons/rx";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
@@ -26,19 +27,26 @@ import Favicon from "../assets/favicon.svg";
 import useBreakpoints from "../components/functions/useBreakpoints";
 
 export default function Home({ dataHome, dataSetting, dataAktuelles }) {
+    const [isLoading, setIsLoading] = useState(true);
+    const [aktuelles, setAktuelles] = useState(false);
+    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+
+    // Flag to toggle Under Construction mode
+    const underConstruction = true;
+
     useEffect(() => {
         console.log(dataHome, dataAktuelles);
     }, []);
-
-    const [isLoading, setIsLoading] = useState(true);
-    const [aktuelles, setAktuelles] = useState(false);
-
-    const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
     useEffect(() => {
         console.log(isMobile, isTablet, isDesktop);
         setIsLoading(false);
     }, [isMobile, isTablet, isDesktop]);
+
+    // Render only the UnderConstruction component if underConstruction is true
+    if (underConstruction) {
+        return <UnderConstruction videoFile={dataHome.videoFile.asset.url} />;
+    }
 
     return (
         <>

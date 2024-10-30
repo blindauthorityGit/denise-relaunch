@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa/index.js";
 
 // COMPS
 import Overlay from "../modal/overlay";
 import ModalMobile from "../modal/modalMobile";
 import { Opening, Contact } from "../modalContent";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { AiOutlineClockCircle } from "react-icons/ai/index.js";
 
 const MobileBar = (props) => {
     const [showOverlay, setShowOverlay] = useState(false);
@@ -31,17 +31,17 @@ const MobileBar = (props) => {
                     />
                 </>
             ) : null}
-            <div className="fixed sm:hidden  z-50 bottom-0 w-full flex justify-center items-center bg-darkBG text-sm ">
+            <div className="fixed bottom-0  z-50 flex w-full items-center justify-center bg-darkBG text-sm sm:hidden ">
                 <a
                     onClick={() => {
                         setShowOverlay((showOverlay) => !showOverlay);
                         setShowContact(false);
                         setShowOpening(true);
                     }}
-                    className="w-1/3 p-4 flex border-r border-opacity-30 border-primaryColor-200 flex-col justify-center items-center text-primaryColor-200 hover:text-primaryColor"
+                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 p-4 text-primaryColor-200 hover:text-primaryColor"
                 >
                     <AiOutlineClockCircle size={16} />
-                    <span className="text-xs font-base mt-1">ZEITEN</span>
+                    <span className="font-base mt-1 text-xs">ZEITEN</span>
                 </a>
                 <a
                     onClick={() => {
@@ -49,17 +49,17 @@ const MobileBar = (props) => {
                         setShowContact(true);
                         setShowOpening(false);
                     }}
-                    className="w-1/3 p-4 flex flex-col border-r border-primaryColor-200 border-opacity-30  justify-center items-center text-primaryColor hover:text-primaryColor"
+                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200  border-opacity-30 p-4 text-primaryColor hover:text-primaryColor"
                 >
                     <FaEnvelope size={16} />
-                    <span className="text-xs font-base mt-1">EMAIL</span>
+                    <span className="font-base mt-1 text-xs">EMAIL</span>
                 </a>
                 <a
                     href="tel:+436508011900"
-                    className="w-1/3 p-4 border-r border-primaryColor-200 border-opacity-30 flex flex-col justify-center items-center text-primaryColor-200 hover:text-primaryColor "
+                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 p-4 text-primaryColor-200 hover:text-primaryColor "
                 >
                     <FaPhone size={16} />
-                    <span className="text-xs  mt-1">CALL</span>
+                    <span className="mt-1  text-xs">CALL</span>
                 </a>
             </div>
         </>

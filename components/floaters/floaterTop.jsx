@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 
 // AOS
 import AOS from "aos";
@@ -14,14 +14,14 @@ const FloaterTop = (props) => {
     }, []);
     return (
         <div
-            className={`floater hidden sm:block absolute bottom-0 h-[12%] lg:h-[33%] w-[10rem] left-6 lg:left-12 lg:text-lg lg:font-semibold text-textBlack  right-12 ${
-                props.center ? "items-center flex" : ""
+            className={`floater text-textBlack absolute bottom-0 left-6 right-12 hidden h-[12%] w-[10rem] sm:block lg:left-12 lg:h-[33%] lg:text-lg  lg:font-semibold ${
+                props.center ? "flex items-center" : ""
             } ${props.klasse}`}
         >
-            <div className="kugel z-10 absolute  opacity-0  top-0 left-[-7%] animate-scaleUp delay-1000 w-6 h-6 border-[6px] border-blackText rounded-full bg-primaryColor-300"></div>
-            <div className="w-[1px] opacity-0 animate-expand delay-1000 border-blackText-200 border h-full"></div>
-            <div className="w-[160px] absolute top-[69%] lg:top-[88%] opacity-0 animate-expand2  border-blackText-200 border-t-[1px] h-full"></div>
-            <div className="w-[200px] absolute top-[47%] lg:top-[77%]  opacity-0 left-[15%]  animate-expand2   h-full">
+            <div className="kugel animate-scaleUp border-blackText  absolute  top-0 left-[-7%] z-10 h-6 w-6 rounded-full border-[6px] bg-primaryColor-300 opacity-0 delay-1000"></div>
+            <div className="animate-expand border-blackText-200 h-full w-[1px] border opacity-0 delay-1000"></div>
+            <div className="animate-expand2 border-blackText-200 absolute top-[69%] h-full w-[160px]  border-t-[1px] opacity-0 lg:top-[88%]"></div>
+            <div className="animate-expand2 absolute top-[47%] left-[15%]  h-full w-[200px]  opacity-0   lg:top-[77%]">
                 Find out more
             </div>
         </div>

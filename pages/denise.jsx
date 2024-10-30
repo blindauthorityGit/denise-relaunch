@@ -18,7 +18,7 @@ import { Element } from "../components/quickLinks";
 import { PageChangeFX } from "../components/transitionFX";
 
 //ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
@@ -82,7 +82,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <ContainerStandard klasse="containerXL 2xl:mx-auto">
                     <video
                         controls
-                        className="w-full col-span-12 object-cover object-center"
+                        className="col-span-12 w-full object-cover object-center"
                         style={{ objectFit: "cover" }}
                     >
                         <source src={dataDenise.videoFile.asset.url} type="video/mp4" />
@@ -95,7 +95,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <ImageGridBasic klasse="lg:px-28 " data={dataDenise.deniseImages}></ImageGridBasic>
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
+                <div className="containerXL container mx-auto grid grid-cols-12 gap-4 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element

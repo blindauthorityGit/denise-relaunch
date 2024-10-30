@@ -16,7 +16,7 @@ import { ImgText1, BGText1, ImgText2 } from "../components/imgText";
 import { Element } from "../components/quickLinks";
 import Map from "../components/map";
 //ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";

@@ -22,8 +22,8 @@ import MapboxMap from "../map";
 import { Form1 } from "../forms";
 
 //ICONS
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 
 const ContactImg = (props) => {
     const ref = useRef(null);

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { motion, useAnimation } from "framer-motion";
 import Logo from "../../assets/logoDark.svg";
-import { GrClose } from "react-icons/gr";
+import { GrClose } from "react-icons/gr/index.js";
 import { useRouter } from "next/router";
 
 //ASSETS
@@ -88,15 +88,15 @@ const Mobile1 = (props) => {
             <motion.nav
                 variants={boxMotion}
                 className={`navbar slide-in-right ${props.klasse} 
-                w-[90%] right-0 h-full bg-white fixed z-50 top-0 `}
+                fixed right-0 top-0 z-50 h-full w-[90%] bg-white `}
             >
                 <div className="brot absolute bottom-10 right-[-4rem] w-72 opacity-10">
                     <img src={Brot.src} alt="" />
                 </div>
-                <div onClick={props.onClick} className="closer absolute text-xl rounded-full p-1 right-4 top-3">
+                <div onClick={props.onClick} className="closer absolute right-4 top-3 rounded-full p-1 text-xl">
                     <GrClose className=""></GrClose>
                 </div>
-                <div className="container h-screen pt-12 px-8 font-europa tracking-widest">
+                <div className="font-europa container h-screen px-8 pt-12 tracking-widest">
                     <div className="middle flex justify-start">
                         <Link href="/">
                             <a>
@@ -104,9 +104,9 @@ const Mobile1 = (props) => {
                             </a>
                         </Link>
                     </div>
-                    <div className="MenuItems text-xl sm:text-4xl pt-12 font-barlow">
+                    <div className="MenuItems pt-12 font-barlow text-xl sm:text-4xl">
                         <Link href="/baeckerei">
-                            <a className="text-text block my-3 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
+                            <a className="text-text subNav relative my-3 mt-4 block cursor-pointer hover:text-primaryColor">
                                 Bäckerei
                             </a>
                         </Link>
@@ -114,7 +114,7 @@ const Mobile1 = (props) => {
                             <motion.li variants={textMotion} className="mb-4">
                                 <div className="wrap dropdown text-primaryColor-900  ">
                                     <Link href="/denise">
-                                        <a className="text-text block my-5 subNav relative hover:text-primaryColor cursor-pointer">
+                                        <a className="text-text subNav relative my-5 block cursor-pointer hover:text-primaryColor">
                                             Denise
                                         </a>
                                     </Link>
@@ -139,11 +139,11 @@ const Mobile1 = (props) => {
                                 </div>
                             </motion.li>
                             <Link href="/weingebaeck">
-                                <a className="text-text block my-5 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
+                                <a className="text-text subNav relative my-5 mt-4 block cursor-pointer hover:text-primaryColor">
                                     Weingebäck
                                 </a>
                             </Link>
-                            <li className="mr-8 hover:text-primaryColor hover:underline mb-4 text-primaryColor-900">
+                            <li className="mr-8 mb-4 text-primaryColor-900 hover:text-primaryColor hover:underline">
                                 <Link href="/kontakt">
                                     <a>Kontakt</a>
                                 </Link>
@@ -154,20 +154,20 @@ const Mobile1 = (props) => {
                             <li className="mb-3 mt-8 text-xs">
                                 <div className="wrap dropdown   ">
                                     <Link href="/impressum">
-                                        <a className="text-text block my-4 subNav relative hover:text-primaryColor cursor-pointer">
+                                        <a className="text-text subNav relative my-4 block cursor-pointer hover:text-primaryColor">
                                             Impressum
                                         </a>
                                     </Link>
 
                                     <Link href="/datenschutz">
-                                        <a className="text-text block my-4 subNav relative mt-4 hover:text-primaryColor cursor-pointer">
+                                        <a className="text-text subNav relative my-4 mt-4 block cursor-pointer hover:text-primaryColor">
                                             Datenschutzerklärung
                                         </a>
                                     </Link>
                                 </div>
                             </li>
                             <li className="mt-8">
-                                <div className="sm:hidden flex ">
+                                <div className="flex sm:hidden ">
                                     {props.socialMedia.map((e, i) => {
                                         return (
                                             <a className="mr-4 pt-2" key={`smKey${i}`} href={e.link} alt={e.title}>

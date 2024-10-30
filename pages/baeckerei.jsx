@@ -17,7 +17,7 @@ import { ListItem } from "../components/list";
 import { PageChangeFX } from "../components/transitionFX";
 
 //ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
@@ -94,7 +94,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 <div className="brote">
                     <h2
                         data-aos="fade-left"
-                        className="font-freight text-center text-2xl sm:text-4xl text-darkText lg:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
+                        className="mt-8 mb-8 text-center font-freight text-2xl font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 lg:text-6xl"
                     >
                         {dataBaeckerei.gebaeck.title}
                     </h2>
@@ -103,8 +103,8 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
 
                     {/* <div className="h-8 lg:h-24 "></div> */}
 
-                    <div className="container mx-auto containerXL 2xl:mx-auto">
-                        <h2 className="col-span-12 text-center pl-8 lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                    <div className="containerXL container mx-auto 2xl:mx-auto">
+                        <h2 className="aos-init aos-animate col-span-12 mt-8 mb-8 pl-8 text-center font-freight text-2xl font-thin tracking-widest text-darkText sm:text-3xl lg:mt-12 lg:mb-8 lg:pl-16 xl:text-5xl">
                             ROGGEN
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList
@@ -113,7 +113,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                                 console.log(e);
                                 return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                             })}
-                        <h2 className="col-span-12 pl-8 text-center lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                        <h2 className="aos-init aos-animate col-span-12 mt-8 mb-8 pl-8 text-center font-freight text-2xl font-thin tracking-widest text-darkText sm:text-3xl lg:mt-12 lg:mb-8 lg:pl-16 xl:text-5xl">
                             DINKEL
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList
@@ -122,7 +122,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                                 console.log(e);
                                 return <ListItem bgColor={i % 2 !== 0 ? true : false} data={e}></ListItem>;
                             })}
-                        <h2 className="col-span-12 pl-8 text-center lg:pl-16 font-freight text-2xl sm:text-3xl text-darkText xl:text-5xl font-thin mt-8 lg:mt-12 tracking-widest mb-8 lg:mb-8 aos-init aos-animate">
+                        <h2 className="aos-init aos-animate col-span-12 mt-8 mb-8 pl-8 text-center font-freight text-2xl font-thin tracking-widest text-darkText sm:text-3xl lg:mt-12 lg:mb-8 lg:pl-16 xl:text-5xl">
                             WEIZEN
                         </h2>
                         {dataBaeckerei.gebaeck.gebaeckList
@@ -141,7 +141,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
                 <div className="h-8 lg:h-24 "></div>
 
                 <div className="h-8 sm:h-24"></div>
-                <div className="grid grid-cols-12 gap-4 container mx-auto containerXL 2xl:mx-auto">
+                <div className="containerXL container mx-auto grid grid-cols-12 gap-4 2xl:mx-auto">
                     {quickLinkData.map((e, i) => {
                         return (
                             <Element

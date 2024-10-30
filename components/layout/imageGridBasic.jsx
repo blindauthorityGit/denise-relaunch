@@ -10,7 +10,7 @@ import { LightBoxImage } from "../modalContent";
 import { motion } from "framer-motion";
 
 // icons
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort } from "react-icons/bs/index.js";
 
 import urlFor from "../functions/urlFor";
 import useBreakpoints from "../functions/useBreakpoints";

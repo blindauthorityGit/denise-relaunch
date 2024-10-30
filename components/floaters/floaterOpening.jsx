@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { AiOutlineClockCircle } from "react-icons/ai";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
+import { AiOutlineClockCircle } from "react-icons/ai/index.js";
 import { PortableText } from "@portabletext/react";
 
 // AOS

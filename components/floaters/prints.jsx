@@ -1,4 +1,4 @@
-import { RiPrinterLine } from "react-icons/ri";
+import { RiPrinterLine } from "react-icons/ri/index.js";
 import { motion } from "framer-motion";
 
 export default function PrintAvailability() {
@@ -20,7 +20,7 @@ export default function PrintAvailability() {
 
     return (
         <motion.div
-            className="absolute z-20 top-8 right-4 bg-white p-2 rounded-lg flex items-center gap-2"
+            className="absolute top-8 right-4 z-20 flex items-center gap-2 rounded-lg bg-white p-2"
             variants={containerVariants}
             initial="hidden"
             animate="visible"

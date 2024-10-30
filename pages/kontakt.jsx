@@ -23,7 +23,7 @@ import { Element } from "../components/quickLinks";
 import { ListItem } from "../components/list";
 import Map from "../components/map";
 //ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";

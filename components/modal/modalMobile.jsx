@@ -1,6 +1,6 @@
 import React, { forwardRef } from "react";
 
-import { MdOutlineClose } from "react-icons/md";
+import { MdOutlineClose } from "react-icons/md/index.js";
 
 const ModalMobile = ({ ...props }, ref) => {
     return (

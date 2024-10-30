@@ -7,7 +7,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 // icons
-import { BsArrowRightShort } from "react-icons/bs";
+import { BsArrowRightShort } from "react-icons/bs/index.js";
 
 //ImageBuilder
 import myConfiguredSanityClient from "../../client";
@@ -25,10 +25,10 @@ const ImageGrid1 = (props) => {
 
     return (
         <div
-            className={`w-full col-span-12 grid grid-cols-12 relative grid-rows-3 sm:grid-rows-2 z-10 min-h-[600px] md:min-h-[30rem] lg:min-h-[40rem] gap-2 h-full  ${props.colspan}`}
+            className={`relative z-10 col-span-12 grid h-full min-h-[600px] w-full grid-cols-12 grid-rows-3 gap-2 sm:grid-rows-2 md:min-h-[30rem] lg:min-h-[40rem]  ${props.colspan}`}
         >
             <>
-                <div className="col-span-12 sm:col-span-4 relative group sm:row-span-2">
+                <div className="group relative col-span-12 sm:col-span-4 sm:row-span-2">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[0]).url()}
@@ -36,11 +36,11 @@ const ImageGrid1 = (props) => {
                         loading="lazy"
                         objectFit="cover"
                         alt="hero"
-                        className="group-hover:scale-110 transition-all duration-500"
+                        className="transition-all duration-500 group-hover:scale-110"
                         onClick={props.onClick}
                     />
                 </div>
-                <motion.div className="col-span-6 sm:col-span-3  relative group">
+                <motion.div className="group relative  col-span-6 sm:col-span-3">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[1]).url()}
@@ -48,11 +48,11 @@ const ImageGrid1 = (props) => {
                         loading="lazy"
                         objectFit="cover"
                         alt="hero"
-                        className="group-hover:scale-110 transition-all duration-500"
+                        className="transition-all duration-500 group-hover:scale-110"
                         onClick={props.onClick}
                     />
                 </motion.div>
-                <div className="col-span-6  sm:col-span-5 sm:row-span-1 relative group">
+                <div className="group  relative col-span-6 sm:col-span-5 sm:row-span-1">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[2]).url()}
@@ -60,11 +60,11 @@ const ImageGrid1 = (props) => {
                         loading="lazy"
                         objectFit="cover"
                         alt="hero"
-                        className="group-hover:scale-110 transition-all duration-500"
+                        className="transition-all duration-500 group-hover:scale-110"
                         onClick={props.onClick}
                     />
                 </div>
-                <div className="col-span-12 sm:col-span-4 sm:row-span-2 relative group">
+                <div className="group relative col-span-12 sm:col-span-4 sm:row-span-2">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[3]).url()}
@@ -72,11 +72,11 @@ const ImageGrid1 = (props) => {
                         loading="lazy"
                         objectFit="cover"
                         alt="hero"
-                        className="group-hover:scale-110 transition-all duration-500"
+                        className="transition-all duration-500 group-hover:scale-110"
                         onClick={props.onClick}
                     />
                 </div>
-                <div className="col-span-4 row-span-1 relative group">
+                <div className="group relative col-span-4 row-span-1">
                     <Image
                         // {...ImagePropsGallery(i)}
                         src={urlFor(props.images[4]).url()}
@@ -84,7 +84,7 @@ const ImageGrid1 = (props) => {
                         loading="lazy"
                         objectFit="cover"
                         alt="hero"
-                        className="group-hover:scale-110 transition-all duration-500"
+                        className="transition-all duration-500 group-hover:scale-110"
                         onClick={props.onClick}
                     />
                 </div>

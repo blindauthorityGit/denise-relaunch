@@ -16,7 +16,7 @@ import { ImgText1, BGText1, ImgText2 } from "../components/imgText";
 import { Element } from "../components/quickLinks";
 import Map from "../components/map";
 //ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
@@ -56,8 +56,8 @@ export default function Datenschutz() {
                 <div className="h-6 xl:h-16 "></div>
 
                 <ContainerStandard>
-                    <div className="col-span-12 my-8 lg:my-16 px-8 lg:px-32 font-freight">
-                        <h2 className="font-freight text-2xl sm:text-4xl text-darkText xl:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12">
+                    <div className="col-span-12 my-8 px-8 font-freight lg:my-16 lg:px-32">
+                        <h2 className="mt-8 mb-8 font-freight text-2xl font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 xl:text-6xl">
                             Datenschutzerklärung
                         </h2>
                         <h3 id="einleitung-ueberblick" className="adsimple-112503916 mb-4">

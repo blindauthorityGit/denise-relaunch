@@ -5,14 +5,14 @@ import Image from "next/image";
 //FUNCTIONS
 import urlFor from "../functions/urlFor";
 //ICONS
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 
 const LightBoxImage = (props) => {
     return (
-        <div className="grid grid-cols-12 gap-4 mb-16 sm:mb-0 h-full justify-center relative">
+        <div className="relative mb-16 grid h-full grid-cols-12 justify-center gap-4 sm:mb-0">
             <div
-                className={`left w-full  sm:flex justify-center col-span-12 lg:col-span-12 relative lg:h-full ${props.order}`}
+                className={`left relative  col-span-12 w-full justify-center sm:flex lg:col-span-12 lg:h-full ${props.order}`}
             >
                 <Image
                     // {...ImagePropsGallery(i)}

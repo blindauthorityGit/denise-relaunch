@@ -1,6 +1,6 @@
 import React, { useEffect, forwardRef } from "react";
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 
 // AOS
 import AOS from "aos";
@@ -14,17 +14,17 @@ const FloaterBlackFull = (props, ref) => {
     }, []);
     return (
         <div
-            className={`floater hidden sm:block absolute bottom-0 h-[100%] lg:h-[100%] w-[10rem] left-6 opacity-40 lg:left-12 lg:text-lg lg:font-semibold text-textBlack  right-12 ${
-                props.center ? "items-center flex" : ""
+            className={`floater text-textBlack absolute bottom-0 left-6 right-12 hidden h-[100%] w-[10rem] opacity-40 sm:block lg:left-12 lg:h-[100%] lg:text-lg  lg:font-semibold ${
+                props.center ? "flex items-center" : ""
             } ${props.klasse}`}
         >
             <div
                 ref={ref}
                 style={{ ...props.style, opacity: props.opacity }}
-                className="w-[1px] opacity-0 animate-expand delay-1000 border-blackText-50 border h-full"
+                className="animate-expand border-blackText-50 h-full w-[1px] border opacity-0 delay-1000"
             ></div>
-            <div className="w-[160px] absolute top-[0%] lg:top-[0%] opacity-0 animate-expand2  border-blackText-50 border-t-[1px] h-full"></div>
-            <div className="w-[200px] absolute top-[0%] lg:top-[0%]  opacity-0 left-[15%]  animate-expand2   h-full">
+            <div className="animate-expand2 border-blackText-50 absolute top-[0%] h-full w-[160px]  border-t-[1px] opacity-0 lg:top-[0%]"></div>
+            <div className="animate-expand2 absolute top-[0%] left-[15%]  h-full w-[200px]  opacity-0   lg:top-[0%]">
                 Find out more
             </div>
         </div>

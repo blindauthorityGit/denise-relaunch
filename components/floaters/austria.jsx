@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { FaPhone } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
+import { FaPhone } from "react-icons/fa/index.js";
+import { HiOutlineMail } from "react-icons/hi/index.js";
 import AustriaLogo from "../../assets/austria.svg";
 
 // AOS
@@ -15,19 +15,19 @@ const Austria = (props) => {
     }, []);
     return (
         <div
-            className={`floater  bg-primaryColor-500 sm:block absolute py-2 px-8 sm:px-6 w-full sm:w-[34rem] right-0 top-12 lg:text-lg lg:font-semibold text-textBlack   ${
-                props.center ? "items-center flex" : ""
+            className={`floater  text-textBlack absolute right-0 top-12 w-full bg-primaryColor-500 py-2 px-8 sm:block sm:w-[34rem] sm:px-6 lg:text-lg lg:font-semibold   ${
+                props.center ? "flex items-center" : ""
             } ${props.klasse}`}
         >
-            <div className="w-full relative">
-                <div className="font-freight hidden sm:block text-primaryColor-50 font-thin tracking-wider">
+            <div className="relative w-full">
+                <div className="hidden font-freight font-thin tracking-wider text-primaryColor-50 sm:block">
                     Österreichische Produkte in Handarbeit gefertigt.
                 </div>
-                <div className="font-freight block sm:hidden text-primaryColor-50 font-thin tracking-wider">
+                <div className="block font-freight font-thin tracking-wider text-primaryColor-50 sm:hidden">
                     Österreichische Produkte in <br /> Handarbeit gefertigt.
                 </div>
                 <img
-                    className="top-[-0.7rem] sm:top-[-1rem] right-0 sm:right-8 absolute w-16"
+                    className="absolute top-[-0.7rem] right-0 w-16 sm:top-[-1rem] sm:right-8"
                     src={AustriaLogo.src}
                     alt=""
                 />

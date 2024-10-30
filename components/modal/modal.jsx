@@ -1,11 +1,11 @@
 import React from "react";
 
-import { MdOutlineClose } from "react-icons/md";
+import { MdOutlineClose } from "react-icons/md/index.js";
 const Modal = (props) => {
     return (
-        <div className="fixed overflow-y-auto max-h-[100%] fade-in w-[90%] lg:w-[80%] min-h-[80%] h-[80%] bg-white p-8 lg:p-12 xl:p-24 z-50  top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="fade-in fixed top-1/2 left-1/2 z-50 h-[80%] max-h-[100%] min-h-[80%] w-[90%] -translate-x-1/2 -translate-y-1/2 transform overflow-y-auto  bg-white p-8 lg:w-[80%] lg:p-12 xl:p-24">
             <div
-                className="closer absolute top-6 right-6 text-4xl cursor-pointer transition hover:opacity-50 z-50"
+                className="closer absolute top-6 right-6 z-50 cursor-pointer text-4xl transition hover:opacity-50"
                 onClick={props.onClick}
             >
                 <MdOutlineClose></MdOutlineClose>
