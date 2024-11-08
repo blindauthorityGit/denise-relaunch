@@ -24,19 +24,19 @@ const Hero = (props) => {
 
     return (
         <div
-            className={`hero-container  w-full relative ${
-                props.fullHeight ? "h-calc-screen 2xl:h-screen sm:h-full" : props.height
+            className={`hero-container  relative w-full ${
+                props.fullHeight ? "h-calc-screen sm:h-full 2xl:h-screen" : props.height
             } ${props.colspan}`}
         >
             {/* Background Image */}
             {/* Background Video */}
             <FloaterOpening data={props.dataSetting}></FloaterOpening>
             <FloaterContact data={props.dataSetting}></FloaterContact>
-            <div className="text absolute z-10 text-center sm:w-[600px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div className="text absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform text-center sm:w-[600px]">
                 <Parallax translateY={["-200px", "120px"]}>
                     <h1 className="text-white">{props.data.title}</h1>
-                    <h3 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subtitle}</h3>
-                    <h6 className="mt-2 sm:mt-4 lg:mt-2 xl:mt-4 text-primaryColor-200">{props.data.subsubtitle}</h6>
+                    <h3 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subtitle}</h3>
+                    <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6>
                     <Link href="/denise">
                         <a>
                             <MainButton>Mehr</MainButton>
@@ -44,14 +44,14 @@ const Hero = (props) => {
                     </Link>
                 </Parallax>
             </div>
-            <div className="h-full sm:h-full w-full bg-[#3b3720] opacity-60 absolute"></div>
+            <div className="absolute h-full w-full bg-[#3b3720] opacity-60 sm:h-full"></div>
             {/* {!loaded && <Spinner1></Spinner1>} */}
             <video
                 autoPlay
                 muted
                 loop
                 playsInline
-                className="w-full h-full sm:h-screen 2xl:h-full object-cover object-center"
+                className="h-full w-full object-cover object-center sm:h-screen 2xl:h-full"
                 style={{ objectFit: "cover" }}
                 onLoadedData={() => setLoaded(true)}
                 onCanPlayThrough={() => setLoaded(true)}

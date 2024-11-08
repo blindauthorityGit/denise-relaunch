@@ -6,6 +6,7 @@ import urlFor from "../components/functions/urlFor";
 
 // COMPS
 import Hero from "../components/Hero/hero";
+import HeroWeingebaeck from "../components/Hero/heroWeingebaeck";
 import UnderConstruction from "../components/underConstruction"; // Import UnderConstruction component
 import { Menu1 } from "../components/menues";
 import { StartKachelLeft, Contact } from "../components/sections";
@@ -15,7 +16,7 @@ import { FullBGContainer } from "../components/container";
 import { Aktuelles } from "../components/stoerer";
 
 // ASSETS
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu } from "react-icons/rx/index.js";
 import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
@@ -32,7 +33,7 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
     // Flag to toggle Under Construction mode
-    const underConstruction = true;
+    const underConstruction = false;
 
     useEffect(() => {
         console.log(dataHome, dataAktuelles);
@@ -84,13 +85,13 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
             ></Menu1>
             <div className="overflow-x-hidden">
                 {!isLoading ? (
-                    <Hero
+                    <HeroWeingebaeck
                         fullHeight={true}
                         data={dataHome}
                         dataSetting={dataSetting}
                         colspan="col-span-12"
                         videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
-                    ></Hero>
+                    ></HeroWeingebaeck>
                 ) : (
                     <div className="h-screen bg-primaryColor"></div>
                 )}
