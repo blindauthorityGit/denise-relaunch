@@ -48,7 +48,7 @@ module.exports = {
                 darkRed: "#444140",
             },
             height: {
-                "calc-screen": "calc(100vh - 5rem)",
+                "calc-screen": "calc(100svh - 5rem)",
             },
         },
     },

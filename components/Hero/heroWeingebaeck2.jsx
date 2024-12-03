@@ -56,11 +56,11 @@ const HeroWeingebaeck = (props) => {
                     <h3 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subtitle}</h3>
                     <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6> */}
                 </div>
-                <div className="relative col-span-12 flex h-full flex-col px-4 pt-[25%] lg:col-span-6 lg:justify-center lg:pt-0 lg:pl-36">
+                <div className="relative col-span-12 flex h-full flex-col px-4 pt-[20%] lg:col-span-6 lg:justify-center lg:pt-0 lg:pl-36">
                     <h1 className="!text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
                         "Genuss im
                     </h1>
-                    <h1 className="!font-regular mt-[-1rem] pl-16 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
+                    <h1 className="!font-regular mt-[-1rem] pl-8 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
                         neuen Gewand"
                     </h1>
                     <h3 className="mt-2 w-full text-lg !leading-tight text-darkText sm:mt-4 lg:mt-8 lg:w-[80%] lg:pl-16 lg:!text-xl xl:mt-8 xl:w-[66%] xl:!text-2xl">
