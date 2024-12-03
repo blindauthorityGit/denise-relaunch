@@ -7,7 +7,8 @@ import { MainButton } from "../buttons";
 import { Spinner1 } from "../spinner";
 import { FloaterContact, FloaterOpening } from "../floaters";
 
-import BGHero from "../../assets/bghero.png";
+import BigHero from "../../assets/bigHero.jpg";
+import BGMobile from "../../assets/bgMobile.jpg";
 import WG from "../../assets/wg18.jpg";
 import { CoverImage } from "../images";
 
@@ -28,15 +29,15 @@ const HeroWeingebaeck = (props) => {
 
     return (
         <div
-            className={`hero-container relative mt-20 w-full bg-[#FBFBF5] ${
-                props.fullHeight ? "h-calc-screen  2xl:h-screen" : props.height
+            className={`hero-container relative w-full bg-[#FBFBF5] md:mt-16 xl:mt-24  ${
+                props.fullHeight ? "h-calc-screen lg:h-[92svh] xl:h-[93svh]  2xl:h-screen" : props.height
             } ${props.colspan}`}
         >
             {/* Background Image */}
             {/* Background Video */}
             <FloaterOpening data={props.dataSetting}></FloaterOpening>
             <FloaterContact data={props.dataSetting}></FloaterContact>
-            <div className="absolute top-[45%] left-1/3 z-30 -translate-x-1/2 -translate-y-1/2 transform lg:w-[48%]">
+            {/* <div className="absolute top-[45%] left-1/3 z-30 -translate-x-1/2 -translate-y-1/2 transform lg:w-[48%]">
                 <h1 className="!leading-tight tracking-tight text-primaryColor-600 xl:!text-9xl">"Genuss im</h1>
                 <h1 className="mt-[-2rem] pl-36 !leading-tight tracking-tight text-primaryColor-600 xl:!text-9xl">
                     neuen Gewand"
@@ -46,24 +47,34 @@ const HeroWeingebaeck = (props) => {
                     ideal portioniert für Ihren Weinmoment
                 </h3>
                 <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6>
-            </div>
+            </div> */}
 
             <div className=" relative z-20 mx-auto grid h-full grid-cols-12 items-center">
-                <div className="col-span-6">
+                <div className="hidden lg:col-span-6 lg:block">
                     {/* <h1 className="!leading-tight tracking-tight text-white xl:!text-9xl">Genuss im </h1>
                     <h1 className="mt-[-2rem] !leading-tight tracking-tight text-white xl:!text-9xl">neuen Gewand</h1>
                     <h3 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subtitle}</h3>
                     <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6> */}
                 </div>
-                <div className="relative col-span-6 h-full">
-                    <div className=" relative  h-full " initial="hidden">
-                        <CoverImage
-                            src={WG.src}
-                            mobileSrc={WG.src}
-                            alt="Cover Background"
-                            klasse={"absolute"}
-                            className=" h-full"
-                        />
+                <div className="relative col-span-12 flex h-full flex-col px-4 pt-[25%] lg:col-span-6 lg:justify-center lg:pt-0 lg:pl-36">
+                    <h1 className="!text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
+                        "Genuss im
+                    </h1>
+                    <h1 className="!font-regular mt-[-1rem] pl-16 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
+                        neuen Gewand"
+                    </h1>
+                    <h3 className="mt-2 w-full text-lg !leading-tight text-darkText sm:mt-4 lg:mt-8 lg:w-[80%] lg:pl-16 lg:!text-xl xl:mt-8 xl:w-[66%] xl:!text-2xl">
+                        Unser Weingebäck – die perfekte Kombination aus Tradition und modernem Design.{" "}
+                        <span className="hidden lg:inline-block">
+                            {" "}
+                            Neu verpackt und ideal abgestimmt für Ihren Weingenuss
+                        </span>
+                    </h3>
+                    <div className="absolute bottom-2 w-full lg:static lg:mt-8 ">
+                        <Link href="https://shop.baeckerin.at/produkt/weingebaeck/">
+                            <MainButton klasse="lg:!max-w-[360px]">Jetzt bestellen</MainButton>
+                        </Link>
+                        {/* <p className="text-white">Reseller? Hier klicken</p> */}
                     </div>
                 </div>
             </div>
@@ -80,8 +91,8 @@ const HeroWeingebaeck = (props) => {
                 />
             </div> */}
             <div
-                style={{ backgroundImage: `url(${BGHero.src})` }}
-                className="absolute top-0 z-10 h-full w-full  opacity-60 sm:h-full"
+                style={{ backgroundImage: `url(${isMobile ? BGMobile.src : BigHero.src})` }}
+                className="absolute top-0 z-10 h-full w-full bg-cover sm:h-full  "
             ></div>
 
             <div className="text absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform text-center sm:w-[600px]">

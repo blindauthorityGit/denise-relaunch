@@ -7,6 +7,7 @@ import urlFor from "../components/functions/urlFor";
 // COMPS
 import Hero from "../components/Hero/hero";
 import HeroWeingebaeck from "../components/Hero/heroWeingebaeck";
+import HeroWeingebaeck2 from "../components/Hero/heroWeingebaeck2";
 import UnderConstruction from "../components/underConstruction"; // Import UnderConstruction component
 import { Menu1 } from "../components/menues";
 import { StartKachelLeft, Contact } from "../components/sections";
@@ -85,13 +86,13 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
             ></Menu1>
             <div className="overflow-x-hidden">
                 {!isLoading ? (
-                    <HeroWeingebaeck
+                    <HeroWeingebaeck2
                         fullHeight={true}
                         data={dataHome}
                         dataSetting={dataSetting}
                         colspan="col-span-12"
                         videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
-                    ></HeroWeingebaeck>
+                    ></HeroWeingebaeck2>
                 ) : (
                     <div className="h-screen bg-primaryColor"></div>
                 )}

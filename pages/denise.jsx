@@ -7,7 +7,7 @@ import urlFor from "../components/functions/urlFor";
 //COMPS
 import HeroPage from "../components/Hero/heroPage";
 import BG from "../components/layout/bg";
-import { Menu2 } from "../components/menues";
+import { Menu2, Menu1 } from "../components/menues";
 import { ContainerStandard } from "../components/container";
 import { Austria } from "../components/floaters";
 import { ImageGridBasic } from "../components/layout";
@@ -58,7 +58,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 <meta property="og:locale" content="de_DE" />
             </Head>
 
-            <Menu2
+            <Menu1
                 logoLight={LogoLight.src}
                 logoDark={LogoDark.src}
                 menuItems={menuItems}
@@ -68,7 +68,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
                 onClick={() => {
                     setIsOpen(true);
                 }}
-            ></Menu2>
+            ></Menu1>
             <BG />
             <div className="overflow-x-hidden">
                 <HeroPage data={dataDenise}>

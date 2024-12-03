@@ -163,14 +163,12 @@ const Menu2 = (props) => {
                 <div className=" relative z-30 m-auto grid grid-cols-12 items-center  py-3 sm:py-4 lg:px-0 lg:py-0">
                     {/* Background Image */}
                     <div className="logo col-span-4 md:col-span-2 ">
-                        <Link href="/">
-                            <a className="flex">
-                                <img
-                                    src={props.logoDark}
-                                    className="fill-current-[#fff] max-h-[1.75rem] sm:max-h-[3.75rem]"
-                                    alt="Logo"
-                                />
-                            </a>
+                        <Link className="flex" href="/">
+                            <img
+                                src={props.logoDark}
+                                className="fill-current-[#fff] max-h-[1.75rem] sm:max-h-[3.75rem]"
+                                alt="Logo"
+                            />
                         </Link>
                     </div>
                     <div className="col-span-7 md:col-span-9 ">
@@ -189,15 +187,16 @@ const Menu2 = (props) => {
                                             onEnter(e);
                                         }}
                                     >
-                                        <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end text-base uppercase lg:text-xs xl:text-lg">
-                                                {e.title}{" "}
-                                                {e.subMenu ? (
-                                                    <motion.span variants={pfeilMotion}>
-                                                        <BiChevronDown></BiChevronDown>
-                                                    </motion.span>
-                                                ) : null}
-                                            </a>
+                                        <Link
+                                            className="flex items-end text-base uppercase lg:text-xs xl:text-lg"
+                                            href={`/${e.slug}`}
+                                        >
+                                            {e.title}{" "}
+                                            {e.subMenu ? (
+                                                <motion.span variants={pfeilMotion}>
+                                                    <BiChevronDown></BiChevronDown>
+                                                </motion.span>
+                                            ) : null}
                                         </Link>
                                         {e.subMenu ? (
                                             <motion.ul
@@ -211,10 +210,11 @@ const Menu2 = (props) => {
                                                             key={`submenuKey${i}`}
                                                             className="mb-3 min-w-max"
                                                         >
-                                                            <Link href={`${e.external ? "" : "/"}${e.slug}`}>
-                                                                <a className="font-semibold hover:text-red-500">
-                                                                    {e.title}
-                                                                </a>
+                                                            <Link
+                                                                className="font-semibold hover:text-red-500"
+                                                                href={`${e.external ? "" : "/"}${e.slug}`}
+                                                            >
+                                                                {e.title}
                                                             </Link>
                                                             <hr className="mt-1" />
                                                         </motion.li>

@@ -38,9 +38,7 @@ const Hero = (props) => {
                     <h3 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subtitle}</h3>
                     <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6>
                     <Link href="/denise">
-                        <a>
-                            <MainButton>Mehr</MainButton>
-                        </a>
+                        <MainButton>Mehr</MainButton>
                     </Link>
                 </Parallax>
             </div>

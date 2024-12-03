@@ -105,9 +105,9 @@ const Contact = (props) => {
                                 {props.data.contact.email}
                             </div>
                         </div>
-                        <a href="https://builtbynature.at/">
+                        {/* <a href="https://builtbynature.at/">
                             <img src={BuildByNature.src} className="mt-8 w-24" alt="buildbynature" />
-                        </a>
+                        </a> */}
                     </div>
                     <div className="col-span-12 sm:col-span-6">
                         <h4
@@ -119,7 +119,7 @@ const Contact = (props) => {
                         <div className="flex space-x-6">
                             <div className="font-freight ">
                                 <div className="mb-4 text-lg leading-relaxed text-primaryColor-500 sm:text-xl">
-                                    Brunn an der Pitten
+                                    Shop Brunn an der Pitten
                                 </div>
                                 <div className="font-freight leading-relaxed text-darkText xl:text-lg">
                                     <PortableText value={props.data.oeffnungszeiten.brunn} />
@@ -135,9 +135,9 @@ const Contact = (props) => {
                             </div> */}
                         </div>
                         <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
-                            <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
+                            {/* <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
                                 ab 27.05.
-                            </div>
+                            </div> */}
                             <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                                 Bad Vöslau Schlosspark
                             </div>
