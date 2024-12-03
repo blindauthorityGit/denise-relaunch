@@ -77,7 +77,7 @@ export default function Baeckerei({ dataBaeckerei, dataSetting, dataHome, dataBa
             ></Menu1>
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataBaeckerei} mobileImage={dataDenise.heroMobile.image}>
+                <HeroPage data={dataBaeckerei} mobileImage={dataBaeckerei.heroMobile.image}>
                     {/* <div className="hidden sm:block">
                         <Austria></Austria>
                     </div> */}
