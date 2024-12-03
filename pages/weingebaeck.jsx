@@ -116,7 +116,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
 
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataWeingebaeck} noSubline>
+                <HeroPage data={dataWeingebaeck} mobileImage={dataWeingebaeck.heroMobile.image} noSubline>
                     {/* <img
                         src={BuildByNature.src}
                         className="absolute top-[38%] right-6 w-20 md:top-8 md:left-8 md:w-24 lg:w-24 xl:w-48"
