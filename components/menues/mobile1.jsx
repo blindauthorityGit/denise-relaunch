@@ -147,6 +147,9 @@ const Mobile1 = (props) => {
                             <li className="mr-8 mb-4 text-primaryColor-900 hover:text-primaryColor hover:underline">
                                 <Link href="/kontakt">Kontakt</Link>
                             </li>
+                            <li className="mr-8 mb-4 font-bold text-primaryColor-600 hover:text-primaryColor hover:underline">
+                                <Link href="https://shop.baeckerin.at">SHOP</Link>
+                            </li>
                         </motion.ul>
                         <hr className="mt-8" />
                         <ul className="tracking-widest text-primaryColor-900">
@@ -169,13 +172,13 @@ const Mobile1 = (props) => {
                             </li>
                             <li className="mt-8">
                                 <div className="flex sm:hidden ">
-                                    {props.socialMedia.map((e, i) => {
+                                    {/* {props.socialMedia.map((e, i) => {
                                         return (
                                             <a className="mr-4 pt-2" key={`smKey${i}`} href={e.link} alt={e.title}>
                                                 {e.icon}
                                             </a>
                                         );
-                                    })}
+                                    })} */}
                                 </div>
                             </li>
                         </ul>
