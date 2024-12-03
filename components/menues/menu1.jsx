@@ -232,10 +232,10 @@ const Menu1 = (props) => {
                             <Newsletter onClick={props.onClick}></Newsletter>
                         </ul> */}
                     </div>
-                    <div className="social media col-span-2 flex justify-end text-xl md:text-4xl">
+                    <div className="social media col-span-1 flex justify-end text-xl md:text-4xl lg:col-span-2">
                         <div
                             className={`block cursor-pointer lg:hidden ${
-                                isScrolled ? "text-darkText" : "text-primaryColor-100"
+                                isScrolled ? "text-darkText" : "text-darkText"
                             }`}
                             onClick={(e) => {
                                 setShowOverlay(true);

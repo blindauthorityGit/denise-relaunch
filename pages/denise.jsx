@@ -71,7 +71,7 @@ export default function Denise({ dataDenise, dataSetting, dataHome }) {
             ></Menu1>
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataDenise}>
+                <HeroPage data={dataDenise} contain>
                     {/* <div className="hidden lg:block">
                         <Austria></Austria>
                     </div> */}

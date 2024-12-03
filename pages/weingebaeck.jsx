@@ -151,7 +151,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                                 klasse="border-primaryColor text-primaryColor "
                                 link="https://shop.baeckerin.at/registration/"
                             >
-                                für Reseller
+                                für Wiederverkäufer
                             </LineButtonWhite>
                         </div>
                     </div>
