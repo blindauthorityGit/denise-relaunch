@@ -28,19 +28,22 @@ const BGText = (props) => {
     return (
         <div
             ref={ref}
-            style={{ backgroundImage: `url(${!props.isDesktop ? "" : urlFor(props.data.story.image).url()})` }}
-            className={`w-full container  sm:px-0 md:px-24 xl:px-48 m-auto bg-contain bg-no-repeat bg-center lg:bg-pos-x-small xl:bg-pos-x xl:gap-24 grid grid-cols-12  ${props.colspan}`}
+            // style={{ backgroundImage: `url(${!props.isDesktop ? "" : urlFor(props.data.story.image).url()})` }}
+            className={`container m-auto  grid w-full grid-cols-12 bg-contain bg-center bg-no-repeat sm:px-0 md:px-24 lg:bg-pos-x-small xl:gap-24 xl:py-6 xl:px-12 xl:bg-pos-x  ${props.colspan}`}
         >
-            <div className="right px-8 py-8 xl:py-24 sm:px-0 col-span-12 lg:col-span-8 flex flex-col justify-center ">
+            <div className="right col-span-12 flex flex-col justify-center px-8  sm:px-0 lg:col-span-6 ">
                 <h2
                     data-aos="fade-left"
-                    className="font-freight text-2xl sm:text-4xl text-darkText xl:text-6xl font-thin mt-8 tracking-widest mb-8 lg:mb-12"
+                    className="mt-8 mb-8 font-freight text-2xl font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 xl:text-6xl"
                 >
                     {props.data.story.title}
                 </h2>
-                <div className="font-freight xl:text-xl xl:leading-8 leading-relaxed tracking-wider">
+                <div className="font-freight leading-relaxed tracking-wider xl:text-xl xl:leading-8">
                     <PortableText value={props.data.story.text} />
                 </div>
+            </div>
+            <div className="col-span-12 lg:col-span-6 lg:pt-10">
+                <img src={urlFor(props.data.story.image).url()} alt="" />
             </div>
         </div>
     );

@@ -7,9 +7,9 @@ const HeroPage = (props) => {
     return (
         <>
             <div
-                className={`hero containerXL container relative mx-auto mt-12 h-[325px] md:mt-20 md:h-[350px] lg:mt-20 lg:h-[350px] xl:h-[620px] 2xl:mx-auto ${props.colspan}`}
+                className={`hero containerXL container relative mx-auto mt-12 h-[325px] md:mt-24 md:h-[350px] lg:mt-24 lg:h-[350px] xl:h-[620px] 2xl:mx-auto ${props.colspan}`}
             >
-                <div className="text absolute top-[85%] left-1/2 z-10 w-[600px] -translate-x-1/2 -translate-y-1/2 transform text-center md:top-[89%]">
+                <div className="text absolute top-[85%] left-8 z-10 -translate-y-1/2 transform  text-center md:top-[89%] lg:left-auto lg:w-[600px]">
                     <h1 className="text-4xl uppercase text-white lg:text-6xl xl:text-7xl">{props.data.hero.title}</h1>
                 </div>
                 <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-[#493414] opacity-60"></div>{" "}
@@ -19,7 +19,7 @@ const HeroPage = (props) => {
                 ></div>
                 {props.children}
             </div>
-            <div className="subtitle mt-6 flex justify-center  ">
+            <div className={`subtitle mt-6 flex justify-center ${props.noSubline ? "hidden" : null}`}>
                 <div className="flex w-[18%] items-center lg:w-[35%]">
                     <div className="strich w-full border-t border-primaryColor-500 "></div>
                 </div>

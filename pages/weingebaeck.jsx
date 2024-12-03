@@ -11,7 +11,7 @@ import urlFor from "../components/functions/urlFor";
 import { MainButton, LineButtonWhite } from "../components/buttons";
 import HeroPage from "../components/Hero/heroPage";
 import BG from "../components/layout/bg";
-import { Menu2 } from "../components/menues";
+import { Menu2, Menu1 } from "../components/menues";
 import { ShadowBox } from "../components/container";
 import { StoererImg } from "../components/stoerer";
 import { Austria } from "../components/floaters";
@@ -85,7 +85,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 <meta property="og:locale" content="de_DE" />
             </Head>
 
-            <Menu2
+            <Menu1
                 logoLight={LogoLight.src}
                 logoDark={LogoDark.src}
                 menuItems={menuItems}
@@ -95,7 +95,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 onClick={() => {
                     setIsOpen(true);
                 }}
-            ></Menu2>
+            ></Menu1>
 
             {showModal && (
                 <>
@@ -116,32 +116,43 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
 
             <BG />
             <div className="overflow-x-hidden">
-                <HeroPage data={dataWeingebaeck}>
-                    <img
+                <HeroPage data={dataWeingebaeck} noSubline>
+                    {/* <img
                         src={BuildByNature.src}
                         className="absolute top-[38%] right-6 w-20 md:top-8 md:left-8 md:w-24 lg:w-24 xl:w-48"
                         alt=""
-                    />
+                    /> */}
                     <Austria></Austria>
                 </HeroPage>
-                <Divider1></Divider1>
-                <IntroText data={dataWeingebaeck.intro} klasse="mt-8" />
+                {/* <Divider1></Divider1>  */}
+                <BGText1 isDesktop={isDesktop} data={dataWeingebaeck}></BGText1>
+                {/* <IntroText data={dataWeingebaeck.intro} klasse="mt-8" /> */}
                 <div className="h-8 lg:h-24 "></div>
                 <div
                     className="relative bg-cover py-8"
                     style={{ backgroundImage: `url(${isMobile ? WGBGMobile.src : WGBG.src})` }}
                 >
                     <div className=" grid grid-cols-12 gap-4 bg-top sm:p-16 xl:p-24 xl:px-36">
-                        <h2 className="z-10 col-span-12 mb-1 text-center font-freight text-3xl font-thin tracking-widest text-primaryColor-500 sm:mb-8  sm:text-4xl lg:mb-12 lg:text-6xl">
+                        {/* <h2 className="z-10 col-span-12 mb-1 text-center font-freight text-3xl font-thin tracking-widest text-primaryColor-500 sm:mb-8  sm:text-4xl lg:mb-12 lg:text-6xl">
                             Die 3 Sorten
-                        </h2>
+                        </h2> */}
                         <div className="absolute top-0 left-0 h-full w-full bg-[#1D1B1C] opacity-80 "></div>
                         {dataWeingebaeck.produkte.map((e, i) => {
-                            return <Produkt data={e}></Produkt>;
+                            if (i == 0) {
+                                return <Produkt data={e}></Produkt>;
+                            }
                         })}{" "}
-                        <div className="text-[#fff!important] z-10 col-span-12 text-center">
+                        <div className="text-[#fff!important] z-10 col-span-12 space-x-4 text-center">
                             {" "}
-                            <LineButtonWhite link="#sell">Erhältlich hier</LineButtonWhite>
+                            <LineButtonWhite link="https://shop.baeckerin.at/produkt/weingebaeck/">
+                                Jetzt bestellen
+                            </LineButtonWhite>
+                            <LineButtonWhite
+                                klasse="border-primaryColor text-primaryColor "
+                                link="https://shop.baeckerin.at/registration/"
+                            >
+                                für Reseller
+                            </LineButtonWhite>
                         </div>
                     </div>
                 </div>
@@ -149,13 +160,11 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                 {/* <ShadowBox>
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
                 </ShadowBox> */}
-
-                <BGText1 isDesktop={isDesktop} data={dataWeingebaeck}></BGText1>
                 {/* <div className="h-8 lg:h-24 "></div> */}
                 <ShadowBox>
                     <ImageGrid1 images={dataWeingebaeck.imgGallery}></ImageGrid1>
                 </ShadowBox>
-                <div id="sell" className="scroll-mt-24">
+                {/* <div id="sell" className="scroll-mt-24">
                     <StoreBox data={dataWeingebaeck}>
                         <div className="col-span-12 flex justify-center">
                             <MainButton
@@ -168,7 +177,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                             </MainButton>
                         </div>
                     </StoreBox>
-                </div>
+                </div> */}
                 <Divider1></Divider1>
                 <div className="h-8 sm:h-24"></div>
                 <div className="containerXL container mx-auto grid grid-cols-12 gap-4 2xl:mx-auto">

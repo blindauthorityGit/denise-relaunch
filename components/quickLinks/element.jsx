@@ -29,37 +29,33 @@ const Element = (props) => {
 
     return (
         <div
-            className="col-span-6 sm:col-span-4 mb-6 sm:mb-6"
+            className="col-span-6 mb-6 sm:col-span-4 sm:mb-6"
             style={{
                 gridColumn: `span ${isMobile ? 6 : getColSpan(imageCount)} / span ${getColSpan(imageCount)}`,
             }}
         >
             <div className="image relative h-36 sm:h-96 md:h-64 lg:h-96">
                 <Link href={props.link}>
-                    <a>
-                        <Image
-                            // {...ImagePropsGallery(i)}
-                            src={urlFor(props.image).url()}
-                            layout="fill"
-                            loading="lazy"
-                            objectFit="cover"
-                            objectPosition={`${isDenise ? "top" : "center"}`}
-                            alt="hero"
-                            onLoad={(e) => {
-                                e.target.parentNode.parentNode.href.split("/")[
-                                    e.target.parentNode.parentNode.href.split("/").length - 1
-                                ] == "denise"
-                                    ? setIsDenise(true)
-                                    : setIsDenise(false);
-                            }}
-                        />
-                    </a>
+                    <Image
+                        // {...ImagePropsGallery(i)}
+                        src={urlFor(props.image).url()}
+                        layout="fill"
+                        loading="lazy"
+                        objectFit="cover"
+                        objectPosition={`${isDenise ? "top" : "center"}`}
+                        alt="hero"
+                        onLoad={(e) => {
+                            e.target.parentNode.parentNode.href.split("/")[
+                                e.target.parentNode.parentNode.href.split("/").length - 1
+                            ] == "denise"
+                                ? setIsDenise(true)
+                                : setIsDenise(false);
+                        }}
+                    />
                 </Link>
             </div>
-            <div className="col-span-12 z-10 mt-2 sm:mt-4 pl-4 sm:pl-0 sm:px-8 font-freight text-xl font-bold tracking-wider">
-                <Link href={props.link}>
-                    <a>{props.linkText}</a>
-                </Link>
+            <div className="z-10 col-span-12 mt-2 pl-4 font-freight text-xl font-bold tracking-wider sm:mt-4 sm:px-8 sm:pl-0">
+                <Link href={props.link}>{props.linkText}</Link>
             </div>
         </div>
     );

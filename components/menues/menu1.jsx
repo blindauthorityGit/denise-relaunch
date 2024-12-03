@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import Overlay from "../modal/overlay";
 // Modal
 import Modal from "../modal/modal";
-
+import { MainButton } from "../buttons";
 import { Newsletter } from "../menues";
 
 //Mobile Nav
@@ -163,17 +163,15 @@ const Menu1 = (props) => {
                 <div className=" containerXL relative z-30 m-auto grid grid-cols-12 items-center py-3 sm:py-4  lg:px-0 lg:py-0 2xl:mx-auto 2xl:px-8">
                     {/* Background Image */}
                     <div className="logo col-span-4 md:col-span-2 ">
-                        <Link href="/">
-                            <a className="flex">
-                                <img
-                                    src={isScrolled ? props.logoDark : props.logoLight}
-                                    className="fill-current-[#fff] max-h-[1.75rem] sm:max-h-[3.75rem] lg:max-h-[3.05rem]"
-                                    alt="Logo"
-                                />
-                            </a>
+                        <Link className="flex" href="/">
+                            <img
+                                src={isScrolled ? props.logoDark : props.logoDark}
+                                className="fill-current-[#fff] max-h-[1.75rem] sm:max-h-[3.75rem] lg:max-h-[3.05rem]"
+                                alt="Logo"
+                            />
                         </Link>
                     </div>
-                    <div className="col-span-7 md:col-span-9 ">
+                    <div className="col-span-7 md:col-span-8 ">
                         <ul className="list-style-none hidden items-center justify-end pr-8 font-barlow lg:flex">
                             {props.menuItems.map((e, i) => {
                                 return (
@@ -184,20 +182,23 @@ const Menu1 = (props) => {
                                         key={`menuKey${i}`}
                                         className={`font-montserrat relative mx-8 py-4 font-semibold tracking-widest 
                                        
-                                         ${isScrolled ? "text-darkText" : "text-white"}  hover:text-primaryColor-500`}
+                                         ${
+                                             isScrolled ? "text-darkText" : "text-darkText"
+                                         }  hover:text-primaryColor-500`}
                                         onMouseEnter={(e) => {
                                             onEnter(e);
                                         }}
                                     >
-                                        <Link href={`/${e.slug}`}>
-                                            <a className="flex items-end text-base uppercase lg:text-xs xl:text-lg">
-                                                {e.title}{" "}
-                                                {e.subMenu ? (
-                                                    <motion.span variants={pfeilMotion}>
-                                                        <BiChevronDown></BiChevronDown>
-                                                    </motion.span>
-                                                ) : null}
-                                            </a>
+                                        <Link
+                                            className="flex items-end text-base uppercase lg:text-xs xl:text-lg"
+                                            href={`/${e.slug}`}
+                                        >
+                                            {e.title}{" "}
+                                            {e.subMenu ? (
+                                                <motion.span variants={pfeilMotion}>
+                                                    <BiChevronDown></BiChevronDown>
+                                                </motion.span>
+                                            ) : null}
                                         </Link>
                                         {e.subMenu ? (
                                             <motion.ul
@@ -211,10 +212,11 @@ const Menu1 = (props) => {
                                                             key={`submenuKey${i}`}
                                                             className="mb-3 min-w-max"
                                                         >
-                                                            <Link href={`${e.external ? "" : "/"}${e.slug}`}>
-                                                                <a className="font-semibold hover:text-red-500">
-                                                                    {e.title}
-                                                                </a>
+                                                            <Link
+                                                                className="font-semibold hover:text-red-500"
+                                                                href={`${e.external ? "" : "/"}${e.slug}`}
+                                                            >
+                                                                {e.title}
                                                             </Link>
                                                             <hr className="mt-1" />
                                                         </motion.li>
@@ -230,7 +232,7 @@ const Menu1 = (props) => {
                             <Newsletter onClick={props.onClick}></Newsletter>
                         </ul> */}
                     </div>
-                    <div className="social media col-span-1 flex justify-end text-xl md:text-4xl">
+                    <div className="social media col-span-2 flex justify-end text-xl md:text-4xl">
                         <div
                             className={`block cursor-pointer lg:hidden ${
                                 isScrolled ? "text-darkText" : "text-primaryColor-100"
@@ -242,7 +244,10 @@ const Menu1 = (props) => {
                             {props.burgerIcon}
                         </div>
                         <div className="hidden lg:flex ">
-                            {props.socialMedia.map((e, i) => {
+                            <Link href="https://shop.baeckerin.at">
+                                <MainButton klasse="!mt-0 mb-2">Shop</MainButton>
+                            </Link>
+                            {/* {props.socialMedia.map((e, i) => {
                                 return (
                                     <a
                                         className={`mr-4 text-lg ${
@@ -255,7 +260,7 @@ const Menu1 = (props) => {
                                         {e.icon}
                                     </a>
                                 );
-                            })}
+                            })} */}
                         </div>
                     </div>
                     {/* <div className="relative top-[1000%] w-full h-24 bg-red-500" ref={ref}></div> */}

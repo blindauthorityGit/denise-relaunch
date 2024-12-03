@@ -39,7 +39,7 @@ const StartKachelLeft = (props) => {
     return (
         <div
             ref={ref}
-            className={`w-full containerXL 2xl:mx-auto  sm:px-0 md:px-0 lg:px-0 m-auto  grid grid-cols-12  ${props.colspan}`}
+            className={`containerXL m-auto grid  w-full grid-cols-12 sm:px-0 md:px-0  lg:px-0 2xl:mx-auto  ${props.colspan}`}
         >
             <motion.div
                 style={{
@@ -54,36 +54,34 @@ const StartKachelLeft = (props) => {
                 data-aos="fade-right"
                 data-aos-once="true"
                 ref={imgRef}
-                className={`left sm:block col-span-12 lg:col-span-6 relative group ${
+                className={`left group relative col-span-12 overflow-hidden sm:block lg:col-span-6 ${
                     props.data.left ? "" : "lg:order-last"
                 }`}
             >
                 <Link href={props.data.buttonLink}>
-                    <a>
-                        <div className="absolute transition-all duration-500 bg-primaryColor-500 w-full h-full opacity-0 group-hover:opacity-50 z-20"></div>
-                        <Image
-                            src={urlFor(props.data.image).url()}
-                            layout="fill"
-                            loading="lazy"
-                            objectFit="cover"
-                            alt="hero"
-                            className="z-10 group-hover:scale-110 transition-all duration-500"
-                        />
-                    </a>
+                    <div className="absolute z-20 h-full w-full bg-primaryColor-500 opacity-0 transition-all duration-500 group-hover:opacity-50"></div>
+                    <Image
+                        src={urlFor(props.data.image).url()}
+                        layout="fill"
+                        loading="lazy"
+                        objectFit="cover"
+                        alt="hero"
+                        className="z-10 transition-all duration-500 group-hover:scale-110"
+                    />
                 </Link>
             </motion.div>
             <div
                 style={{ backgroundImage: `url(${props.bg.src})` }}
-                className="right md:mb-16 lg:mb-0 px-8 sm:px-16 xl:px-48 col-span-12 lg:col-span-6 flex flex-col justify-center"
+                className="right col-span-12 flex flex-col justify-center px-8 sm:px-16 md:mb-16 lg:col-span-6 lg:mb-0 xl:px-48"
             >
                 <h2
                     data-aos="fade-left"
                     data-aos-once="true"
-                    className="font-thin font-freight text-4xl sm:text-4xl text-darkText lg:text-4xl  xl:text-6xl  mt-8 mb-8 lg:mb-12"
+                    className="mt-8 mb-8 font-freight text-4xl font-thin text-darkText  sm:text-4xl  lg:mb-12 lg:text-4xl xl:text-6xl"
                 >
                     {props.data.title}
                 </h2>
-                <div className="text-regular leading-relaxed xl:leading-relaxed font-freight tracking-wider mb-4 text-regular sm:text-xl lg:text-base xl:text-xl">
+                <div className="text-regular text-regular mb-4 font-freight leading-relaxed tracking-wider sm:text-xl lg:text-base xl:text-xl xl:leading-relaxed">
                     <PortableText value={props.data.text} />
                 </div>
                 <LineButton link={props.data.buttonLink}>{props.data.buttonText}</LineButton>
