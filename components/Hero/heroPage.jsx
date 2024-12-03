@@ -13,10 +13,23 @@ const HeroPage = (props) => {
                     <h1 className="text-4xl uppercase text-white lg:text-6xl xl:text-7xl">{props.data.hero.title}</h1>
                 </div>
                 <div className="absolute h-full w-full bg-gradient-to-b from-transparent to-[#493414] opacity-60"></div>{" "}
-                <div
+                {/* <div
                     className={`h-full w-full ${props.contain ? "bg-contain" : "bg-cover"}  bg-right`}
                     style={{ backgroundImage: `url(${urlFor(props.data.hero.image)})` }}
-                ></div>
+                ></div> */}
+                {props.mobileImage ? (
+                    <div
+                        className={`h-full w-full lg:hidden ${props.contain ? "bg-contain" : "bg-cover"}  bg-right`}
+                        style={{ backgroundImage: `url(${urlFor(props.data.heroMobile.image)})` }}
+                    ></div>
+                ) : (
+                    <div
+                        className={`hidden h-full w-full lg:block ${
+                            props.contain ? "bg-contain" : "bg-cover"
+                        }  bg-right`}
+                        style={{ backgroundImage: `url(${urlFor(props.data.hero.image)})` }}
+                    ></div>
+                )}
                 {props.children}
             </div>
             <div className={`subtitle mt-6 flex justify-center ${props.noSubline ? "hidden" : null}`}>
