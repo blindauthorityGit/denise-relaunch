@@ -71,7 +71,7 @@ const HeroWeingebaeck = (props) => {
                         </span>
                     </h3>
                     <div className="absolute bottom-2 w-full lg:static lg:mt-8 ">
-                        <Link href="https://shop.baeckerin.at/produkt/weingebaeck/">
+                        <Link href="https://shop.baeckerin.at/">
                             <MainButton klasse="lg:!max-w-[360px]">Jetzt bestellen</MainButton>
                         </Link>
                         {/* <p className="text-white">Reseller? Hier klicken</p> */}
