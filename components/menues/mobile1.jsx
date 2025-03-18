@@ -150,6 +150,9 @@ const Mobile1 = (props) => {
                             <li className="mr-8 mb-4 font-bold text-primaryColor-600 hover:text-primaryColor hover:underline">
                                 <Link href="https://shop.baeckerin.at">SHOP</Link>
                             </li>
+                            <li className="mr-8 mb-4  text-darkText hover:text-primaryColor hover:underline">
+                                <Link href="https://shop.baeckerin.at/registration">Wiederverkäufer</Link>
+                            </li>
                         </motion.ul>
                         <hr className="mt-8" />
                         <ul className="tracking-widest text-primaryColor-900">

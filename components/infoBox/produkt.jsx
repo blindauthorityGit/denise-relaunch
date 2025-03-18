@@ -15,7 +15,7 @@ const Produkt = (props) => {
     }, []);
 
     return (
-        <div data-aos="fade-right" className="col-span-12 md:col-span-12 lg:col-span-12 lg:flex">
+        <div data-aos="fade-right" className="col-span-12 md:col-span-12 lg:col-span-6 lg:mb-12 lg:flex">
             <div className="image relative h-96 w-96 lg:h-64 xl:h-96 ">
                 <Image
                     // {...ImagePropsGallery(i)}
@@ -37,7 +37,7 @@ const Produkt = (props) => {
             <div className="z-10 col-span-12 mt-4 px-8  font-freight lg:col-span-6">
                 {/* <h3 className="font-freight font-thin text-darkText text-3xl">{props.data.title}</h3> */}
                 <div className="description mt-2 leading-relaxed tracking-wider text-primaryColor-50">
-                    <div className="lg:text-3xl">WEINGEBÄCK Desgustation</div>
+                    <div className="lg:text-3xl">{props.data.title} </div>
                     <PortableText value={props.data.description} />
                 </div>
                 {props.children}
