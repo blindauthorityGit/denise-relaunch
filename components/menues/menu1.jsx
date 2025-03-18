@@ -171,7 +171,7 @@ const Menu1 = (props) => {
                             />
                         </Link>
                     </div>
-                    <div className="col-span-7 md:col-span-8 ">
+                    <div className="col-span-7 md:col-span-6 ">
                         <ul className="list-style-none hidden items-center justify-end pr-8 font-barlow lg:flex">
                             {props.menuItems.map((e, i) => {
                                 return (
@@ -232,7 +232,7 @@ const Menu1 = (props) => {
                             <Newsletter onClick={props.onClick}></Newsletter>
                         </ul> */}
                     </div>
-                    <div className="social media col-span-1 flex justify-end text-xl md:text-4xl lg:col-span-2">
+                    <div className="social media col-span-1 flex justify-end text-xl md:text-4xl lg:col-span-4">
                         <div
                             className={`block cursor-pointer lg:hidden ${
                                 isScrolled ? "text-darkText" : "text-darkText"
@@ -245,7 +245,12 @@ const Menu1 = (props) => {
                         </div>
                         <div className="hidden lg:flex ">
                             <Link href="https://shop.baeckerin.at">
-                                <MainButton klasse="!mt-0 mb-2">Shop</MainButton>
+                                <MainButton klasse="!mt-0 mb-2 !text-lg">Shop</MainButton>
+                            </Link>
+                            <Link href="https://shop.baeckerin.at/registration">
+                                <MainButton klasse="!mt-0 mb-2  !text-lg !bg-transparent !text-darkText border border-darkText">
+                                    Wiederverkäufer
+                                </MainButton>
                             </Link>
                             {/* {props.socialMedia.map((e, i) => {
                                 return (
