@@ -57,13 +57,13 @@ const HeroWeingebaeck = (props) => {
                     <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6> */}
                 </div>
                 <div className="relative col-span-12 flex h-full flex-col px-4 pt-[20%] lg:col-span-6 lg:justify-center lg:pt-0 lg:pl-36">
-                    <h1 className="!text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
+                    <h1 className="!text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-7xl 2xl:!text-8xl">
                         "Genuss im
                     </h1>
-                    <h1 className="!font-regular mt-[-1rem] pl-8 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-8xl">
+                    <h1 className="!font-regular mt-[-1rem] pl-8 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-7xl 2xl:!text-8xl">
                         neuen Gewand"
                     </h1>
-                    <h3 className="mt-2 w-full text-lg !leading-tight text-darkText sm:mt-4 lg:mt-8 lg:w-[80%] lg:pl-16 lg:!text-xl xl:mt-8 xl:w-[66%] xl:!text-2xl">
+                    <h3 className="mt-2 w-full text-lg font-thin !leading-tight text-darkText sm:mt-4 lg:mt-8 lg:w-[80%] lg:pl-16 lg:!text-xl xl:mt-8 xl:w-[75%] xl:!text-xl">
                         Unser Weingebäck – die perfekte Kombination aus Tradition und modernem Design.{" "}
                         <span className="hidden lg:inline-block">
                             {" "}
@@ -72,12 +72,12 @@ const HeroWeingebaeck = (props) => {
                     </h3>
                     <div className="absolute bottom-2 w-full lg:static lg:mt-8 ">
                         <Link href="https://shop.baeckerin.at/">
-                            <MainButton klasse="lg:!max-w-[360px] !w-full !max-w-[90%] !text-lg">
+                            <MainButton klasse="lg:!max-w-[360px] !w-full !max-w-[90%] !text-base">
                                 Jetzt bestellen
                             </MainButton>
                         </Link>
                         <Link href="https://shop.baeckerin.at/registration">
-                            <MainButton klasse="!mt-0 mb-2 !w-full !max-w-[90%] !text-lg !bg-white/70 lg:!bg-transparent !text-darkText border border-darkText">
+                            <MainButton klasse="!mt-4 mb-2 !w-full !max-w-[90%] lg:!max-w-[360px] !text-base !bg-white/70 lg:!bg-transparent !text-darkText border border-darkText">
                                 Wiederverkäufer
                             </MainButton>
                         </Link>

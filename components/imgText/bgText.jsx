@@ -34,7 +34,7 @@ const BGText = (props) => {
             <div className="right col-span-12 flex flex-col justify-center px-8  sm:px-0 lg:col-span-6 ">
                 <h2
                     data-aos="fade-left"
-                    className="mt-8 mb-8 font-freight text-2xl font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 xl:text-6xl"
+                    className="mt-8 mb-8 font-freight font-thin tracking-widest text-darkText sm:text-4xl lg:mb-12 xl:text-4xl 2xl:text-2xl"
                 >
                     {props.data.story.title}
                 </h2>
