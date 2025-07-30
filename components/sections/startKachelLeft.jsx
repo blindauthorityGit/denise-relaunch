@@ -72,7 +72,7 @@ const StartKachelLeft = (props) => {
             </motion.div>
             <div
                 style={{ backgroundImage: `url(${props.bg.src})` }}
-                className="right col-span-12 flex flex-col justify-center px-8 sm:px-16 md:mb-16 lg:col-span-6 lg:mb-0 xl:px-48"
+                className="right col-span-12 flex flex-col justify-center px-8 sm:px-16 md:mb-16 lg:col-span-6 lg:mb-0 2xl:px-48"
             >
                 <h2
                     data-aos="fade-left"

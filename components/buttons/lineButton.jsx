@@ -7,7 +7,7 @@ const LineButton = (props) => {
         <Link href={`/${props.link}`}>
             <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="transition-all-ease mt-8 min-w-[300px] border border-darkText px-12 py-4 font-freight  text-lg uppercase  tracking-widest text-darkText xl:text-2xl"
+                className="transition-all-ease mt-8 min-w-[300px] border border-darkText px-12 py-4 font-freight  text-base uppercase  tracking-widest text-darkText 2xl:text-2xl"
             >
                 {props.children}
             </motion.button>

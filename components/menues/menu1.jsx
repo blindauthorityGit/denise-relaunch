@@ -190,10 +190,10 @@ const Menu1 = (props) => {
                                         }}
                                     >
                                         <Link
-                                            className="flex items-end text-base uppercase lg:text-xs xl:text-lg"
+                                            className="flex items-end font-barlow text-base uppercase lg:text-xs xl:text-sm 2xl:text-lg"
                                             href={`/${e.slug}`}
                                         >
-                                            {e.title}{" "}
+                                            {e.title}
                                             {e.subMenu ? (
                                                 <motion.span variants={pfeilMotion}>
                                                     <BiChevronDown></BiChevronDown>
@@ -245,10 +245,12 @@ const Menu1 = (props) => {
                         </div>
                         <div className="hidden lg:flex ">
                             <Link href="https://shop.baeckerin.at">
-                                <MainButton klasse="!mt-0 mb-2 !text-lg">Shop</MainButton>
+                                <MainButton klasse="!mt-0 mb-2 !text-sm !min-w-[166px] border border-primaryColor">
+                                    Shop
+                                </MainButton>
                             </Link>
                             <Link href="https://shop.baeckerin.at/registration">
-                                <MainButton klasse="!mt-0 mb-2  !text-lg !bg-transparent !text-darkText border border-darkText">
+                                <MainButton klasse="!mt-0 mb-2  !text-sm !min-w-[166px] !bg-transparent !text-darkText border border-darkText">
                                     Wiederverkäufer
                                 </MainButton>
                             </Link>
