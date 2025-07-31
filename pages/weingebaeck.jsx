@@ -138,7 +138,7 @@ export default function Weingebaeck({ dataWeingebaeck, dataSetting, dataHome, da
                         </h2> */}
                         <div className="absolute top-0 left-0 h-full w-full bg-[#1D1B1C] opacity-80 "></div>
                         {dataWeingebaeck.produkte.map((e, i) => {
-                            if (i <= 1) {
+                            if (i <= 2) {
                                 return <Produkt data={e}></Produkt>;
                             }
                         })}{" "}
