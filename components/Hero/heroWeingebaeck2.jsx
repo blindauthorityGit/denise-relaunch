@@ -7,7 +7,7 @@ import { MainButton } from "../buttons";
 import { Spinner1 } from "../spinner";
 import { FloaterContact, FloaterOpening } from "../floaters";
 
-import BigHero from "../../assets/bigHero.jpg";
+import BigHero from "../../assets/bigHero2.jpg";
 import BGMobile from "../../assets/bgMobile.jpg";
 import WG from "../../assets/wg18.jpg";
 import { CoverImage } from "../images";
