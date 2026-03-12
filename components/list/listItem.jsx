@@ -27,7 +27,7 @@ import React from "react";
 const ListItem = (props) => {
     return (
         <div className={`col-span-12 py-4 text-center ${props.bgColor ? "bg-primaryColor-50" : ""}`}>
-            <div className="font-freight text-xl tracking-wider">{props.data.title}</div>
+            <div className="d font-freight text-xl tracking-wider">{props.data.title}</div>
 
             <div className="mt-1 font-freight text-sm tracking-wider opacity-70">{props.data.description}</div>
         </div>
