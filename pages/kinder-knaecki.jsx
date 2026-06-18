@@ -27,7 +27,7 @@ import KinderMutkarten from "../assets/kinder-knaecki-mutkarten.jpg";
 import YogiHeart from "../assets/yogi-heart.svg";
 import YogiGlueck from "../assets/yogi-glueck.png";
 
-const SHOP_URL = "https://shop.baeckerin.at/?post_type=product&p=491";
+const SHOP_URL = "https://shop.baeckerin.at/produkt/kinderknaecki/";
 const RESELLER_URL = "https://shop.baeckerin.at/registration/";
 const OG_IMAGE_PLACEHOLDER =
   "https://www.baeckerin.at/kinder-knaecki-og-placeholder.jpg";
