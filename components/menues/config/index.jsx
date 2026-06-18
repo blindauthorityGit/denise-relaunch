@@ -36,6 +36,11 @@ const menuItems = [
         subMenu: false,
     },
     {
+        title: "Kinder Knäcki",
+        slug: "kinder-knaecki",
+        subMenu: false,
+    },
+    {
         title: "Kontakt",
         slug: "kontakt",
         subMenu: false,

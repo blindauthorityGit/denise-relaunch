@@ -88,7 +88,7 @@ const Mobile1 = (props) => {
             <motion.nav
                 variants={boxMotion}
                 className={`navbar slide-in-right ${props.klasse} 
-                fixed right-0 top-0 z-50 h-full w-[90%] bg-white `}
+                fixed right-0 top-0 z-50 h-full w-[90%] overflow-y-auto bg-white `}
             >
                 <div className="brot absolute bottom-10 right-[-4rem] w-72 opacity-10">
                     <img src={Brot.src} alt="" />
@@ -143,6 +143,12 @@ const Mobile1 = (props) => {
                                 className="text-text subNav relative my-5 mt-4 block cursor-pointer hover:text-primaryColor"
                             >
                                 Weingebäck
+                            </Link>
+                            <Link
+                                href="/kinder-knaecki"
+                                className="text-text subNav relative my-5 block cursor-pointer hover:text-primaryColor"
+                            >
+                                Kinder Knäcki
                             </Link>
                             <li className="mr-8 mb-4 text-primaryColor-900 hover:text-primaryColor hover:underline">
                                 <Link href="/kontakt">Kontakt</Link>
