@@ -29,7 +29,6 @@ import Favicon from "../assets/favicon.svg";
 import useBreakpoints from "../components/functions/useBreakpoints";
 
 export default function Home({ dataHome, dataSetting, dataAktuelles }) {
-    const [isLoading, setIsLoading] = useState(true);
     const [aktuelles, setAktuelles] = useState(false);
     const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
@@ -42,7 +41,6 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
 
     useEffect(() => {
         console.log(isMobile, isTablet, isDesktop);
-        setIsLoading(false);
     }, [isMobile, isTablet, isDesktop]);
 
     // Render only the UnderConstruction component if underConstruction is true
@@ -85,17 +83,13 @@ export default function Home({ dataHome, dataSetting, dataAktuelles }) {
                 }}
             ></Menu1>
             <div className="overflow-x-hidden">
-                {!isLoading ? (
-                    <HeroWeingebaeck2
-                        fullHeight={true}
-                        data={dataHome}
-                        dataSetting={dataSetting}
-                        colspan="col-span-12"
-                        videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
-                    ></HeroWeingebaeck2>
-                ) : (
-                    <div className="h-screen bg-primaryColor"></div>
-                )}
+                <HeroWeingebaeck2
+                    fullHeight={true}
+                    data={dataHome}
+                    dataSetting={dataSetting}
+                    colspan="col-span-12"
+                    videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
+                ></HeroWeingebaeck2>
                 {aktuelles ? (
                     <FullBGContainer klasse="bg-darkRed">
                         <Aktuelles data={dataAktuelles}></Aktuelles>

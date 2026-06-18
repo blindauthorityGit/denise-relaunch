@@ -1,114 +1,184 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import Link from "next/link";
-import { Parallax } from "react-scroll-parallax";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // COMPS
 import { MainButton } from "../buttons";
-import { Spinner1 } from "../spinner";
 import { FloaterContact, FloaterOpening } from "../floaters";
 
 import BigHero from "../../assets/bigHero2.jpg";
 import BGMobile from "../../assets/bgMobile.jpg";
-import WG from "../../assets/wg18.jpg";
-import { CoverImage } from "../images";
+import KinderKnaeckiHero from "../../assets/kinder-knaecki-hero-v2.png";
 
 // FUNCTIONS
 import useBreakpoints from "../functions/useBreakpoints";
 
+const starterHeroSlides = [
+    {
+        kicker: "Kinder Knäcki",
+        title: ["Knusprig.", "Natürlich.", "Kindgerecht."],
+        text: "Knuspriger Genuss für kleine Entdecker - gemeinsam mit dem Kleinen Yogi entwickelt.",
+        image: KinderKnaeckiHero,
+        mobileImage: KinderKnaeckiHero,
+        isLight: true,
+        backgroundPosition: "26% 46%",
+        mobileBackgroundPosition: "24% 50%",
+        primaryButton: {
+            label: "Jetzt entdecken",
+            href: "/kinder-knaecki",
+        },
+        secondaryButton: {
+            label: "Wiederverkäufer",
+            href: "https://shop.baeckerin.at/registration",
+        },
+    },
+    {
+        kicker: "Denise Bäckerin",
+        title: ["Genuss im", "neuen Gewand"],
+        text: "Unser Weingebäck - die perfekte Kombination aus Tradition und modernem Design. Neu verpackt und ideal abgestimmt für Ihren Weingenuss.",
+        image: BigHero,
+        mobileImage: BGMobile,
+        backgroundPosition: "center top",
+        mobileBackgroundPosition: "center center",
+        primaryButton: {
+            label: "Jetzt bestellen",
+            href: "https://shop.baeckerin.at/",
+        },
+        secondaryButton: {
+            label: "Wiederverkäufer",
+            href: "https://shop.baeckerin.at/registration",
+        },
+    },
+];
+
 const HeroWeingebaeck = (props) => {
-    const [loaded, setLoaded] = useState(false);
-    const { isMobile, isTablet, isDesktop } = useBreakpoints();
-
-    const videoRef = useRef(null);
-
-    useEffect(() => {
-        console.log(isMobile, isTablet, isDesktop);
-    }, [isMobile, isTablet, isDesktop]);
-
-    useEffect(() => {}, []);
+    const { isMobile } = useBreakpoints();
 
     return (
-        <div
-            className={`hero-container relative w-full bg-[#FBFBF5] md:mt-16 xl:mt-24  ${
-                props.fullHeight ? "h-calc-screen lg:h-[92svh] xl:h-[93svh]  2xl:h-screen" : props.height
+        <section
+            className={`hero-container relative w-full overflow-hidden bg-[#FBFBF5] md:mt-16 xl:mt-24 ${
+                props.fullHeight ? "h-calc-screen lg:h-[92svh] xl:h-[93svh] 2xl:h-screen" : props.height
             } ${props.colspan}`}
         >
-            {/* Background Image */}
-            {/* Background Video */}
-            <FloaterOpening data={props.dataSetting}></FloaterOpening>
-            <FloaterContact data={props.dataSetting}></FloaterContact>
-            {/* <div className="absolute top-[45%] left-1/3 z-30 -translate-x-1/2 -translate-y-1/2 transform lg:w-[48%]">
-                <h1 className="!leading-tight tracking-tight text-primaryColor-600 xl:!text-9xl">"Genuss im</h1>
-                <h1 className="mt-[-2rem] pl-36 !leading-tight tracking-tight text-primaryColor-600 xl:!text-9xl">
-                    neuen Gewand"
-                </h1>
-                <h3 className="mt-2 text-darkText sm:mt-4 lg:mt-8 lg:w-[66%] lg:!text-2xl xl:mt-8">
-                    Unser Weingebäck – die perfekte Kombination aus Tradition und modernem Design. Neu verpackt und
-                    ideal portioniert für Ihren Weinmoment
-                </h3>
-                <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6>
-            </div> */}
-
-            <div className=" relative z-20 mx-auto grid h-full grid-cols-12 items-center">
-                <div className="hidden lg:col-span-6 lg:block">
-                    {/* <h1 className="!leading-tight tracking-tight text-white xl:!text-9xl">Genuss im </h1>
-                    <h1 className="mt-[-2rem] !leading-tight tracking-tight text-white xl:!text-9xl">neuen Gewand</h1>
-                    <h3 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subtitle}</h3>
-                    <h6 className="mt-2 text-primaryColor-200 sm:mt-4 lg:mt-2 xl:mt-4">{props.data.subsubtitle}</h6> */}
-                </div>
-                <div className="relative col-span-12 flex h-full flex-col px-4 pt-[20%] lg:col-span-6 lg:justify-center lg:pt-0 lg:pl-36">
-                    <h1 className="!text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-7xl 2xl:!text-8xl">
-                        "Genuss im
-                    </h1>
-                    <h1 className="!font-regular mt-[-1rem] pl-8 !text-5xl !leading-tight tracking-tight text-white lg:!text-6xl xl:!text-7xl 2xl:!text-8xl">
-                        neuen Gewand"
-                    </h1>
-                    <h3 className="mt-2 w-full text-lg font-thin !leading-tight text-darkText sm:mt-4 lg:mt-8 lg:w-[80%] lg:pl-16 lg:!text-xl xl:mt-8 xl:w-[75%] xl:!text-xl">
-                        Unser Weingebäck – die perfekte Kombination aus Tradition und modernem Design.{" "}
-                        <span className="hidden lg:inline-block">
-                            {" "}
-                            Neu verpackt und ideal abgestimmt für Ihren Weingenuss
-                        </span>
-                    </h3>
-                    <div className="absolute bottom-2 w-full lg:static lg:mt-8 ">
-                        <Link href="https://shop.baeckerin.at/">
-                            <MainButton klasse="lg:!max-w-[360px] !w-full !max-w-[90%] !text-base">
-                                Jetzt bestellen
-                            </MainButton>
-                        </Link>
-                        <Link href="https://shop.baeckerin.at/registration">
-                            <MainButton klasse="!mt-4 mb-2 !w-full !max-w-[90%] lg:!max-w-[360px] !text-base !bg-white/70 lg:!bg-transparent !text-darkText border border-darkText">
-                                Wiederverkäufer
-                            </MainButton>
-                        </Link>
-                        {/* <p className="text-white">Reseller? Hier klicken</p> */}
-                    </div>
-                </div>
+            <div className="lg:hidden">
+                <FloaterOpening data={props.dataSetting}></FloaterOpening>
+                <FloaterContact data={props.dataSetting}></FloaterContact>
             </div>
-            {/* <div
-                className=" absolute z-10 h-auto "
-                initial="hidden"
+
+            <Swiper
+                modules={[Autoplay, Pagination]}
+                loop
+                speed={850}
+                grabCursor
+                autoplay={{
+                    delay: 6200,
+                    disableOnInteraction: false,
+                }}
+                pagination={{
+                    clickable: true,
+                    renderBullet: (index, className) =>
+                        `<button class="${className}" type="button" aria-label="Hero Slide ${index + 1}"></button>`,
+                }}
+                className="hero-swiper h-full w-full"
             >
-                <CoverImage
-                    src={WG.src}
-                    mobileSrc={WG.src}
-                    alt="Cover Background"
-                    klasse={"relative"}
-                    className="  absolute !aspect-[16/9] lg:!aspect-[9/12]"
-                />
-            </div> */}
-            <div
-                style={{ backgroundImage: `url(${isMobile ? BGMobile.src : BigHero.src})` }}
-                className="absolute top-0 z-10 h-full w-full bg-cover sm:h-full  "
-            ></div>
+                {starterHeroSlides.map((slide, index) => {
+                    const backgroundImage = isMobile ? slide.mobileImage : slide.image;
+                    const hasBackgroundImage = Boolean(backgroundImage);
+                    const backgroundPosition = isMobile
+                        ? slide.mobileBackgroundPosition || "center center"
+                        : slide.backgroundPosition || "center top";
+                    const textColor = slide.isLight
+                        ? "text-primaryColor-700 drop-shadow-none"
+                        : "text-white drop-shadow-sm lg:text-primaryColor-700 lg:drop-shadow-none";
+                    const kickerColor = slide.isLight ? "text-darkText/70" : "text-white/80 lg:text-darkText/70";
+                    const copyColor = slide.isLight ? "text-darkText" : "text-white lg:text-darkText";
+                    const ghostColor = slide.isLight
+                        ? "text-darkText hover:text-primaryColor-700"
+                        : "text-white hover:text-primaryColor-100 lg:text-darkText lg:hover:text-primaryColor-700";
 
-            <div className="text absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 transform text-center sm:w-[600px]">
-                <Parallax translateY={["-200px", "120px"]}>
-                    <Link href="/denise"></Link>
-                </Parallax>
-            </div>
-            {/* {!loaded && <Spinner1></Spinner1>} */}
-        </div>
+                    return (
+                        <SwiperSlide key={`${slide.kicker}-${index}`} className="relative h-full overflow-hidden">
+                            {hasBackgroundImage ? (
+                                <div
+                                    className="absolute inset-0 z-10 bg-cover transition-transform duration-[7000ms] ease-out"
+                                    style={{
+                                        backgroundImage: `url(${backgroundImage.src})`,
+                                        backgroundPosition,
+                                    }}
+                                ></div>
+                            ) : (
+                                <div className={`absolute inset-0 z-10 ${slide.backgroundClass || "bg-[#FBFBF5]"}`}>
+                                    <div className="absolute right-0 top-0 hidden h-full w-[42%] bg-primaryColor-100 lg:block"></div>
+                                </div>
+                            )}
+                            <div
+                                className={`absolute inset-0 z-20 ${
+                                    hasBackgroundImage
+                                        ? "bg-gradient-to-b from-black/20 via-transparent to-black/35 lg:bg-gradient-to-r lg:from-[#FBFBF5]/10 lg:via-[#FBFBF5]/10 lg:to-[#FBFBF5]/75"
+                                        : "bg-gradient-to-r from-transparent via-white/10 to-white/35"
+                                }`}
+                            ></div>
+
+                            <div className="relative z-30 mx-auto grid h-full max-w-[1680px] grid-cols-12 items-center px-4 sm:px-8 lg:px-12 2xl:px-0">
+                                <div className="hidden lg:col-span-5 lg:block"></div>
+                                <div className="col-span-12 flex h-full flex-col justify-end pb-8 pt-24 lg:col-span-7 lg:justify-center lg:pb-0 lg:pt-0 lg:pl-16 xl:pl-28">
+                                    <div className="max-w-[680px] lg:ml-auto lg:-translate-y-12 xl:-translate-y-16">
+                                        <p
+                                            className={`mb-3 font-barlow text-sm uppercase tracking-[0.28em] ${kickerColor}`}
+                                        >
+                                            {slide.kicker}
+                                        </p>
+                                        <h1
+                                            className={`!text-5xl !leading-[0.9] tracking-normal lg:!text-6xl xl:!text-7xl 2xl:!text-8xl ${textColor}`}
+                                        >
+                                            {slide.title[0]}
+                                        </h1>
+                                        <h1
+                                            className={`mt-1 pl-8 !text-5xl !font-light !leading-[0.9] tracking-normal lg:pl-16 lg:!text-6xl xl:!text-7xl 2xl:!text-8xl ${textColor}`}
+                                        >
+                                            {slide.title[1]}
+                                        </h1>
+                                        {slide.title[2] ? (
+                                            <h1
+                                                className={`mt-1 pl-16 !text-5xl !font-light !leading-[0.9] tracking-normal lg:pl-28 lg:!text-6xl xl:!text-7xl 2xl:!text-8xl ${textColor}`}
+                                            >
+                                                {slide.title[2]}
+                                            </h1>
+                                        ) : null}
+                                        <h3
+                                            className={`mt-4 max-w-[620px] text-lg font-thin !leading-snug tracking-normal lg:mt-7 lg:pl-16 lg:!text-xl xl:!text-2xl ${copyColor}`}
+                                        >
+                                            {slide.text}
+                                        </h3>
+                                        <div className="mt-4 flex w-full flex-col gap-3 lg:mt-8 lg:max-w-[360px] lg:pl-16">
+                                            {slide.primaryButton ? (
+                                                <Link href={slide.primaryButton.href}>
+                                                    <MainButton klasse="!m-0 !w-full !max-w-none !text-base">
+                                                        {slide.primaryButton.label}
+                                                    </MainButton>
+                                                </Link>
+                                            ) : null}
+                                            {slide.secondaryButton ? (
+                                                <Link
+                                                    href={slide.secondaryButton.href}
+                                                    className={`inline-flex w-fit items-center font-freight text-base uppercase tracking-widest transition-colors duration-300 lg:ml-0 lg:pl-0 xl:text-xl ${ghostColor}`}
+                                                >
+                                                    <span className="mr-3 h-px w-10 bg-current"></span>
+                                                    <span>
+                                                        {slide.secondaryButton.label}
+                                                    </span>
+                                                </Link>
+                                            ) : null}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    );
+                })}
+            </Swiper>
+        </section>
     );
 };
 

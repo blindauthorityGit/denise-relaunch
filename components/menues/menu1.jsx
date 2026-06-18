@@ -180,7 +180,7 @@ const Menu1 = (props) => {
                                         whileHover="hover"
                                         animate="rest"
                                         key={`menuKey${i}`}
-                                        className={`font-montserrat relative mx-8 py-4 font-semibold tracking-widest 
+                                        className={`font-montserrat relative mx-3 py-4 font-semibold tracking-widest xl:mx-4 2xl:mx-5
                                        
                                          ${
                                              isScrolled ? "text-darkText" : "text-darkText"
@@ -190,7 +190,7 @@ const Menu1 = (props) => {
                                         }}
                                     >
                                         <Link
-                                            className="flex items-end font-barlow text-base uppercase lg:text-xs xl:text-sm 2xl:text-lg"
+                                            className="flex items-end whitespace-nowrap font-barlow uppercase lg:text-[11px] xl:text-xs 2xl:text-sm"
                                             href={`/${e.slug}`}
                                         >
                                             {e.title}
