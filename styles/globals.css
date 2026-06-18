@@ -118,7 +118,8 @@ p {
 
 .hero-swiper .swiper-pagination {
   position: absolute;
-  bottom: 1.75rem;
+  top: calc(44% - 1.5rem);
+  bottom: auto;
   left: 1rem;
   z-index: 40;
   display: flex;
@@ -146,6 +147,8 @@ p {
 
 @media (min-width: 1024px) {
   .hero-swiper .swiper-pagination {
+    top: auto;
+    bottom: 1.75rem;
     right: 3rem;
     left: auto;
   }
