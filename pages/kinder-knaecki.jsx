@@ -127,9 +127,10 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
               </p>
               <p>
                 Die Rezeptur basiert auf wenigen, sorgfältig ausgewählten
-                Zutaten: Dinkelmehl, Traubenkernmehl, Olivenöl, Wasser und Salz.
-                Dadurch entsteht ein unkomplizierter Snack für zwischendurch -
-                knusprig, bekömmlich und ohne unnötige Zusätze.
+                Zutaten: Dinkelmehl, Traubenkernmehl, Olivenöl, Wasser, Thymian,
+                Oregano, Basilikum und Salz. Dadurch entsteht ein unkomplizierter
+                Snack für zwischendurch - knusprig, bekömmlich und ohne unnötige
+                Zusätze.
               </p>
               <p>
                 Die liebevollen Illustrationen des Kleinen Yogi begleiten Kinder
@@ -231,8 +232,9 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
               </p>
               <p className="mt-5 max-w-xl font-freight text-lg leading-relaxed tracking-wider text-darkText xl:text-xl">
                 Knuspriges Kinder Knäcki aus Dinkelmehl, Olivenöl, Wasser,
-                Traubenkernmehl und Salz. Mild im Geschmack, unkompliziert für
-                zwischendurch und ohne unnötige Zusätze.
+                Traubenkernmehl, Thymian, Oregano, Basilikum und Salz. Mild im
+                Geschmack, unkompliziert für zwischendurch und ohne unnötige
+                Zusätze.
               </p>
               <div className="mt-6 font-freight text-5xl text-primaryColor-700">
                 4,90 €

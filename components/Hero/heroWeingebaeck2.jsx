@@ -10,9 +10,7 @@ import { FloaterContact, FloaterOpening } from "../floaters";
 import BigHero from "../../assets/bigHero2.jpg";
 import BGMobile from "../../assets/bgMobile.jpg";
 import KinderKnaeckiHero from "../../assets/kinder-knaecki-hero-v2.png";
-
-// FUNCTIONS
-import useBreakpoints from "../functions/useBreakpoints";
+import KinderKnaeckiMobile from "../../assets/kinder-knaecki-product-square.png";
 
 const starterHeroSlides = [
     {
@@ -20,10 +18,11 @@ const starterHeroSlides = [
         title: ["Knusprig.", "Natürlich.", "Kindgerecht."],
         text: "Knuspriger Genuss für kleine Entdecker - gemeinsam mit dem Kleinen Yogi entwickelt.",
         image: KinderKnaeckiHero,
-        mobileImage: KinderKnaeckiHero,
+        mobileImage: KinderKnaeckiMobile,
         isLight: true,
         backgroundPosition: "26% 46%",
-        mobileBackgroundPosition: "24% 50%",
+        mobileBackgroundPosition: "28% 72%",
+        mobileBackgroundSize: "145%",
         primaryButton: {
             label: "Jetzt entdecken",
             href: "/kinder-knaecki",
@@ -40,7 +39,8 @@ const starterHeroSlides = [
         image: BigHero,
         mobileImage: BGMobile,
         backgroundPosition: "center top",
-        mobileBackgroundPosition: "center center",
+        mobileBackgroundPosition: "center 62%",
+        mobileBackgroundSize: "cover",
         primaryButton: {
             label: "Jetzt bestellen",
             href: "https://shop.baeckerin.at/",
@@ -53,8 +53,6 @@ const starterHeroSlides = [
 ];
 
 const HeroWeingebaeck = (props) => {
-    const { isMobile } = useBreakpoints();
-
     return (
         <section
             className={`hero-container relative w-full overflow-hidden bg-[#FBFBF5] md:mt-16 xl:mt-24 ${
@@ -83,11 +81,7 @@ const HeroWeingebaeck = (props) => {
                 className="hero-swiper h-full w-full"
             >
                 {starterHeroSlides.map((slide, index) => {
-                    const backgroundImage = isMobile ? slide.mobileImage : slide.image;
-                    const hasBackgroundImage = Boolean(backgroundImage);
-                    const backgroundPosition = isMobile
-                        ? slide.mobileBackgroundPosition || "center center"
-                        : slide.backgroundPosition || "center top";
+                    const hasBackgroundImage = Boolean(slide.image || slide.mobileImage);
                     const textColor = slide.isLight
                         ? "text-primaryColor-700 drop-shadow-none"
                         : "text-white drop-shadow-sm lg:text-primaryColor-700 lg:drop-shadow-none";
@@ -100,13 +94,23 @@ const HeroWeingebaeck = (props) => {
                     return (
                         <SwiperSlide key={`${slide.kicker}-${index}`} className="relative h-full overflow-hidden">
                             {hasBackgroundImage ? (
-                                <div
-                                    className="absolute inset-0 z-10 bg-cover transition-transform duration-[7000ms] ease-out"
-                                    style={{
-                                        backgroundImage: `url(${backgroundImage.src})`,
-                                        backgroundPosition,
-                                    }}
-                                ></div>
+                                <>
+                                    <div
+                                        className="absolute inset-x-0 top-0 z-10 h-[44%] bg-cover bg-center lg:hidden"
+                                        style={{
+                                            backgroundImage: `url(${(slide.mobileImage || slide.image).src})`,
+                                            backgroundPosition: slide.mobileBackgroundPosition || "center center",
+                                            backgroundSize: slide.mobileBackgroundSize || "cover",
+                                        }}
+                                    ></div>
+                                    <div
+                                        className="absolute inset-0 z-10 hidden bg-cover transition-transform duration-[7000ms] ease-out lg:block"
+                                        style={{
+                                            backgroundImage: `url(${slide.image.src})`,
+                                            backgroundPosition: slide.backgroundPosition || "center top",
+                                        }}
+                                    ></div>
+                                </>
                             ) : (
                                 <div className={`absolute inset-0 z-10 ${slide.backgroundClass || "bg-[#FBFBF5]"}`}>
                                     <div className="absolute right-0 top-0 hidden h-full w-[42%] bg-primaryColor-100 lg:block"></div>
@@ -115,12 +119,55 @@ const HeroWeingebaeck = (props) => {
                             <div
                                 className={`absolute inset-0 z-20 ${
                                     hasBackgroundImage
-                                        ? "bg-gradient-to-b from-black/20 via-transparent to-black/35 lg:bg-gradient-to-r lg:from-[#FBFBF5]/10 lg:via-[#FBFBF5]/10 lg:to-[#FBFBF5]/75"
+                                        ? "bg-gradient-to-b from-black/10 via-transparent to-transparent lg:bg-gradient-to-r lg:from-[#FBFBF5]/10 lg:via-[#FBFBF5]/10 lg:to-[#FBFBF5]/75"
                                         : "bg-gradient-to-r from-transparent via-white/10 to-white/35"
                                 }`}
                             ></div>
 
-                            <div className="relative z-30 mx-auto grid h-full max-w-[1680px] grid-cols-12 items-center px-4 sm:px-8 lg:px-12 2xl:px-0">
+                            <div className="absolute inset-x-0 bottom-0 top-[44%] z-20 bg-[#FBFBF5] lg:hidden"></div>
+
+                            <div className="absolute inset-x-0 bottom-0 top-[44%] z-30 flex flex-col px-5 py-5 sm:px-8 lg:hidden">
+                                <div className="flex min-h-0 flex-1 flex-col">
+                                    <p className="mb-2 font-barlow text-xs uppercase tracking-[0.24em] text-darkText/60">
+                                        {slide.kicker}
+                                    </p>
+                                    <div>
+                                        {slide.title.map((line, lineIndex) => (
+                                            <h1
+                                                key={line}
+                                                className={`!text-[2.15rem] !font-light !leading-[0.92] tracking-normal text-primaryColor-700 ${
+                                                    lineIndex === 1 ? "pl-3" : lineIndex === 2 ? "pl-6" : ""
+                                                }`}
+                                            >
+                                                {line}
+                                            </h1>
+                                        ))}
+                                    </div>
+                                    <p className="mt-3 max-w-[34rem] font-freight text-base leading-snug text-darkText">
+                                        {slide.text}
+                                    </p>
+                                    <div className="mt-auto flex flex-col gap-3 pt-4">
+                                        {slide.primaryButton ? (
+                                            <Link href={slide.primaryButton.href}>
+                                                <MainButton klasse="!m-0 !min-w-0 !w-full !max-w-none !py-3 !text-sm">
+                                                    {slide.primaryButton.label}
+                                                </MainButton>
+                                            </Link>
+                                        ) : null}
+                                        {slide.secondaryButton ? (
+                                            <Link
+                                                href={slide.secondaryButton.href}
+                                                className="inline-flex w-fit items-center font-freight text-sm uppercase tracking-widest text-darkText transition-colors duration-300 hover:text-primaryColor-700"
+                                            >
+                                                <span className="mr-3 h-px w-8 bg-current"></span>
+                                                <span>{slide.secondaryButton.label}</span>
+                                            </Link>
+                                        ) : null}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="relative z-30 mx-auto hidden h-full max-w-[1680px] grid-cols-12 items-center px-4 sm:px-8 lg:grid lg:px-12 2xl:px-0">
                                 <div className="hidden lg:col-span-5 lg:block"></div>
                                 <div className="col-span-12 flex h-full flex-col justify-end pb-8 pt-24 lg:col-span-7 lg:justify-center lg:pb-0 lg:pt-0 lg:pl-16 xl:pl-28">
                                     <div className="max-w-[680px] lg:ml-auto lg:-translate-y-12 xl:-translate-y-16">
