@@ -20,9 +20,9 @@ import { menuItems, socialMedia } from "../components/menues/config";
 import LogoLight from "../assets/logoLight.svg";
 import LogoDark from "../assets/logoDark.svg";
 import Favicon from "../assets/favicon.svg";
-import KinderHero from "../assets/kinder-knaecki-hero-lifestyle.png";
+import KinderHero from "../assets/kinder-knaecki-hero-final.jpg";
+import KinderHeroMobile from "../assets/kinder-knaecki-hero-final-mobile.jpg";
 import KinderProductSquare from "../assets/kinder-knaecki-product-square.png";
-import KinderProduct from "../assets/kinder-knaecki-product.png";
 import KinderMutkarten from "../assets/kinder-knaecki-mutkarten.jpg";
 import YogiHeart from "../assets/yogi-heart.svg";
 import YogiGlueck from "../assets/yogi-glueck.png";
@@ -102,8 +102,15 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
             src={KinderHero}
             alt="Kinder Knäcki Packung auf hellem Tisch mit Trauben und Getreide"
             priority
-            sizes="100vw"
-            className="h-auto w-full"
+            sizes="(min-width: 768px) 100vw, 0px"
+            className="hidden h-auto w-full md:block"
+          />
+          <Image
+            src={KinderHeroMobile}
+            alt="Kinder Knäcki Packung mit dem Schriftzug Knusper dich glücklich"
+            priority
+            sizes="(max-width: 767px) 100vw, 0px"
+            className="h-auto w-full md:hidden"
           />
         </section>
 
@@ -128,9 +135,9 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
               <p>
                 Die Rezeptur basiert auf wenigen, sorgfältig ausgewählten
                 Zutaten: Dinkelmehl, Traubenkernmehl, Olivenöl, Wasser, Thymian,
-                Oregano, Basilikum und Salz. Dadurch entsteht ein unkomplizierter
-                Snack für zwischendurch - knusprig, bekömmlich und ohne unnötige
-                Zusätze.
+                Oregano, Basilikum und Salz. Dadurch entsteht ein
+                unkomplizierter Snack für zwischendurch - knusprig, bekömmlich
+                und ohne unnötige Zusätze.
               </p>
               <p>
                 Die liebevollen Illustrationen des Kleinen Yogi begleiten Kinder
@@ -213,11 +220,11 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
           <div className="containerXL container mx-auto grid grid-cols-12 items-center gap-8 px-6 md:px-12 xl:px-20 2xl:mx-auto">
             <div className="relative col-span-12 aspect-square lg:col-span-6">
               <Image
-                src={KinderProduct}
+                src={KinderProductSquare}
                 alt="Freigestellte Kinder Knäcki Packung mit Traubenkernmehl"
                 fill
                 sizes="(min-width: 1024px) 50vw, 100vw"
-                className="object-contain object-center"
+                className="object-cover object-center"
               />
             </div>
             <div className="col-span-12 lg:col-span-6 lg:px-8">
@@ -259,7 +266,10 @@ export default function KinderKnaecki({ dataSetting, dataHome }) {
           </div>
         </section>
 
-        <section id="kleiner-yogi" className="border-b border-darkText/10 bg-white py-14 lg:py-20">
+        <section
+          id="kleiner-yogi"
+          className="border-b border-darkText/10 bg-white py-14 lg:py-20"
+        >
           <div className="containerXL container mx-auto grid grid-cols-12 items-center gap-8 px-6 md:px-12 xl:px-20 2xl:mx-auto">
             <div className="col-span-12 text-center lg:col-span-8 lg:text-left">
               <p className="font-barlow text-sm uppercase tracking-[0.28em] text-[#2FADE0]">
