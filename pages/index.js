@@ -29,98 +29,122 @@ import Favicon from "../assets/favicon.svg";
 import useBreakpoints from "../components/functions/useBreakpoints";
 
 export default function Home({ dataHome, dataSetting, dataAktuelles }) {
-    const [aktuelles, setAktuelles] = useState(false);
-    const { isMobile, isTablet, isDesktop } = useBreakpoints();
+  const [aktuelles, setAktuelles] = useState(false);
+  const { isMobile, isTablet, isDesktop } = useBreakpoints();
 
-    // Flag to toggle Under Construction mode
-    const underConstruction = false;
+  // Flag to toggle Under Construction mode
+  const underConstruction = false;
 
-    useEffect(() => {
-        console.log(dataHome, dataAktuelles);
-    }, []);
+  useEffect(() => {
+    console.log(dataHome, dataAktuelles);
+  }, []);
 
-    useEffect(() => {
-        console.log(isMobile, isTablet, isDesktop);
-    }, [isMobile, isTablet, isDesktop]);
+  useEffect(() => {
+    console.log(isMobile, isTablet, isDesktop);
+  }, [isMobile, isTablet, isDesktop]);
 
-    // Render only the UnderConstruction component if underConstruction is true
-    if (underConstruction) {
-        return <UnderConstruction videoFile={dataHome.videoFile.asset.url} />;
-    }
+  // Render only the UnderConstruction component if underConstruction is true
+  if (underConstruction) {
+    return <UnderConstruction videoFile={dataHome.videoFile.asset.url} />;
+  }
 
-    return (
-        <>
-            <Head>
-                <title>{dataHome.seo.mainSEO.title}</title>
-                <meta name="description" content={dataHome.seo.mainSEO.description} />
-                <meta name="keywords" content={dataHome.seo.mainSEO.keywords.map((e) => e)} />
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link rel="icon" href={Favicon.src} />
-                <meta property="og:title" content={dataHome.seo.mainSEO.title} />
-                <meta property="og:type" content="website" />
-                <meta property="og:url" content="https://www.baeckerin.at" />
-                <meta
-                    property="og:image"
-                    content={dataHome.seo.advancedSEO.ogImage ? urlFor(dataHome.seo.advancedSEO.ogImage) : null}
-                />
-                <meta
-                    property="og:description"
-                    content={dataHome.seo.advancedSEO.ogDescription ? dataHome.seo.advancedSEO.ogDescription : null}
-                />
-                <meta property="og:site_name" content="Denise Bäckerin - Die Bäckerei" />
-                <meta property="og:locale" content="de_DE" />
-            </Head>
+  return (
+    <>
+      <Head>
+        <title>{dataHome.seo.mainSEO.title}</title>
+        <meta name="description" content={dataHome.seo.mainSEO.description} />
+        <meta
+          name="keywords"
+          content={dataHome.seo.mainSEO.keywords.map((e) => e)}
+        />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href={Favicon.src} />
+        <meta property="og:title" content={dataHome.seo.mainSEO.title} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.baeckerin.at" />
+        <meta
+          property="og:image"
+          content={
+            dataHome.seo.advancedSEO.ogImage
+              ? urlFor(dataHome.seo.advancedSEO.ogImage)
+              : null
+          }
+        />
+        <meta
+          property="og:description"
+          content={
+            dataHome.seo.advancedSEO.ogDescription
+              ? dataHome.seo.advancedSEO.ogDescription
+              : null
+          }
+        />
+        <meta
+          property="og:site_name"
+          content="Denise Bäckerin - Die Bäckerei"
+        />
+        <meta property="og:locale" content="de_DE" />
+      </Head>
 
-            <Menu1
-                logoLight={LogoLight.src}
-                logoDark={LogoDark.src}
-                menuItems={menuItems}
-                socialMedia={socialMedia}
-                burgerIcon={<RxHamburgerMenu />}
-                onBurgerClick={(e) => {}}
-                onClick={() => {
-                    setIsOpen(true);
-                }}
-            ></Menu1>
-            <div className="overflow-x-hidden">
-                <HeroWeingebaeck2
-                    fullHeight={true}
-                    data={dataHome}
-                    dataSetting={dataSetting}
-                    colspan="col-span-12"
-                    videoFile={isMobile ? dataHome.videoFileMobile.asset.url : dataHome.videoFile.asset.url}
-                ></HeroWeingebaeck2>
-                {aktuelles ? (
-                    <FullBGContainer klasse="bg-darkRed">
-                        <Aktuelles data={dataAktuelles}></Aktuelles>
-                    </FullBGContainer>
-                ) : null}
-                <div className="max-w-container mx-auto">
-                    {dataHome.section
-                        .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
-                        .map((e, i) => {
-                            return <StartKachelLeft data={e} bg={FirstBG} key={`kachelKey${i}`}></StartKachelLeft>;
-                        })}
-                </div>
-                <div className="lg:h-24 "></div>
-                <BasicBox
-                    title={"Im Newsletter eintragen"}
-                    text={
-                        "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
-                    }
-                    bgImage={Newsletter.src}
-                >
-                    <NewsletterSub></NewsletterSub>
-                </BasicBox>
-                <div className="sm:h-24"></div>
-                <Contact data={dataSetting}></Contact>
-            </div>
-        </>
-    );
+      <Menu1
+        logoLight={LogoLight.src}
+        logoDark={LogoDark.src}
+        menuItems={menuItems}
+        socialMedia={socialMedia}
+        burgerIcon={<RxHamburgerMenu />}
+        onBurgerClick={(e) => {}}
+        onClick={() => {
+          setIsOpen(true);
+        }}
+      ></Menu1>
+      <div className="overflow-x-hidden">
+        <HeroWeingebaeck2
+          fullHeight={true}
+          data={dataHome}
+          dataSetting={dataSetting}
+          colspan="col-span-12"
+          videoFile={
+            isMobile
+              ? dataHome.videoFileMobile.asset.url
+              : dataHome.videoFile.asset.url
+          }
+        ></HeroWeingebaeck2>
+        {aktuelles ? (
+          <FullBGContainer klasse="bg-darkRed">
+            <Aktuelles data={dataAktuelles}></Aktuelles>
+          </FullBGContainer>
+        ) : null}
+        <div className="max-w-container mx-auto">
+          {dataHome.section
+            .sort((a, b) => a.buttonLink.localeCompare(b.buttonLink))
+            .map((e, i) => {
+              return (
+                <StartKachelLeft
+                  data={e}
+                  bg={FirstBG}
+                  key={`kachelKey${i}`}
+                ></StartKachelLeft>
+              );
+            })}
+        </div>
+        <div className="lg:h-24 "></div>
+        <BasicBox
+          title={"Im Newsletter eintragen"}
+          text={
+            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat"
+          }
+          bgImage={Newsletter.src}
+        >
+          <NewsletterSub></NewsletterSub>
+        </BasicBox>
+        <div className="sm:h-24"></div>
+        <Contact data={dataSetting}></Contact>
+      </div>
+    </>
+  );
 }
 
 export const getStaticProps = async (context) => {
-    const resHome = await client.fetch(`
+  const resHome = await client.fetch(`
   *[_type == "home"][0] {
     ...,
     videoFile {
@@ -135,23 +159,23 @@ export const getStaticProps = async (context) => {
       }
   }
 `);
-    const dataHome = await resHome;
+  const dataHome = await resHome;
 
-    const resSetting = await client.fetch(`
+  const resSetting = await client.fetch(`
   *[_type == "setting"][0] 
 `);
-    const dataSetting = await resSetting;
-    const resAktuelles = await client.fetch(`
+  const dataSetting = await resSetting;
+  const resAktuelles = await client.fetch(`
   *[_type == "aktuelles"][0] 
 `);
-    const dataAktuelles = await resAktuelles;
+  const dataAktuelles = await resAktuelles;
 
-    return {
-        props: {
-            dataHome,
-            dataSetting,
-            dataAktuelles,
-        },
-        revalidate: 1, // 10 seconds
-    };
+  return {
+    props: {
+      dataHome,
+      dataSetting,
+      dataAktuelles,
+    },
+    revalidate: 1, // 10 seconds
+  };
 };

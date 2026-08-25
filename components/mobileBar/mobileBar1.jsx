@@ -31,14 +31,14 @@ const MobileBar = (props) => {
                     />
                 </>
             ) : null}
-            <div className="fixed bottom-0  z-50 flex w-full items-center justify-center bg-darkBG text-sm sm:hidden ">
+            <div className="fixed bottom-0 z-50 flex h-20 w-full items-center justify-center bg-darkBG text-sm sm:hidden">
                 <a
                     onClick={() => {
                         setShowOverlay((showOverlay) => !showOverlay);
                         setShowContact(false);
                         setShowOpening(true);
                     }}
-                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 p-4 text-primaryColor-200 hover:text-primaryColor"
+                    className="flex h-full w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 text-primaryColor-200 hover:text-primaryColor"
                 >
                     <AiOutlineClockCircle size={16} />
                     <span className="font-base mt-1 text-xs">ZEITEN</span>
@@ -49,14 +49,14 @@ const MobileBar = (props) => {
                         setShowContact(true);
                         setShowOpening(false);
                     }}
-                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200  border-opacity-30 p-4 text-primaryColor hover:text-primaryColor"
+                    className="flex h-full w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 text-primaryColor hover:text-primaryColor"
                 >
                     <FaEnvelope size={16} />
                     <span className="font-base mt-1 text-xs">EMAIL</span>
                 </a>
                 <a
                     href="tel:+436508011900"
-                    className="flex w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 p-4 text-primaryColor-200 hover:text-primaryColor "
+                    className="flex h-full w-1/3 flex-col items-center justify-center border-r border-primaryColor-200 border-opacity-30 text-primaryColor-200 hover:text-primaryColor"
                 >
                     <FaPhone size={16} />
                     <span className="mt-1  text-xs">CALL</span>
