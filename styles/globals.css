@@ -89,7 +89,8 @@ p {
   z-index: 1;
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: calc(100svh - 5rem);
   margin-left: auto;
   margin-right: auto;
   overflow: hidden;
@@ -102,7 +103,8 @@ p {
   z-index: 1;
   display: flex;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: inherit;
   box-sizing: content-box;
   transition-property: transform;
 }
@@ -112,15 +114,37 @@ p {
   display: block;
   flex-shrink: 0;
   width: 100%;
-  height: 100%;
+  height: auto;
+  min-height: inherit;
   transition-property: transform;
+}
+
+@media (min-width: 1024px) {
+  .hero-swiper,
+  .hero-swiper .swiper-wrapper,
+  .hero-swiper .swiper-slide {
+    height: 100%;
+    min-height: 0;
+  }
+}
+
+/* Mobile hero copy sits directly on the image, so it needs a subtle warm base. */
+@media (max-width: 1023px) {
+  .hero-mobile-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(38, 34, 20, 0) 30%,
+      rgba(75, 67, 39, 0.26) 54%,
+      rgba(38, 34, 20, 0.82) 100%
+    );
+  }
 }
 
 .hero-swiper .swiper-pagination {
   position: absolute;
-  top: calc(44% - 1.5rem);
-  bottom: auto;
-  left: 1rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  left: auto;
   z-index: 40;
   display: flex;
   width: auto;
@@ -134,7 +158,7 @@ p {
   height: 0.7rem;
   margin: 0!important;
   border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.55);
   opacity: 1;
   transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
 }
@@ -159,6 +183,22 @@ p {
 
   .hero-swiper .swiper-pagination-bullet-active {
     background: #B1A269;
+  }
+}
+
+@media (max-width: 639px) {
+  .hero-swiper .swiper-pagination {
+    right: 1.5rem;
+    bottom: 1.35rem;
+  }
+
+  .hero-swiper .swiper-pagination-bullet {
+    width: 0.45rem;
+    height: 0.45rem;
+  }
+
+  .hero-swiper .swiper-pagination-bullet-active {
+    width: 1.35rem;
   }
 }
 
