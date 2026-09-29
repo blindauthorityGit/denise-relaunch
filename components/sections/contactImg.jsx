@@ -15,6 +15,7 @@ import useBreakpoints from "../functions/useBreakpoints";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
+import OpeningHours from "../openingHours";
 
 //COMPS
 import { LineButton } from "../buttons";
@@ -99,7 +100,7 @@ const ContactImg = (props) => {
                   Brunn an der Pitten
                 </div>
                 <div className="font-freight leading-relaxed text-darkText xl:text-xl">
-                  <PortableText value={props.data.oeffnungszeiten.brunn} />
+                  <OpeningHours />
                 </div>{" "}
               </div>
               {/* <div className="font-freight ">
@@ -111,30 +112,12 @@ const ContactImg = (props) => {
                                 </div>
                             </div> */}
             </div>
-            <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
-              <div className="absolute top-[-2rem] right-[-1rem] flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
-                ab 27.05.
-              </div>
+            <div className="relative col-span-12 mt-4 bg-primaryColor-50 p-4 font-freight">
               <div className="mb-4 leading-relaxed text-primaryColor-500 xl:text-xl">
                 Bad Vöslau Schlosspark
               </div>
               <div className="font-freight leading-relaxed text-darkText xl:text-xl">
                 <PortableText value={props.data.oeffnungszeiten.voeslau} />
-              </div>
-            </div>
-            <div className="relative col-span-12 mt-4 bg-primaryColor-50 p-4 font-freight">
-              <div className="absolute top-[-2rem] right-[-1rem] flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 px-1 text-center font-bold leading-tight text-white">
-                27.08.
-                <br />
-                2026
-              </div>
-              <div className="mb-0 leading-relaxed text-primaryColor-500 xl:text-xl">
-                Bauernmarkt Theresienfeld
-              </div>
-              <div className="mt-2 font-freight leading-relaxed text-darkText xl:text-xl">
-                15:30–19:30 Uhr
-                <br />
-                Hauptplatz 6, 2604 Theresienfeld
               </div>
             </div>
           </div>
