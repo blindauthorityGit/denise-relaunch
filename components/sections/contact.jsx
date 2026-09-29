@@ -15,6 +15,7 @@ import useBreakpoints from "../functions/useBreakpoints";
 
 //SANITY
 import { PortableText } from "@portabletext/react";
+import OpeningHours from "../openingHours";
 
 //COMPS
 import { LineButton } from "../buttons";
@@ -122,7 +123,7 @@ const Contact = (props) => {
                   Shop Brunn an der Pitten
                 </div>
                 <div className="font-freight leading-relaxed text-darkText xl:text-lg">
-                  <PortableText value={props.data.oeffnungszeiten.brunn} />
+                  <OpeningHours />
                 </div>{" "}
               </div>
               {/* <div className="font-freight ">
@@ -134,30 +135,21 @@ const Contact = (props) => {
                                 </div>
                             </div> */}
             </div>
-            <div className="relative col-span-12 bg-primaryColor-50 p-4 font-freight">
-              {/* <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 font-bold text-white">
-                                ab 27.05.
-                            </div> */}
+            <div className="relative col-span-12 mt-4 bg-primaryColor-50 p-4 font-freight">
               <div className="mb-4 text-lg font-bold leading-relaxed text-primaryColor-500">
                 Bad Vöslau Schlosspark
               </div>
               <div className="font-freight text-base leading-relaxed text-darkText">
-                <PortableText value={props.data.oeffnungszeiten.voeslau} />
-              </div>
-            </div>
-            <div className="relative col-span-12 mt-4 bg-primaryColor-50 p-4 font-freight">
-              <div className="absolute top-[-2rem] right-4 flex h-16 w-16 items-center justify-center rounded-full bg-primaryColor-500 px-1 text-center font-bold leading-tight text-white">
-                27.08.
-                <br />
-                2026
-              </div>
-              <div className="mb-0 text-lg font-bold leading-relaxed text-primaryColor-500">
-                Bauernmarkt Theresienfeld
-              </div>
-              <div className="mt-2 font-freight text-base leading-relaxed text-darkText">
-                15:30–19:30 Uhr
-                <br />
-                Hauptplatz 6, 2604 Theresienfeld
+                <PortableText
+                  value={props.data.oeffnungszeiten.voeslau}
+                  components={{
+                    block: {
+                      normal: ({ children }) => (
+                        <span className="mr-2 whitespace-nowrap">{children}</span>
+                      ),
+                    },
+                  }}
+                />
               </div>
             </div>
           </div>

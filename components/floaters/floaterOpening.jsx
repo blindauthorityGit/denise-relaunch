@@ -3,6 +3,7 @@ import { FaPhone } from "react-icons/fa/index.js";
 import { HiOutlineMail } from "react-icons/hi/index.js";
 import { AiOutlineClockCircle } from "react-icons/ai/index.js";
 import { PortableText } from "@portabletext/react";
+import OpeningHours from "../openingHours";
 
 // AOS
 import AOS from "aos";
@@ -28,7 +29,7 @@ const FloaterOpening = (props) => {
                     <div className="text-primaryColor-300">Brunn an der Pitten</div>
                     <div className="noMargin" style={{ marginBottom: "0!important" }}>
                         {" "}
-                        <PortableText className="mb-0" value={props.data.oeffnungszeiten.brunn} />
+                        <OpeningHours />
                     </div>
                 </a>
                 <a className="pl-4 text-primaryColor-100" href="tel:+43 650 944 4150">

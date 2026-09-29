@@ -15,8 +15,8 @@ import KinderKnaeckiMobile from "../../assets/kinder-knaecki-hero-mobile.png";
 
 const starterHeroSlides = [
   {
-    kicker: "Pop-up Ladencafé",
-    title: ["Pop-up", "Ladencafé"],
+    kicker: "Bäckerei, Ladencafe & Concept Store",
+    title: ["Bäckerei,", "Ladencafe"],
     subTitle: "& Concept Store",
     text: "In unseren liebevoll renovierten, alten Gemäuern.",
     image: PopupCafeHero,
@@ -39,14 +39,6 @@ const starterHeroSlides = [
       { label: "Samstag", hours: "8 – 13 Uhr" },
     ],
     note: "Eingang rechts von der Bäckerei im Hof",
-    nightMarket: {
-      title: ["Nacht", "flohmarkt"],
-      schedule: "Jeden Freitag · 18–22 Uhr",
-      detail: "Musik · Fingerfood · gemütliche Stimmung",
-      adultFee: "€ 10,–",
-      childFee: "€ 3,–",
-      contact: "Anmeldung & Infos: 0650 / 80 11 900",
-    },
   },
   {
     kicker: "Kinder Knäcki",
@@ -217,10 +209,6 @@ const HeroWeingebaeck = (props) => {
                 }`}
               ></div>
 
-              {slide.nightMarket ? (
-                <div className="absolute inset-y-0 right-0 z-20 hidden w-1/2 bg-[#303126] lg:block"></div>
-              ) : null}
-
               {slide.badge ? (
                 <div
                   className={`absolute right-5 top-20 z-30 flex -rotate-12 flex-col items-center justify-center rounded-full bg-primaryColor-600/95 text-center text-primaryColor-50 shadow-lg sm:right-8 sm:top-24 lg:left-[47%] lg:right-auto lg:top-10 ${
@@ -380,40 +368,6 @@ const HeroWeingebaeck = (props) => {
                 </div>
               </div>
 
-              {slide.nightMarket ? (
-                <section className="relative z-30 bg-[#303126] px-6 py-14 text-primaryColor-50 sm:px-8 lg:hidden">
-                  <p className="mb-2 font-barlow text-xs uppercase tracking-[0.22em] text-primaryColor-100">
-                    {slide.nightMarket.schedule}
-                  </p>
-                  <h2 className="pr-14 font-freight !text-5xl !font-light italic !leading-[0.84] tracking-normal">
-                    {slide.nightMarket.title[0]}
-                    <br />
-                    {slide.nightMarket.title[1]}
-                  </h2>
-                  <div className="mt-6 h-px bg-primaryColor-500"></div>
-                  <p className="mt-5 font-barlow text-xs uppercase tracking-[0.18em] text-primaryColor-100">
-                    {slide.nightMarket.detail}
-                  </p>
-                  <div className="mt-7 grid grid-cols-2 gap-2">
-                    <div className="bg-primaryColor-500 px-3 py-4 text-center">
-                      <p className="mb-2 font-freight text-sm">Erwachsene</p>
-                      <p className="mb-0 font-freight text-3xl leading-none">
-                        {slide.nightMarket.adultFee}
-                      </p>
-                    </div>
-                    <div className="bg-primaryColor-500 px-3 py-4 text-center">
-                      <p className="mb-2 font-freight text-sm">Kinder</p>
-                      <p className="mb-0 font-freight text-3xl leading-none">
-                        {slide.nightMarket.childFee}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mb-0 mt-7 font-barlow text-xs uppercase tracking-[0.17em] text-primaryColor-50">
-                    {slide.nightMarket.contact}
-                  </p>
-                </section>
-              ) : null}
-
               <div className="relative z-30 mx-auto hidden h-full max-w-[1680px] grid-cols-12 items-center px-4 sm:px-8 lg:grid lg:px-12 2xl:px-0">
                 <div
                   className={`hidden lg:block ${
@@ -556,39 +510,6 @@ const HeroWeingebaeck = (props) => {
                   </div>
                 </div>
               </div>
-              {slide.nightMarket ? (
-                <div className="absolute inset-y-0 right-0 z-30 hidden w-1/2 flex-col justify-center px-10 py-10 text-primaryColor-50 lg:flex lg:-translate-y-12 xl:-translate-y-16 xl:px-16">
-                  <h2 className="font-freight !text-6xl !font-light italic !leading-[0.92] tracking-normal lg:!text-6xl xl:!text-7xl 2xl:!text-8xl">
-                    {slide.nightMarket.title[0]}
-                    <br />
-                    {slide.nightMarket.title[1]}
-                  </h2>
-                  <p className="mt-3 font-freight text-3xl !leading-none text-primaryColor-300 xl:text-4xl">
-                    {slide.nightMarket.schedule}
-                  </p>
-                  <div className="mt-5 h-px w-full max-w-[540px] bg-primaryColor-500"></div>
-                  <p className="mt-5 font-freight text-lg !leading-snug text-primaryColor-50 lg:text-2xl xl:text-3xl">
-                    {slide.nightMarket.detail}
-                  </p>
-                  <div className="mt-7 grid max-w-[540px] grid-cols-2 gap-3">
-                    <div className="bg-primaryColor-500 px-6 py-5 text-center">
-                      <p className="mb-2 font-freight text-lg">Erwachsene</p>
-                      <p className="mb-0 font-freight text-4xl leading-none">
-                        {slide.nightMarket.adultFee}
-                      </p>
-                    </div>
-                    <div className="bg-primaryColor-500 px-6 py-5 text-center">
-                      <p className="mb-2 font-freight text-lg">Kinder</p>
-                      <p className="mb-0 font-freight text-4xl leading-none">
-                        {slide.nightMarket.childFee}
-                      </p>
-                    </div>
-                  </div>
-                  <p className="mb-0 mt-7 font-barlow text-sm uppercase tracking-[0.17em] text-primaryColor-50">
-                    {slide.nightMarket.contact}
-                  </p>
-                </div>
-              ) : null}
             </SwiperSlide>
           );
         })}
